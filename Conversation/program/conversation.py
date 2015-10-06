@@ -9,15 +9,14 @@ import logging
 import ConfigParser
 sys.path.append('/usr/share/pyshared/xbmc')
 
-from xbmcclient import XBMCClient
+from xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
 import xbmcgui
 import xbmcplugin
 import xbmc, xbmcgui, xbmcaddon
 
+ADDON = xbmcaddon.Addon(id='script.module.oldphone.conversation')
 
-ADDON = xbmcaddon.Addon(id='scripts.module.oldphone.conversation')
-
-addonFolder = "/home/osmc/.kodi/addons/scripts.module.oldphone.conversation/" 
+addonFolder = "/home/osmc/.kodi/addons/script.module.oldphone.conversation/" 
 
 logging.basicConfig(filename=addonFolder + 'conversation.log',level=logging.INFO)
 #logging.basicConfig(level=logging.INFO)
@@ -39,10 +38,6 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 new=True
-
-def picked_up(argument):
-    main()
-    call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
 
 def showMainWindow():
     addon_handle = int(sys.argv[1])
@@ -87,36 +82,4 @@ class main():
 
     def showThingy(self):
         xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
-
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-new = True
-
-while True:
-    try:
-        if(GPIO.input(hoorn) == 1):
-            print("wait until hanging up...")
-            picked_up(1)
-            while(GPIO.input(hoorn) == 1):
-                    #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/anythingelse"])
-                    #voicecommand = subprocess.Popen(["/home/osmc/Pi/PiAUISuite/VoiceCommand/voicecommand", "-c", "-f", "/home/osmc/$
-                    #runningPid = voicecommand.pid;
-                    time.sleep(1)
-        if(GPIO.input(hoorn) == 0):
-            os.system('pkill voicecommand')
-            if(new):
-                    print("Phone is down")
-                    new=False
-            else:
-                    print("Hung up")
-            while (GPIO.input(hoorn) == 0):
-                    #wait until someone picks up the phone
-                    time.sleep(1)
-    except KeyboardInterrupt:
-        print("Bye... Cleaning up...")
-        raise
-    except:
-        GPIO.cleanup()
-
 
