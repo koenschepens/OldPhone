@@ -32,7 +32,11 @@ def executeAddon(addonid, params):
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
 
 def executeScript(script, arguments):
-    p = subprocess.Popen([script, arguments], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if(arguments is None):
+        p = subprocess.Popen([script], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    else:
+        p = subprocess.Popen([script, arguments], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
     out, err = p.communicate()
     return out
 
