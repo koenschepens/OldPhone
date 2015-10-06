@@ -31,11 +31,6 @@ def executeAddon(addonid, params):
 
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
 
-def listen():
-    
-
-
-
 def playYoutubeVideo(youtubeId):
     result = xbmc.executeJSONRPC('{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}')
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
