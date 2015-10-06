@@ -6,7 +6,7 @@ from datetime import datetime
 import sys
 import logging
 import ConfigParser
-
+import traceback
 import xbmcgui
 import xbmcplugin
 import xbmc, xbmcgui, xbmcaddon
