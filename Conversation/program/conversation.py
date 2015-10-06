@@ -13,6 +13,8 @@ from xbmcclient import XBMCClient
 import xbmcgui
 import xbmcplugin
 
+ADDON = xbmcaddon.Addon(id='scripts.module.oldphone.conversation')
+
 addonFolder = "/home/osmc/.kodi/addons/scripts.module.oldphone.conversation/" 
 
 logging.basicConfig(filename=addonFolder + 'conversation.log',level=logging.INFO)
@@ -83,7 +85,7 @@ class main():
         xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
 
     def showWelcome(main=None):
-        w = OptionsDialog('welcome.xml','whoop','main','720p',main=main)
+        w = OptionsDialog('welcome.xml',ADDON.getAddonInfo('path'),'main','720p',main=main)
         w.doModal()
         del w
 
