@@ -44,6 +44,8 @@ def picked_up(argument):
     #playYoutubeVideo(whatyouwant)
 
 def ask(what):
+    global CLIENT_ACCESS_TOKEN
+    global SUBSCRIPTION_KEY
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN, SUBSCRIPTION_KEY)
     request = ai.text_request()
     request.query = what
