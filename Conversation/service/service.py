@@ -17,7 +17,7 @@ def picked_up(argument):
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
     executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
 
-def executeAddon(addonid, params)
+def executeAddon(addonid, params):
     result = xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }')
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
 
