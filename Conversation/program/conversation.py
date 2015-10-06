@@ -34,8 +34,10 @@ hoorn = 11
 ##v.speak("Hello! How nice of you to drop by.")
 
 ##GPIO.setup(buzzer, GPIO.OUT)
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
 new=True
 
 def picked_up(argument):
@@ -57,35 +59,8 @@ def startVoiceCommand():
 	voicecommand = subprocess.Popen(["/home/osmc/Pi/PiAUISuite/VoiceCommand/voicecommand", "-c",  "-f", "/home/osmc/Pi/PiAUISuite/VoiceCommand/.commands.conf"])
 	runningPid = voicecommand.pid;
 
-class OptionsDialog(xbmcgui.WindowXMLDialog):
-    def __init__(self,*args,**kwargs):
-        self.main = kwargs.get('main')
-
-    def onClick(self,controlID):
-        if controlID == 200:
-            self.main.showThingy()
-
-    def setupButtons(self,x,y,w,h,a="Vert",f=None,nf=None):
-        self.numbut  = 0
-        self.butx = x
-        self.buty = y
-        self.butwidth = w
-        self.butheight = h
-        self.butalign = a
-        self.butfocus_img = f
-        self.butnofocus_img = nf
- 
-    def addButon(self,text):
-        if self.butalign == "Hori":
-            c =  xbmcgui.ControlButton(self.butx + (self.numbut * self.butwidth),self.buty,self.butwidth,self.butheight,text,self.butfocus_img,self.butnofocus_img)
-            self.addControl(c)
-        elif self.butalign == "Vert":
-            c = xbmcgui.ControlButton(self.butx ,self.buty + (self.numbut * self.butheight),self.butwidth,self.butheight,text,self.butfocus_img,self.butnofocus_img)
-            self.addControl(c)
-        self.numbut += 1
-        return c
-
-class main():
+#class Window(WindowXMLDialog):    
+class main(value):
     def __init__(self):
         arg = self.getArg()
         if arg == 'INFO':
@@ -114,6 +89,5 @@ class main():
         xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
 
 
-main()
-#GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
+GPIO.add_event_detect(hoorn, GPIO.RISING, callback=main) 
 
