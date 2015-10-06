@@ -13,6 +13,20 @@ import xbmcgui
 import xbmcplugin
 import xbmc, xbmcgui, xbmcaddon
 
+import os.path, sys
+
+try:
+    import apiai
+except ImportError:
+    sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
+    import apiai
+
+import time
+import scipy.io.wavfile as wav
+
+CLIENT_ACCESS_TOKEN = 'fb928615eb914f4785e110eecad49c95'
+SUBSCRIPTION_KEY = '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25' 
+
 def picked_up(argument):
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
@@ -24,9 +38,18 @@ def picked_up(argument):
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
+    ask(whatyoushouldhavesaid)
 
-    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search ' + whatyoushouldhavesaid)
-    playYoutubeVideo(whatyouwant)
+    #whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search ' + whatyoushouldhavesaidf)
+    #playYoutubeVideo(whatyouwant)
+
+def ask(what):
+    ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN, SUBSCRIPTION_KEY)
+    request = ai.text_request()
+    request.query = what
+    response = request.getresponse()
+    xbmc.GUI.ShowNotification({"title":what, "message": response.read()})
+
 
 def executeAddon(addonid, params):
     result = xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }')
