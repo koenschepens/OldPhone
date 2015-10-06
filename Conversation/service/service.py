@@ -20,16 +20,21 @@ def picked_up(argument):
     dialog = xbmcgui.Dialog()
     dialog.notification('Wat wil je doen?', 'Bijv: Youtube.', xbmcgui.NOTIFICATION_INFO, 5000)
 
-    whatyousaid = commands.getstatusoutput('./includes/speech-recog.sh')
+    whatyousaid = executeScript('./includes/speech-recog.sh', '')
     xbmc.log(msg='you said ' + whatyousaid, level=xbmc.LOGDEBUG)
 
-    whatyouwant = commands.getstatusoutput('./includes/youtube-search ' + whatyousaid)
+    whatyouwant = executeScript('./includes/youtube-search', whatyousaid)
     playYoutubeVideo(whatyouwant)
 
 def executeAddon(addonid, params):
     result = xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }')
 
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
+
+def executeScript(script, arguments):
+    p = subprocess.Popen([script, arguments], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, err = p.communicate()
+    return out
 
 def playYoutubeVideo(youtubeId):
     result = xbmc.executeJSONRPC('{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}')
