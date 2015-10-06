@@ -20,10 +20,10 @@ def picked_up(argument):
     dialog = xbmcgui.Dialog()
     dialog.notification('Wat wil je doen?', 'Bijv: Youtube.', xbmcgui.NOTIFICATION_INFO, 5000)
 
-    whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/service/includes/speech-recog.sh', '')
+    whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/speech-recog.sh', '')
     xbmc.log(msg='you said ' + whatyousaid, level=xbmc.LOGDEBUG)
 
-    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/service/includes/youtube-search', whatyousaid)
+    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search', whatyousaid)
     playYoutubeVideo(whatyouwant)
 
 def executeAddon(addonid, params):
