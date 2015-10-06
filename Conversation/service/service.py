@@ -24,7 +24,7 @@ new = True
 while True:
     try:
         if(GPIO.input(hoorn) == 1):
-            print("wait until hanging up...")
+            xbmc.log(msg='wait until hanging up...', level=xbmc.LOGDEBUG)
             picked_up(1)
             while(GPIO.input(hoorn) == 1):
                 #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/anythingelse"])
@@ -34,10 +34,10 @@ while True:
         if(GPIO.input(hoorn) == 0):
             os.system('pkill voicecommand')
             if(new):
-                print("Phone is down")
+                xbmc.log(msg='Phone is down', level=xbmc.LOGDEBUG)
                 new=False
             else:
-                print("Hung up")
+                xbmc.log(msg='Hung up', level=xbmc.LOGDEBUG)
             while (GPIO.input(hoorn) == 0):
                 #wait until someone picks up the phone
                 time.sleep(1)
@@ -46,3 +46,4 @@ while True:
         raise
     except:
         GPIO.cleanup()
+        xbmc.log(msg='Error', level=xbmc.LOGDEBUG));
