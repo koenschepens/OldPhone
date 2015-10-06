@@ -97,7 +97,7 @@ while True:
     try:
         if(GPIO.input(hoorn) == 1):
             print("wait until hanging up...")
-            main()
+            picked_up(1)
             while(GPIO.input(hoorn) == 1):
                     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/anythingelse"])
                     #voicecommand = subprocess.Popen(["/home/osmc/Pi/PiAUISuite/VoiceCommand/voicecommand", "-c", "-f", "/home/osmc/$
