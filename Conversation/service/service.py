@@ -23,7 +23,7 @@ def picked_up(argument):
     whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/speech-recog.sh', None)
     xbmc.log(msg='you said ' + whatyousaid, level=xbmc.LOGDEBUG)
 
-    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search', whatyousaid)
+    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search', whatyousaid.strip('"'))
     playYoutubeVideo(whatyouwant)
 
 def executeAddon(addonid, params):
