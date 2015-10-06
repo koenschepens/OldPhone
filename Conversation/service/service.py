@@ -14,7 +14,7 @@ import xbmc, xbmcgui, xbmcaddon
 
 def picked_up(argument):
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
-    xbmc.send_action("RunAddon('script.module.oldphone.conversation')")
+    xbmc.executebuiltin("ActivateWindow(200,plugin://script.module.oldphone.conversation/)")
 
 hoorn = 11
 
