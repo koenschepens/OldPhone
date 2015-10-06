@@ -15,10 +15,15 @@ import xbmc, xbmcgui, xbmcaddon
 def picked_up(argument):
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
-    executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
+    #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
+    playYoutubeVideo("f5RauCBguH0")
 
 def executeAddon(addonid, params):
     result = xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }')
+    xbmc.log(msg=result, level=xbmc.LOGDEBUG)
+
+def playYoutubeVideo(youtubeId):
+    result = xbmc.executeJSONRPC('{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}')
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
 
 
