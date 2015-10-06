@@ -13,7 +13,7 @@ from xbmcclient import XBMCClient
 import xbmcgui
 import xbmcplugin
 
-addonFolder = "/home/osmc/.kodi/scripts.module.oldphone.conversation/" 
+addonFolder = "/home/osmc/.kodi/addons/scripts.module.oldphone.conversation/" 
 
 logging.basicConfig(filename=addonFolder + 'conversation.log',level=logging.INFO)
 #logging.basicConfig(level=logging.INFO)
