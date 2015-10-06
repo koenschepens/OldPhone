@@ -118,8 +118,8 @@ logging.info("port: " + str(port))
 xbmc = XBMCClient("OldPhone", addonFolder + "/icon.png")
 xbmc.connect()
 
-GPIO.setup(hoorn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
+#GPIO.setup(hoorn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+#GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
  
 while True:
     try:
