@@ -90,10 +90,7 @@ class main():
         del w
 
     def showThingy(self):
-        title = xbmc.getInfoLabel('Player.Title')
-        url = xbmc.Player().getPlayingFile() #xbmc.getInfoLabel('Player.Filenameandpath')
-        thumbnail = xbmc.getInfoLabel('Player.Art(thumb)')
-        extra = None
+        xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
 
 
 main()
