@@ -65,6 +65,26 @@ class OptionsDialog(xbmcgui.WindowXMLDialog):
         if controlID == 200:
             self.main.showThingy()
 
+    def setupButtons(self,x,y,w,h,a="Vert",f=None,nf=None):
+        self.numbut  = 0
+        self.butx = x
+        self.buty = y
+        self.butwidth = w
+        self.butheight = h
+        self.butalign = a
+        self.butfocus_img = f
+        self.butnofocus_img = nf
+ 
+    def addButon(self,text):
+        if self.butalign == "Hori":
+            c =  xbmcgui.ControlButton(self.butx + (self.numbut * self.butwidth),self.buty,self.butwidth,self.butheight,text,self.butfocus_img,self.butnofocus_img)
+            self.addControl(c)
+        elif self.butalign == "Vert":
+            c = xbmcgui.ControlButton(self.butx ,self.buty + (self.numbut * self.butheight),self.butwidth,self.butheight,text,self.butfocus_img,self.butnofocus_img)
+            self.addControl(c)
+        self.numbut += 1
+        return c
+
 class main():
     def __init__(self):
         arg = self.getArg()
@@ -86,6 +106,7 @@ class main():
 
     def showWelcome(main=None):
         w = OptionsDialog('welcome.xml',ADDON.getAddonInfo('path'),'main','720p',main=main)
+        w.setupButtons(10, 29, 300, 30)
         w.doModal()
         del w
 
