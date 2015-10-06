@@ -50,7 +50,7 @@ def send_key(key):
         logging.warning("value invalid")
 
 def picked_up(horn):
-    xbmc.send_action("RunAddon('scripts.module.oldphone.conversation')")
+    xbmc.send_action("RunAddon('script.module.oldphone.conversation')")
 
 def row_changed(row):
     global rows
