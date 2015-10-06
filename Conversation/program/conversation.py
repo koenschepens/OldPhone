@@ -41,7 +41,7 @@ GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 new=True
 
 def picked_up(argument):
-    logging.info(str(argument))
+    main()
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
 
 def showMainWindow():
@@ -60,7 +60,7 @@ def startVoiceCommand():
 	runningPid = voicecommand.pid;
 
 #class Window(WindowXMLDialog):    
-class main(value):
+class main():
     def __init__(self):
         arg = self.getArg()
         if arg == 'INFO':
@@ -89,5 +89,5 @@ class main(value):
         xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
 
 
-GPIO.add_event_detect(hoorn, GPIO.RISING, callback=main) 
+GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
 
