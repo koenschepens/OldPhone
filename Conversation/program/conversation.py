@@ -60,8 +60,6 @@ def startVoiceCommand():
 class OptionsDialog(xbmcgui.WindowXMLDialog):
     def __init__(self,*args,**kwargs):
         self.main = kwargs.get('main')
-        self.player = PlayMonitor()
-        self.player.setVideoValidity()
 
     def onClick(self,controlID):
         if controlID == 200:
