@@ -1,6 +1,6 @@
 #!/bin/bash
 
-serviceFolder="/home/osmc/.kodi/addons/plugin.oldphone.conversation"
+serviceFolder="/home/osmc/.kodi/addons/plugin.video.oldphone.conversation"
 
 echo "installing..."
 
