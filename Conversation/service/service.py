@@ -12,6 +12,8 @@ import traceback
 import xbmcgui
 import xbmcplugin
 import xbmc, xbmcaddon
+import json
+
 
 import os.path, sys
 
@@ -51,7 +53,11 @@ def ask(what):
     request.query = what
     response = request.getresponse()
     dialog = xbmcgui.Dialog()
-    dialog.notification(what, response.read(), xbmcgui.NOTIFICATION_INFO, 5001)
+
+    leJson = response.read()
+    parsed_json = json.loads(leJson)
+
+    dialog.notification(what, parsed_json['result']['fulfillment']['speech'], xbmcgui.NOTIFICATION_INFO, 5001)
 
 
 def executeAddon(addonid, params):
