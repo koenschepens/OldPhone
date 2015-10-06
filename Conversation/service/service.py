@@ -48,5 +48,8 @@ while True:
         xbmc.log(msg='bye', level=xbmc.LOGERROR)
         raise
     except:
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+        
         GPIO.cleanup()
-        xbmc.log(msg='Error', level=xbmc.LOGERROR)
+        xbmc.log(msg=''.join('!! ' + line for line in lines), level=xbmc.LOGERROR)
