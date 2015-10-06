@@ -7,15 +7,15 @@ from datetime import datetime
 import sys
 import logging
 import ConfigParser
-import sys
-import xbmcgui
-import xbmcplugin
+
 
 try:
     from xbmc.xbmcclient import XBMCClient
 except:
     sys.path.append('/usr/share/pyshared/xbmc')
     from xbmcclient import XBMCClient
+    import xbmcgui
+    import xbmcplugin
 
 addonFolder = "/home/osmc/.kodi/addons/service.conversation/" 
 
