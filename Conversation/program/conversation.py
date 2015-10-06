@@ -83,7 +83,7 @@ class main():
         xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
 
     def showWelcome(main=None):
-        w = OptionsDialog('welcome.xml',util.ADDON.getAddonInfo('path'),'main','720p',main=main)
+        w = OptionsDialog('welcome.xml','whoop','main','720p',main=main)
         w.doModal()
         del w
 
