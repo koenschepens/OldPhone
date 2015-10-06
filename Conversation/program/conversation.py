@@ -47,7 +47,6 @@ def startVoiceCommand():
 	runningPid = voicecommand.pid;
 
 GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
-GPIO.add_event_detect(hoorn, GPIO.RISING, callback=hung_up) 
 
 logging.info("Setting up Kodi client")
 
