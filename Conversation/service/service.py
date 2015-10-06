@@ -11,7 +11,7 @@ import ConfigParser
 import traceback
 import xbmcgui
 import xbmcplugin
-import xbmc, xbmcgui, xbmcaddon
+import xbmc, xbmcaddon
 
 import os.path, sys
 
@@ -48,7 +48,8 @@ def ask(what):
     request = ai.text_request()
     request.query = what
     response = request.getresponse()
-    xbmc.GUI.ShowNotification({"title":what, "message": response.read()})
+    dialog = xbmcgui.Dialog()
+    dialog.notification(what, response.read(), xbmcgui.NOTIFICATION_INFO, 5001)
 
 
 def executeAddon(addonid, params):
