@@ -15,6 +15,7 @@ def picked_up(argument):
     main()
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
 
+hoorn = 11
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
