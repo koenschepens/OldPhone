@@ -13,8 +13,8 @@ import xbmcplugin
 import xbmc, xbmcgui, xbmcaddon
 
 def picked_up(argument):
-    main()
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
+    xbmc.send_action("RunAddon('script.module.oldphone.conversation')")
 
 hoorn = 11
 
