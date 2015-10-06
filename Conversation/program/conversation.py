@@ -53,6 +53,16 @@ def startVoiceCommand():
 	voicecommand = subprocess.Popen(["/home/osmc/Pi/PiAUISuite/VoiceCommand/voicecommand", "-c",  "-f", "/home/osmc/Pi/PiAUISuite/VoiceCommand/.commands.conf"])
 	runningPid = voicecommand.pid;
 
+class OptionsDialog(xbmcgui.WindowXMLDialog):
+    def __init__(self,*args,**kwargs):
+        self.main = kwargs.get('main')
+        self.player = PlayMonitor()
+        self.player.setVideoValidity()
+
+    def onClick(self,controlID):
+        if controlID == 200:
+            self.main.showThingy()
+
 class main():
     def __init__(self):
         arg = self.getArg()
@@ -76,6 +86,13 @@ class main():
         w = OptionsDialog('welcome.xml',util.ADDON.getAddonInfo('path'),'main','720p',main=main)
         w.doModal()
         del w
+
+    def showThingy(self):
+        title = xbmc.getInfoLabel('Player.Title')
+        url = xbmc.Player().getPlayingFile() #xbmc.getInfoLabel('Player.Filenameandpath')
+        thumbnail = xbmc.getInfoLabel('Player.Art(thumb)')
+        extra = None
+
 
 main()
 #GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
