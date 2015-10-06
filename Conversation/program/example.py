@@ -3,13 +3,13 @@ import xbmcgui
 try: Emulating = xbmcgui.Emulating
 except: Emulating = False 
  
-class Example(xbmcgui.Window): 
+class Example(xbmcgui.WindowDialog): 
     """
         Example Showing Of Using Sub Buttons Module to Create
         Buttons on a Window
     """
     def __init__(self,):
-        if Emulating: xbmcgui.Window.__init__(self)
+        if Emulating: xbmcgui.WindowDialog.__init__(self)
         setupButtons(self,10,10,100,30,"Vert")
         self.h1 = addButon(self,"Click Me")
         self.something = addButon(self,"Something")
@@ -21,7 +21,7 @@ class Example(xbmcgui.Window):
             print "you press med"
         if self.btn_quit == c:
             self.close()
-            
+
 ### The adding button Code (only really need this bit)
 def setupButtons(self,x,y,w,h,a="Vert",f=None,nf=None):
     self.numbut  = 0
