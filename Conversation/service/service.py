@@ -1,6 +1,6 @@
 from time import sleep
 import RPi.GPIO as GPIO
-from subprocess import call
+import subprocess 
 import commands
 import time
 import os
