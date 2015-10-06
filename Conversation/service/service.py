@@ -19,6 +19,9 @@ hoorn = 11
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
+sleep(4)
+
 new = True
 
 while True:
@@ -42,8 +45,8 @@ while True:
                 #wait until someone picks up the phone
                 time.sleep(1)
     except KeyboardInterrupt:
-        print("Bye... Cleaning up...")
+        xbmc.log(msg='bye', level=xbmc.LOGERROR)
         raise
     except:
         GPIO.cleanup()
-        xbmc.log(msg='Error', level=xbmc.LOGDEBUG)
+        xbmc.log(msg='Error', level=xbmc.LOGERROR)
