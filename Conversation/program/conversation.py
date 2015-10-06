@@ -37,7 +37,6 @@ new=True
 def picked_up(argument):
     logging.info(str(argument))
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
-    showMainWindow()
 
 def showMainWindow():
     addon_handle = int(sys.argv[1])
@@ -53,8 +52,6 @@ def startVoiceCommand():
 	os.system('pkill voicecommand')
 	voicecommand = subprocess.Popen(["/home/osmc/Pi/PiAUISuite/VoiceCommand/voicecommand", "-c",  "-f", "/home/osmc/Pi/PiAUISuite/VoiceCommand/.commands.conf"])
 	runningPid = voicecommand.pid;
-
-picked_up(0)
 
 class main():
     def __init__(self):
