@@ -4,10 +4,6 @@ try: Emulating = xbmcgui.Emulating
 except: Emulating = False 
  
 class Example(xbmcgui.WindowDialog): 
-    """
-        Example Showing Of Using Sub Buttons Module to Create
-        Buttons on a Window
-    """
     def __init__(self,):
         if Emulating: xbmcgui.WindowDialog.__init__(self)
         setupButtons(self,10,10,100,30,"Vert")
