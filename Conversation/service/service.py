@@ -20,12 +20,12 @@ def picked_up(argument):
     dialog = xbmcgui.Dialog()
     dialog.notification('Wat wil je doen?', 'Bijv: Youtube.', xbmcgui.NOTIFICATION_INFO, 5000)
 
-    whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/speech-recog.sh', None)
+    whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/speech-recog.sh')
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
 
-    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search ' + whatyoushouldhavesaid, None)
+    whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search ' + whatyoushouldhavesaid)
     playYoutubeVideo(whatyouwant)
 
 def executeAddon(addonid, params):
@@ -33,12 +33,8 @@ def executeAddon(addonid, params):
 
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
 
-def executeScript(script, arguments):
-    if(arguments is None):
-        p = subprocess.Popen([script], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    else:
-        p = subprocess.Popen([script, arguments], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
+def executeScript(script):
+    p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
     return out
 
