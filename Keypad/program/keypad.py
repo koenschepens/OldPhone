@@ -19,7 +19,7 @@ addonFolder = "/home/osmc/.kodi/addons/service.keypad/"
 logging.basicConfig(filename=addonFolder + 'keypad.log',level=logging.INFO)
 #logging.basicConfig(level=logging.INFO)
 
-hoorn = 11
+#hoorn = 11
 
 config = ConfigParser.RawConfigParser()
 configFile = addonFolder + 'keypad.config'

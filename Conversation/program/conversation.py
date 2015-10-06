@@ -26,17 +26,6 @@ configFile = addonFolder + 'conversation.config'
 logging.info("reading config file " + configFile)
 config.read(configFile)
 
-hoorn = 11
-##buzzer = 26
-	
-##v = pyvona.create_voice("GDNAIRN4SS66PRNKPQZQ","2gURBTiaqnkjxEXZX+cslGhkJ+OVKTzWCZg7mvpp")
-##v.speak("Hello! How nice of you to drop by.")
-
-##GPIO.setup(buzzer, GPIO.OUT)
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-
 new=True
 
 def showMainWindow():
