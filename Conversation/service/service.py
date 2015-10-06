@@ -2,6 +2,7 @@ from time import sleep
 import RPi.GPIO as GPIO
 from subprocess import call
 import time
+import os
 from datetime import datetime
 import sys
 import logging
@@ -17,12 +18,12 @@ def picked_up(argument):
 
 hoorn = 11
 
+new = True
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 sleep(4)
-
-new = True
 
 while True:
     try:
@@ -53,3 +54,4 @@ while True:
         
         GPIO.cleanup()
         xbmc.log(msg=''.join('!! ' + line for line in lines), level=xbmc.LOGERROR)
+        raise
