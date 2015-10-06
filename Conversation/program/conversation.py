@@ -35,11 +35,9 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 new=True
 
-def picked_up():
-	call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
-
-def hung_up():
-	os.system('pkill voicecommand')
+def picked_up(argument):
+	logging.info(str(argument))
+    call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
 
 def startVoiceCommand():
 	os.system('pkill voicecommand')
@@ -57,7 +55,7 @@ logging.info("host: " + str(host))
 logging.info("port: " + str(port))
 
 # Create an XBMCClient object and connect (needed because we don't run as the same user as Kodi)
-xbmc = XBMCClient("OldPhone", addonFolder + "/icon.png")
+xbmc = XBMCClient("OldPhone", addonFolder + "icon.png")
 xbmc.connect()
 
 while True:
