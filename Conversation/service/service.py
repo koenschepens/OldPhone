@@ -46,4 +46,4 @@ while True:
         raise
     except:
         GPIO.cleanup()
-        xbmc.log(msg='Error', level=xbmc.LOGDEBUG));
+        xbmc.log(msg='Error', level=xbmc.LOGDEBUG)
