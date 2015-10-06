@@ -6,7 +6,7 @@
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
-  <extension point="xbmc.python.script" library="test.py">
+  <extension point="xbmc.python.script" library="conversation.py">
     <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">

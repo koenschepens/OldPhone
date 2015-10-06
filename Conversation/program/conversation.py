@@ -13,7 +13,7 @@ from xbmcclient import XBMCClient
 import xbmcgui
 import xbmcplugin
 
-addonFolder = "/home/osmc/.kodi/addons/service.conversation/" 
+addonFolder = "/home/osmc/.kodi/scripts.module.oldphone.conversation/" 
 
 logging.basicConfig(filename=addonFolder + 'conversation.log',level=logging.INFO)
 #logging.basicConfig(level=logging.INFO)
@@ -56,5 +56,28 @@ def startVoiceCommand():
 
 picked_up(0)
 
+class main():
+    def __init__(self):
+        arg = self.getArg()
+        if arg == 'INFO':
+            self.showInfo()
+        elif arg == 'UPDATE':
+            self.update()
+        else:
+            self.showWelcome()
+
+    @util.busyDialog
+    def _update(self):
+        xbmcgui.Dialog().ok('Not supported')
+
+    def showInfo(self,updated=False):
+        xbmcgui.Dialog().ok('Conversation','by Koen Schepens','okdoei')
+
+    def showWelcome(main=None):
+        w = OptionsDialog('welcome.xml',util.ADDON.getAddonInfo('path'),'main','720p',main=main)
+        w.doModal()
+        del w
+
+main()
 #GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
 
