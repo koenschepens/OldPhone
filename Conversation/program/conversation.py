@@ -63,7 +63,6 @@ class main():
         else:
             self.showWelcome()
 
-    @util.busyDialog
     def _update(self):
         xbmcgui.Dialog().ok('Not supported')
 
