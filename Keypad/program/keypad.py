@@ -9,16 +9,17 @@ import logging
 import ConfigParser
 
 try:
-    from xbmc.xbmcclient import XBMCClient
+    from xbmc.xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
 except:
     sys.path.append('/usr/share/pyshared/xbmc')
-    from xbmcclient import XBMCClient
-
+    from xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
 
 addonFolder = "/home/osmc/.kodi/addons/service.keypad/" 
 
 logging.basicConfig(filename=addonFolder + 'keypad.log',level=logging.INFO)
 #logging.basicConfig(level=logging.INFO)
+
+hoorn = 11
 
 config = ConfigParser.RawConfigParser()
 configFile = addonFolder + 'keypad.config'
@@ -47,6 +48,9 @@ def send_key(key):
         xbmc.release_button()
     except:
         logging.warning("value invalid")
+
+def picked_up(horn):
+    xbmc.send_action("RunAddon('scripts.module.oldphone.conversation')")
 
 def row_changed(row):
     global rows
@@ -102,7 +106,6 @@ for option in gpiokeymappings:
         GPIO.setup(column, GPIO.OUT)
         GPIO.output(column, 1)
 
- 
 logging.info("Setting up Kodi client")
 
 host = config.get("xbmc", "host")
@@ -115,6 +118,9 @@ logging.info("port: " + str(port))
 xbmc = XBMCClient("OldPhone", addonFolder + "/icon.png")
 xbmc.connect()
 
+GPIO.setup(hoorn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
+ 
 while True:
     try:
         sleep(0.02)
