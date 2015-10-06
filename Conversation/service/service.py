@@ -1,6 +1,7 @@
 from time import sleep
 import RPi.GPIO as GPIO
 from subprocess import call
+import commands
 import time
 import os
 from datetime import datetime
@@ -16,11 +17,24 @@ def picked_up(argument):
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
     #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
-    playYoutubeVideo("f5RauCBguH0")
+    dialog = xbmcgui.Dialog()
+    dialog.notification('Wat wil je doen?', 'Bijv: Youtube.', xbmcgui.NOTIFICATION_INFO, 5000)
+
+    whatyousaid = commands.getstatusoutput('./includes/speech-recog.sh')
+    xbmc.log(msg='you said ' + whatyousaid, level=xbmc.LOGDEBUG)
+
+    whatyouwant = commands.getstatusoutput('./includes/youtube-search ' + whatyousaid)
+    playYoutubeVideo(whatyouwant)
 
 def executeAddon(addonid, params):
     result = xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }')
+
     xbmc.log(msg=result, level=xbmc.LOGDEBUG)
+
+def listen():
+    
+
+
 
 def playYoutubeVideo(youtubeId):
     result = xbmc.executeJSONRPC('{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}')
