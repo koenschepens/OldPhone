@@ -12,7 +12,7 @@ if [ ! -d $serviceFolder ]
 fi
 
 echo "copying program files"
-cp ../program/* $serviceFolder/ -v
+cp ../program/* $serviceFolder/ -v -R
 
 if [ ! -f $serviceFolder/conversation.config ] || [ "$1" == "f" ]
 	then
