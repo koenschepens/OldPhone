@@ -12,6 +12,8 @@ sys.path.append('/usr/share/pyshared/xbmc')
 from xbmcclient import XBMCClient
 import xbmcgui
 import xbmcplugin
+import xbmc, xbmcgui, xbmcaddon
+
 
 ADDON = xbmcaddon.Addon(id='scripts.module.oldphone.conversation')
 
