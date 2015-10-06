@@ -21,6 +21,7 @@ class Example(xbmcgui.Window):
             print "you press med"
         if self.btn_quit == c:
             self.close()
+            
 ### The adding button Code (only really need this bit)
 def setupButtons(self,x,y,w,h,a="Vert",f=None,nf=None):
     self.numbut  = 0
@@ -33,12 +34,9 @@ def setupButtons(self,x,y,w,h,a="Vert",f=None,nf=None):
     self.butnofocus_img = nf
  
 def addButon(self,text):
-    if self.butalign == "Hori":
-        c =  xbmcgui.ControlButton(self.butx + (self.numbut * self.butwidth),self.buty,self.butwidth,self.butheight,text,self.butfocus_img,self.butnofocus_img)
-        self.addControl(c)
-    elif self.butalign == "Vert":
-        c = xbmcgui.ControlButton(self.butx ,self.buty + (self.numbut * self.butheight),self.butwidth,self.butheight,text,self.butfocus_img,self.butnofocus_img)
-        self.addControl(c)
+    #self, x, y, width, height, label, focusTexture=None, noFocusTexture=None, textOffsetX=10, textOffsetY=2, alignment=4, font=None, textColor=None, disabledColor=None, angle=0, shadowColor=None, focusedColor=None
+    c =  xbmcgui.ControlButton(self.butx + (self.numbut * self.butwidth), self.buty, self.butwidth, self.butheight, text)
+    self.addControl(c)
     self.numbut += 1
     return c
 ### The End of adding button Code 
