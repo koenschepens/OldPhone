@@ -35,7 +35,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 new=True
 
-def picked_up:
+def picked_up():
 	call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
 
 def hung_up():
