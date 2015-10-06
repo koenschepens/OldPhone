@@ -36,7 +36,7 @@ GPIO.setup(hoorn, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 new=True
 
 def picked_up(argument):
-	logging.info(str(argument))
+    logging.info(str(argument))
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
 
 def startVoiceCommand():
