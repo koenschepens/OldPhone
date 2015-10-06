@@ -9,6 +9,7 @@ if [ ! -d $serviceFolder ]
 	then
 		echo "creating $serviceFolder"
 		mkdir $serviceFolder
+		sudo chown osmc $serviceFolder -R
 fi
 
 echo "copying program files"

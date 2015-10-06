@@ -45,7 +45,7 @@
                 <disabledcolor>40999999</disabledcolor>
     			<texturefocus border="8">script-module-youtube-dl-button_focus.png</texturefocus>
                 <texturenofocus border="8">script-module-youtube-dl-button.png</texturenofocus>
-                <label>Youtube</label>
+                <label>HOI</label>
     		</control>
 		</control>
 	</controls>
