@@ -43,24 +43,15 @@
     			<textcolor>FF999999</textcolor>
     			<focusedcolor>FFFFFFFF</focusedcolor>
                 <disabledcolor>40999999</disabledcolor>
-    			<texturefocus border="8">script-module-youtube-dl-button_focus.png</texturefocus>
-                <texturenofocus border="8">script-module-youtube-dl-button.png</texturenofocus>
                 <label>HOI</label>
     		</control>
               <control type="button" id="300">
                 <description>Youtube</description>
-                <enable>StringCompare(Window(10000).Property(script.module.youtube.dl_STATUS),ACTIVE)</enable>
+                <enable>1</enable>
                 <left>-</left>
                 <top>-</top>
                 <width>560</width>
                 <height>50</height>
-                <font>font13</font>
-                <align>center</align>
-                <textcolor>FF888888</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
-                <disabledcolor>40FF0099</disabledcolor>
-                <texturefocus border="8">script-module-youtube-dl-button_focus.png</texturefocus>
-                <texturenofocus border="8">script-module-youtube-dl-button.png</texturenofocus>
                 <label>HOI2</label>
             </control>
 		</control>
