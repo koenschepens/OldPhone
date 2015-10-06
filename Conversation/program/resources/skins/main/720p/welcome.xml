@@ -47,7 +47,7 @@
                 <texturenofocus border="8">script-module-youtube-dl-button.png</texturenofocus>
                 <label>HOI</label>
     		</control>
-              <control type="button" id="200">
+              <control type="button" id="300">
                 <description>Youtube</description>
                 <enable>StringCompare(Window(10000).Property(script.module.youtube.dl_STATUS),ACTIVE)</enable>
                 <left>-</left>
