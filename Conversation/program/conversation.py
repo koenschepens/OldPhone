@@ -63,6 +63,9 @@ class main():
         else:
             self.showWelcome()
 
+    def getArg(self):
+        return sys.argv[-1]
+
     def _update(self):
         xbmcgui.Dialog().ok('Not supported')
 
