@@ -17,7 +17,7 @@ cp ../program/* $serviceFolder/ -v
 if [ ! -f $serviceFolder/conversation.config ] || [ "$1" == "f" ]
 	then
 		echo "copying config"
-		cp ./keypad.config $serviceFolder/conversation.config -v
+		cp ./conversation.config $serviceFolder/conversation.config -v
 fi
 
 echo "Done"
