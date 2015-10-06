@@ -7,6 +7,9 @@ from datetime import datetime
 import sys
 import logging
 import ConfigParser
+import sys
+import xbmcgui
+import xbmcplugin
 
 try:
     from xbmc.xbmcclient import XBMCClient
@@ -38,6 +41,17 @@ new=True
 def picked_up(argument):
     logging.info(str(argument))
     call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
+    showMainWindow()
+
+def showMainWindow():
+    addon_handle = int(sys.argv[1])
+
+    xbmcplugin.setContent(addon_handle, 'movies')
+
+    url = 'http://download.wavetlan.com/SVV/Media/HTTP/mkv/H264_PCM(mkvmerge).mkv'
+    li = xbmcgui.ListItem('A video!', iconImage='DefaultVideo.png')
+    xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li)
+    xbmcplugin.endOfDirectory(addon_handle)
 
 def startVoiceCommand():
 	os.system('pkill voicecommand')
