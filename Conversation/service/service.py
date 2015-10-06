@@ -14,7 +14,9 @@ import xbmc, xbmcgui, xbmcaddon
 
 def picked_up(argument):
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "id": "script.module.oldphone.conversation"}')
+    xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
+    result = xbmc.executeJSONRPC('{"jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "id": "script.module.oldphone.conversation"}')
+    xbmc.log(msg=result, level=xbmc.LOGDEBUG)
 
 
 hoorn = 11
