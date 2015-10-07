@@ -102,7 +102,7 @@ class Result:
             return self.video_play_popcorn_time()
 
     def weather(self):
-        return self.Text
+        return self.get_activatewindow_json("weather", 2)
 
     def video_play_popcorn_time(self):
         if('q' not in self.Parameters):
