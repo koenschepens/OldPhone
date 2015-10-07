@@ -70,7 +70,7 @@ class Result:
             'weather.search': self.weather,
             'media.video_play': self.video_play,
             'entertainment.songs': self.songs,
-            'media.music_play', self.songs
+            'media.music_play': self.songs
         }
 
         if(len(self.Action) > 0):
