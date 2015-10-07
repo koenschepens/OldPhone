@@ -49,7 +49,7 @@ class Conversation:
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params": { "Action" : "' + action + '" } ,"id":1}'
 
     def get_show_notification_json(self, title, message, id):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "GUI.infodialog", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
 class Result:
     def __init__(self, parsed_json):
@@ -118,10 +118,10 @@ class Result:
         return '{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
 
     def get_activatewindow_json(self, window, id):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
 
     def get_show_notification_json(self, title, message, id):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
     def video_play_youtube(self):
         global includesDir
