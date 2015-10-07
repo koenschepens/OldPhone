@@ -51,7 +51,9 @@ class Result:
 
     def other(self):
         if(self.Text is not None):
-            return 
+            return self.get_show_notification_json(self.ResolvedQuery, self.Text)
+        else:
+            return self.get_show_notification_json(self.ResolvedQuery, "Me no understand")
 
     def songs(self):
          #if('q' in self.Parameters):
@@ -84,8 +86,8 @@ class Result:
     def get_activatewindow_json(self, window, id):
         return '{ "jsonrpc": "2.0", "method": "GUI.ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
 
-    def get_show_notification_json(self, window, title, message):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + self.ResolvedQuery + '", "message": "' + self.Text + '" }, "id": ' + str(id) + ' }'
+    def get_show_notification_json(self, title, message):
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
     def video_play_youtube(self):
         global includesDir
