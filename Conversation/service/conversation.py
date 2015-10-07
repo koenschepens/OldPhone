@@ -46,7 +46,7 @@ class Result:
             'media.video_play': self.video_play,
             'entertainment.songs': self.songs
         }
-        func = actions.get(self.Action, this.other)
+        func = actions.get(self.Action, self.other)
         return func()
 
     def other(self):
