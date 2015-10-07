@@ -44,7 +44,6 @@ def executeScript(script):
     out, err = p.communicate()
     return out
 
-
 hoorn = 11
 
 new = True
