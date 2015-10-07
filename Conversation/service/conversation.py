@@ -29,7 +29,7 @@ class Conversation:
         }
 
         if(self.Request in immediateActions):
-            return self.Action(immediateActions.get(self.Request))
+            return self.action(immediateActions.get(self.Request))
 
         ai = apiai.ApiAI(self.client_access_token, self.subscription_key)
         request = ai.text_request()
