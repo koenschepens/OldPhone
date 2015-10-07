@@ -43,7 +43,7 @@ class Conversation:
         return result.getKodiAction()
 
     def action(self, action):
-        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","'action'","id":1}'
+        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","' + action + '","id":1}'
 
 class Result:
     def __init__(self, parsed_json):
