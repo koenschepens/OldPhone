@@ -17,16 +17,19 @@ try:
 except:
     sys.path.append('/Library/XbmcLib/')
     from xbmcclient import XBMCClient
+    import xbmc
 
 # Create an XBMCClient object and connect
-xbmc = XBMCClient("Just a test")
-xbmc.connect()
+x = XBMCClient("Just a test", ip="192.168.1.116")
+x.connect()
+x.executebuiltin( "ActivateWindow(busydialog)" )
 
 tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
 language = 'dutch'
 
 def picked_up(argument):
+    global x
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     print('pickup!!!')
     #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
@@ -40,6 +43,7 @@ def picked_up(argument):
     whatwethinkyouwant = c.ask(whatyousaid)
     
     print(whatwethinkyouwant)
+    x.executeJSONRPC(whatwethinkyouwant)
 
 def executeScript(script):
     script = includesDir + script
