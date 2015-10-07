@@ -38,7 +38,7 @@ def picked_up(argument):
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
 def executeScript(script):
-    script = includesDir + 'youtube-search ' + self.Parameters['q']
+    script = includesDir + script + ' ' + self.Parameters['q']
     print(script)
     p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
