@@ -19,6 +19,9 @@ class Conversation:
         self.subscription_key = subscription_key
         
     def ask(self, what):
+        if(len(what) = 0):
+            return get_show_notification_json("Sorry", "I didn't hear you...")
+
         self.Request = what
         immediateActions = {
             'stop': 'Stop',
@@ -29,7 +32,7 @@ class Conversation:
         }
 
         if(self.Request in immediateActions):
-            return self.action(immediateActions.get(self.Request))
+            return self.executeAction(immediateActions.get(self.Request))
 
         ai = apiai.ApiAI(self.client_access_token, self.subscription_key)
         request = ai.text_request()
@@ -42,8 +45,11 @@ class Conversation:
         result = Result(parsed_json)
         return result.getKodiAction()
 
-    def action(self, action):
+    def executeAction(self, action):
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","' + action + '","id":1}'
+
+    def get_show_notification_json(title, message, id):
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
 class Result:
     def __init__(self, parsed_json):
