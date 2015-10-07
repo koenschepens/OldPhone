@@ -7,3 +7,4 @@ service mediacenter stop
 sudo git pull
 ./install.sh
 service mediacenter start
+tailf /home/osmc/.kodi/temp/kodi.log | grep conversation
