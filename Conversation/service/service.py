@@ -13,7 +13,7 @@ import xbmcgui
 import xbmcplugin
 import xbmc, xbmcaddon
 import json
-import conversation.py
+import os.path.dirname(os.path.realpath(__file__)) + '/conversation.py'
 
 tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 
