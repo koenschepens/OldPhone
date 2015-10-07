@@ -19,6 +19,18 @@ class Conversation:
         self.subscription_key = subscription_key
         
     def ask(self, what):
+        self.Request = what
+        immediateActions = {
+            'stop': 'Stop',
+            'play': 'Play',
+            'mute': 'Mute',
+            'next': 'SkipNext',
+            'previous': 'SkipPrevious'
+        }
+
+        if(self.Request in immediateActions):
+            return self.Action(immediateActions.get(self.Request))
+
         ai = apiai.ApiAI(self.client_access_token, self.subscription_key)
         request = ai.text_request()
         request.query = what
@@ -29,6 +41,9 @@ class Conversation:
 
         result = Result(parsed_json)
         return result.getKodiAction()
+
+    def action(self, action):
+        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","'action'","id":1}'
 
 class Result:
     def __init__(self, parsed_json):
