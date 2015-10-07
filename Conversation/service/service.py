@@ -18,7 +18,7 @@ import conversation
 
 tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 
-lang = 'dutch'
+language = 'dutch'
 
 def picked_up(argument):
     c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
