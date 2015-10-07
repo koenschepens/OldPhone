@@ -13,67 +13,28 @@ import xbmcgui
 import xbmcplugin
 import xbmc, xbmcaddon
 import json
+import conversation
 
+tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 
-import os.path, sys
-
-try:
-    import apiai
-except ImportError:
-    sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
-    import apiai
-
-import time
-import scipy.io.wavfile as wav
-
-CLIENT_ACCESS_TOKEN = 'fb928615eb914f4785e110eecad49c95'
-SUBSCRIPTION_KEY = '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25' 
+language = sys.argv[1]
 
 def picked_up(argument):
+    conversation = Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
     #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
     dialog = xbmcgui.Dialog()
-    dialog.notification('Wat wil je doen?', 'Bijv: Youtube.', xbmcgui.NOTIFICATION_INFO, 5000)
+    dialog.notification('WHAT DO YOU WANT??!?!1', 'Example: play movie.', xbmcgui.NOTIFICATION_INFO, 5000)
 
     whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/speech-recog.sh')
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
-    ask(whatyoushouldhavesaid)
-
-    #whatyouwant = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/youtube-search ' + whatyoushouldhavesaidf)
-    #playYoutubeVideo(whatyouwant)
-
-def ask(what):
-    global CLIENT_ACCESS_TOKEN
-    global SUBSCRIPTION_KEY
-    ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN, SUBSCRIPTION_KEY)
-    request = ai.text_request()
-    request.query = what
-    response = request.getresponse()
-    dialog = xbmcgui.Dialog()
-
-    leJson = response.read()
-    parsed_json = json.loads(leJson)
-
-    dialog.notification(what, parsed_json['result']['fulfillment']['speech'], xbmcgui.NOTIFICATION_INFO, 5001)
-
-
-def executeAddon(addonid, params):
-    result = xbmc.executeJSONRPC('{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }')
-
-    xbmc.log(msg=result, level=xbmc.LOGDEBUG)
-
-def executeScript(script):
-    p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    out, err = p.communicate()
-    return out
-
-def playYoutubeVideo(youtubeId):
-    result = xbmc.executeJSONRPC('{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}')
-    xbmc.log(msg=result, level=xbmc.LOGDEBUG)
-
+    
+    xbmc.executebuiltin( "ActivateWindow(busydialog)" )
+    conversation.ask(whatyoushouldhavesaid)
+    xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
 hoorn = 11
 
