@@ -14,16 +14,14 @@ import xbmcplugin
 import xbmc, xbmcaddon
 import json
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
-
-import conversation.py
+import conversation
 
 tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 
 language = sys.argv[1]
 
 def picked_up(argument):
-    conversation = Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
+    c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
     #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
@@ -36,7 +34,7 @@ def picked_up(argument):
     xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
     
     xbmc.executebuiltin( "ActivateWindow(busydialog)" )
-    conversation.ask(whatyoushouldhavesaid)
+    c.ask(whatyoushouldhavesaid)
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
 hoorn = 11
