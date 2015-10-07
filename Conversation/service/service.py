@@ -21,7 +21,6 @@ includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
 language = 'dutch'
 
 def picked_up(argument):
-    c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
     #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
     xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
     #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
@@ -31,6 +30,7 @@ def picked_up(argument):
     whatyousaid = executeScript('speech-recog.sh')
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
+    c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
     whatwethinkyouwant = c.ask(whatyousaid)
     
     xbmc.executebuiltin( "ActivateWindow(busydialog)" )
