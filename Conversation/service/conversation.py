@@ -112,16 +112,19 @@ class Result:
         if('q' not in self.Parameters):
             return self.get_addon_json('plugin.video.kodipopcorntime', '{  }')
         else:        
-            return self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"')
+            return self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"') + self.get_action("Down") + self.get_action("Select")
 
     def get_addon_json(self, addonid, params):
-        return '{ "jsonrpc": "2.0", "method": "ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
+        return '{ "jsonrpc": "2.0", "method": "RunAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
 
     def get_activatewindow_json(self, window, id):
         return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
 
     def get_show_notification_json(self, title, message, id):
         return '{ "jsonrpc": "2.0", "method": "ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+
+    def get_action(self, action):
+        return '{ "jsonrpc": "2.0", "method": "' + action + '", "id": ' + str(4000) + ' }'
 
     def video_play_youtube(self):
         global includesDir
