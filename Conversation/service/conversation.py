@@ -35,6 +35,7 @@ class Result:
         self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
         self.Action = parsed_json['result']['action']
+        self.Parameters = {}
         if('parameters' in parsed_json):
             self.Parameters = parsed_json['result']['parameters']
 
@@ -80,7 +81,7 @@ class Result:
 
     def video_play_youtube(self):
         global includesDir
-        if(self.Parameters['q'] is None):
+        if('q' in self.Parameters):
             self.LastMethod = self.video_play_youtube
             return "Nothing found"
         else:
