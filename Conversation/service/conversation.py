@@ -68,7 +68,7 @@ class Result:
         return self.Text
 
     def video_play_popcorn_time(self):
-        if(self.Parameters['q'] is None):
+        if('q' not in self.Parameters):
             return self.get_addon_json('plugin.video.kodipopcorntime', '{  }')
         else:        
             return self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"')
@@ -81,7 +81,7 @@ class Result:
 
     def video_play_youtube(self):
         global includesDir
-        if('q' in self.Parameters):
+        if('q' not in self.Parameters):
             self.LastMethod = self.video_play_youtube
             return "Nothing found"
         else:
