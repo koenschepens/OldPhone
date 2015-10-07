@@ -87,7 +87,7 @@ class Result:
 
     def songs(self):
          #if('q' in self.Parameters):
-         return self.get_activatewindow_json("music", 501)
+         return self.get_activatewindow_json("MusicLibrary", 501)
 
     def video_play(self):
         services = {
