@@ -17,7 +17,7 @@ import json
 import conversation
 
 tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
-
+includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
 language = 'dutch'
 
 def picked_up(argument):
