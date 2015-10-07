@@ -85,7 +85,7 @@ class Result:
         return '{ "jsonrpc": "2.0", "method": "GUI.ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
 
     def get_show_notification_json(self, window, title, message):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + self.Input + '", "message": "' + self.Text + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + self.ResolvedQuery + '", "message": "' + self.Text + '" }, "id": ' + str(id) + ' }'
 
     def video_play_youtube(self):
         global includesDir
