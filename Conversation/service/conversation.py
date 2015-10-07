@@ -56,7 +56,11 @@ class Result:
         self.ResolvedQuery = parsed_json['result']['resolvedQuery']
         self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
-        self.Action = parsed_json['result']['action']
+        
+        self.Action = {}
+        if('action' in parsed_json['result']):
+            self.Action = parsed_json['result']['action']
+        
         self.Parameters = {}
         if('parameters' in parsed_json['result']):
             self.Parameters = parsed_json['result']['parameters']
@@ -65,9 +69,14 @@ class Result:
         actions = {
             'weather.search': self.weather,
             'media.video_play': self.video_play,
-            'entertainment.songs': self.songs
+            'entertainment.songs': self.songs,
+            'media.music_play', self.songs
         }
-        func = actions.get(self.Action, self.other)
+
+        if(len(self.Action) > 0):
+            func = actions.get(self.Action, self.other)
+        else:
+            func = self.other
         return func()
 
     def other(self):
