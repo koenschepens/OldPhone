@@ -31,11 +31,7 @@ def picked_up(argument):
     whatyousaid = executeScript('speech-recog.sh')
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
-    xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
-    
     whatwethinkyouwant = c.ask(whatyoushouldhavesaid)
-
-    xbmc.log(msg='result ' + whatwethinkyouwant, level=xbmc.LOGDEBUG)
     
     xbmc.executebuiltin( "ActivateWindow(busydialog)" )
     xbmc.executeJSONRPC(whatwethinkyouwant)
