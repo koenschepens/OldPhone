@@ -109,10 +109,13 @@ class Result:
         return self.get_activatewindow_json("weather", 2)
 
     def video_play_popcorn_time(self):
-        if('q' not in self.Parameters):
-            return self.get_addon_json('plugin.video.kodipopcorntime', '{  }')
+        if('q' in self.Parameters):
+            result = self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"')
+        elif('title' in self.Parameters):
+            result = self.get_addon_json('plugin.video.kodipopcorntime', '"title" : "' + self.Parameters['title'] + '"')
         else:        
-            return self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"') + self.get_action("Down") + self.get_action("Select")
+            result = self.get_addon_json('plugin.video.kodipopcorntime', '')
+        return result + self.get_action("Down") + self.get_action("Select")
 
     def get_addon_json(self, addonid, params):
         return '{ "jsonrpc": "2.0", "method": "RunAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
