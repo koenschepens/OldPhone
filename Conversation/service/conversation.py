@@ -13,8 +13,6 @@ except ImportError:
 import time
 import scipy.io.wavfile as wav
 
-includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
-
 class Conversation:
     def __init__(self, client_access_token, subscription_key):
         self.client_access_token = client_access_token
@@ -34,6 +32,7 @@ class Conversation:
 
 class Result:
     def __init__(self, parsed_json):
+        self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
         self.Action = parsed_json['result']['action']
         if('parameters' in parsed_json):
@@ -85,7 +84,7 @@ class Result:
             self.LastMethod = self.video_play_youtube
             return "Nothing found"
         else:
-            script = includesDir + 'youtube-search ' + self.Parameters['q']
+            script = self.IncludesDir + 'youtube-search ' + self.Parameters['q']
             print(script)
             p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             youtubeId, err = p.communicate()
