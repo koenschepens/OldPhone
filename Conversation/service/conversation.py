@@ -46,7 +46,7 @@ class Conversation:
         return result.getKodiAction()
 
     def executeAction(self, action):
-        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","' + action + '","id":1}'
+        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params": { "Action" : "' + action + '" } ,"id":1}'
 
     def get_show_notification_json(self, title, message, id):
         return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
