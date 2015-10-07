@@ -36,7 +36,7 @@ class Result:
         self.Text = parsed_json['result']['fulfillment']['speech']
         self.Action = parsed_json['result']['action']
         self.Parameters = {}
-        if('parameters' in parsed_json):
+        if('parameters' in parsed_json['result']):
             self.Parameters = parsed_json['result']['parameters']
 
     def getKodiAction(self):
