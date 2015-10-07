@@ -28,7 +28,7 @@ def picked_up(argument):
     dialog = xbmcgui.Dialog()
     dialog.notification('WHAT DO YOU WANT??!?!1', 'Example: play movie.', xbmcgui.NOTIFICATION_INFO, 5000)
 
-    whatyousaid = executeScript('/home/osmc/.kodi/addons/service.oldphone.conversation/includes/speech-recog.sh')
+    whatyousaid = executeScript('speech-recog.sh')
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
@@ -38,7 +38,7 @@ def picked_up(argument):
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
 def executeScript(script):
-    script = includesDir + script + ' ' + self.Parameters['q']
+    script = includesDir + script
     print(script)
     p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
