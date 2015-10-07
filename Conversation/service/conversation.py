@@ -28,7 +28,7 @@ class Conversation:
         parsed_json = json.loads(leJson)
 
         result = Result(parsed_json)
-        print(result.getKodiAction())
+        return result.getKodiAction()
 
 class Result:
     def __init__(self, parsed_json):
