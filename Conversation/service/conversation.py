@@ -32,6 +32,7 @@ class Conversation:
 
 class Result:
     def __init__(self, parsed_json):
+        self.ResolvedQuery = parsed_json['result']['resolvedQuery']
         self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
         self.Action = parsed_json['result']['action']
@@ -45,8 +46,12 @@ class Result:
             'media.video_play': self.video_play,
             'entertainment.songs': self.songs
         }
-        func = actions.get(self.Action, lambda: "nothing")
+        func = actions.get(self.Action, this.other)
         return func()
+
+    def other(self):
+        if(self.Text is not None):
+            return 
 
     def songs(self):
          #if('q' in self.Parameters):
@@ -78,6 +83,9 @@ class Result:
 
     def get_activatewindow_json(self, window, id):
         return '{ "jsonrpc": "2.0", "method": "GUI.ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
+
+    def get_show_notification_json(self, window, title, message):
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + self.Input + '", "message": "' + self.Text + '" }, "id": ' + str(id) + ' }'
 
     def video_play_youtube(self):
         global includesDir
