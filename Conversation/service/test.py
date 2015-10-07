@@ -23,7 +23,7 @@ def picked_up(argument):
     
     print('WHAT DO YOU WANT??!?!1', 'Example: play movie.')
 
-    whatyousaid = "youtube play kittens"
+    whatyousaid = argument
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')

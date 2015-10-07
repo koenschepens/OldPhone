@@ -19,8 +19,8 @@ class Conversation:
         self.subscription_key = subscription_key
         
     def ask(self, what):
-        if(len(what) = 0):
-            return get_show_notification_json("Sorry", "I didn't hear you...")
+        if(len(what) == 0):
+            return self.get_show_notification_json("Sorry", "I didn't hear you...", 1)
 
         self.Request = what
         immediateActions = {
@@ -48,7 +48,7 @@ class Conversation:
     def executeAction(self, action):
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","' + action + '","id":1}'
 
-    def get_show_notification_json(title, message, id):
+    def get_show_notification_json(self, title, message, id):
         return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
 class Result:
