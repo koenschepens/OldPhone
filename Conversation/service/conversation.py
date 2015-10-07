@@ -70,7 +70,8 @@ class Result:
             'weather.search': self.weather,
             'media.video_play': self.video_play,
             'entertainment.songs': self.songs,
-            'media.music_play': self.songs
+            'media.music_play': self.songs,
+            'browse.open': self.browser_open
         }
 
         if(len(self.Action) > 0):
@@ -88,6 +89,9 @@ class Result:
     def songs(self):
          #if('q' in self.Parameters):
          return self.get_activatewindow_json("MusicLibrary", 501)
+
+    def browser_open(self):
+        return self.get_show_notification_json("Sorry", "Browsing the interwebs is not possible yet", 602)
 
     def video_play(self):
         services = {
