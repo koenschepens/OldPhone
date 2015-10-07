@@ -51,9 +51,9 @@ class Result:
 
     def other(self):
         if(self.Text is not None):
-            return self.get_show_notification_json(self.ResolvedQuery, self.Text)
+            return self.get_show_notification_json(self.ResolvedQuery, self.Text, 600)
         else:
-            return self.get_show_notification_json(self.ResolvedQuery, "Me no understand")
+            return self.get_show_notification_json(self.ResolvedQuery, "Me no understand", 601)
 
     def songs(self):
          #if('q' in self.Parameters):
