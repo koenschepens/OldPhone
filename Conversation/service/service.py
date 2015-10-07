@@ -34,7 +34,7 @@ def picked_up(argument):
 
     c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
     whatwethinkyouwant = c.ask(whatyoushouldhavesaid)
-    
+    xbmc.log(msg=whatwethinkyouwant, level=xbmc.LOGDEBUG)
     xbmc.executeJSONRPC(whatwethinkyouwant)
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
