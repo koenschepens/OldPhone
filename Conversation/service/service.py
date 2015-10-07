@@ -33,8 +33,12 @@ def picked_up(argument):
 
     xbmc.log(msg='you said ' + whatyoushouldhavesaid, level=xbmc.LOGDEBUG)
     
+    whatwethinkyouwant = c.ask(whatyoushouldhavesaid)
+
+    xbmc.log(msg='result ' + whatwethinkyouwant, level=xbmc.LOGDEBUG)
+    
     xbmc.executebuiltin( "ActivateWindow(busydialog)" )
-    xbmc.executeJSONRPC(c.ask(whatyoushouldhavesaid))
+    xbmc.executeJSONRPC(whatwethinkyouwant)
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
 def executeScript(script):
