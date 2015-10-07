@@ -115,7 +115,7 @@ class Result:
             return self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"')
 
     def get_addon_json(self, addonid, params):
-        return '{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
+        return '{ "jsonrpc": "2.0", "method": "ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
 
     def get_activatewindow_json(self, window, id):
         return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
