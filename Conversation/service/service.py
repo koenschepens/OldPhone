@@ -30,7 +30,9 @@ def picked_up(argument):
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
-    whatwethinkyouwant = c.ask(whatyoushouldhavesaid)
+    result = c.ask(whatyoushouldhavesaid)
+
+    whatwethinkyouwant = result.getKodiAction()
     
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
     xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
