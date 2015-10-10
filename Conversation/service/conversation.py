@@ -178,7 +178,7 @@ class Result:
 
     def show_notification(self, params):
         print(json.dumps(params))
-        return '{ "jsonrpc": "2.0", "method": "ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "Notification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def get_action(self, action):
         return '{ "jsonrpc": "2.0", "method": "' + action + '", "id": ' + str(4000) + ' }'
