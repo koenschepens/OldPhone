@@ -54,7 +54,7 @@ def picked_up(argument):
                 nextFunctionResult = result.NextFunction(chosenItem)
             else:
                 result.NextFunction = None
-                nextFunctionResult = c.get_show_notification_json("Sorry","That movie is not in this list.", 300)
+                nextFunctionResult = c.get_show_notification_json("Sorry","The movie " + userInput + " is not in this list.", 300)
         else:
             xbmc.log(msg="no user input required", level=xbmc.LOGDEBUG)
             nextFunctionResult = result.NextFunction(xbmcResult)

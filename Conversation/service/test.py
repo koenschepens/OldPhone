@@ -56,9 +56,8 @@ def picked_up(argument):
             if(chosenItem is not None):
                 nextFunctionResult = result.NextFunction(chosenItem)
             else:
-                print ("chosenItem is None")
                 result.NextFunction = None
-                nextFunctionResult = c.get_show_notification_json("Sorry","That movie is not in this list.", 300)
+                nextFunctionResult = c.get_show_notification_json("Sorry","The movie " + userInput + " is not in this list.", 300)
         else:
             print ("no user input required")
             nextFunctionResult = result.NextFunction(xbmcResult)
