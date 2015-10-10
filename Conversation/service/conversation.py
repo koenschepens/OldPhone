@@ -74,6 +74,7 @@ class Result:
         self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
         self.AvailableActions = config.options("actions")
+        self.Id = 1000
         
         self.Action = {}
         if('action' in parsed_json['result']):
@@ -84,6 +85,7 @@ class Result:
             self.Parameters = parsed_json['result']['parameters']
 
     def getKodiAction(self):
+        self.Id = self.Id + 1
         if(len(self.Action) > 0):
             print("action: " + str(self.Action))
             if(self.Action in self.AvailableActions):
@@ -122,6 +124,7 @@ class Result:
                 value = value.replace("$service_name", self.Parameters["service_name"])
 
             value = value.replace("$speech", self.Text)
+            value = value.replace("$resolvedQuery", self.ResolvedQuery)
 
             paramsDict[name] = value
 
@@ -171,10 +174,11 @@ class Result:
         return '{ "jsonrpc": "2.0", "method": "RunAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
 
     def get_activatewindow_json(self, window, id):
-        return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(self.Id) + ' }'
 
-    def get_show_notification_json(self, title, message, id):
-        return '{ "jsonrpc": "2.0", "method": "ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+    def show_notification(self, params):
+        print(json.dumps(params))
+        return '{ "jsonrpc": "2.0", "method": "ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def get_action(self, action):
         return '{ "jsonrpc": "2.0", "method": "' + action + '", "id": ' + str(4000) + ' }'
