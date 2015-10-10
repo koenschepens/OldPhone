@@ -75,10 +75,12 @@ class ImmediateResult:
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"' + action + '"},"id":1}'
 
 class Result:
-    def __init__(self, directMessage):
-        self.Text = directMessage
-        
-    def __init__(self, parsed_json, client_access_token, subscription_key):
+    def __init__(self, parsed_json, client_access_token = None, subscription_key = None):
+        if(client_access_token is None):
+            #assume text only
+            self.Text = parsed_json
+            return;
+
         self.client_access_token = client_access_token
         self.subscription_key = subscription_key
         self.ResolvedQuery = parsed_json['result']['resolvedQuery']
