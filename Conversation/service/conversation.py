@@ -180,6 +180,10 @@ class Result:
         print(json.dumps(params))
         return '{ "jsonrpc": "2.0", "method": "Notification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
+    def json(self, params):
+        print(json.dumps(params))
+        return '{ "jsonrpc": "2.0", "method": "' + params['method'] + '", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
+
     def get_action(self, action):
         return '{ "jsonrpc": "2.0", "method": "' + action + '", "id": ' + str(4000) + ' }'
 
