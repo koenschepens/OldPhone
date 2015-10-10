@@ -1,5 +1,7 @@
 #!/bin/bash
 
+aplay sounds/beepbeep.wav -Dplughw:1,0
+
 hardware="plughw:1,0"
 duration="3"
 lang="en"
