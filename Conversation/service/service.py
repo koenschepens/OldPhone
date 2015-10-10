@@ -69,7 +69,7 @@ def picked_up(argument):
 def getChosenItem(userInput, xbmcInput):
     if(len(xbmcInput) > 0):
         for key, value in xbmcInput.iteritems():
-            if(xbmcInput[key] == userInput):
+            if(xbmcInput[key].lower() == userInput.lower()):
                 return { "Label" : xbmcInput[key], "FolderPath" : xbmcInput[key.replace(".Label", ".FolderPath")] }
     return None
 
