@@ -79,7 +79,6 @@ def getChosenItem(userInput, xbmcInput):
     return None
 
 def executeScript(script):
-    script = includesDir + script
     print(script)
     p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
