@@ -230,9 +230,14 @@ class Result:
 
         return self.json(params)
 
-    def get_items(self, params):
+    def get_items(self, params, attempt = 0):
+        if(attempt > 5):
+            self.NextFunction = None
+            self.NeedsUserInput = False
+            return None
+
         try:
-            numberOfItems = json.loads(params)['result']['Container(0).NumItems']
+            numberOfItems = int(json.loads(params)['result']['Container(0).NumItems'])
 
             items = []
             for i in range(0, numberOfItems):
@@ -244,7 +249,9 @@ class Result:
             self.NeedsUserInput = True
             return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":[' + ','.join(items) + ']}}'
         except e:
-            return self.show_notification("ERROR", str(e))
+            # Maybe we should wait and try again
+            sleep(attempt)
+            return self.get_items(params, attempt + 1)
 
     def get_addon_json(self, addonid, params):
         return '{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": ' + json.dumps(params) + ' }, "id": 2 }'
