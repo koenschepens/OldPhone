@@ -1,6 +1,7 @@
 from time import sleep
 import RPi.GPIO as GPIO
 import subprocess 
+from subprocess import call
 import commands
 import time
 import os
@@ -36,7 +37,9 @@ def picked_up(argument):
     
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
     xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
-    xbmc.executeJSONRPC(result.getAudioStream())
+    #xbmc.executeJSONRPC(result.getAudioStream())
+
+    call(["tts", result.Text]
 
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
