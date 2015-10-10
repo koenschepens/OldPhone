@@ -248,7 +248,7 @@ class Result:
             self.NextFunction = self.select_and_play_item
             self.NeedsUserInput = True
             return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":[' + ','.join(items) + ']}}'
-        except e:
+        except:
             # Maybe we should wait and try again
             sleep(attempt)
             return self.get_items(params, attempt + 1)
