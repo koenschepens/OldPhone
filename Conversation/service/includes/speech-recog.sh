@@ -28,7 +28,7 @@ do
     fi
 done
 
-aplay sounds/beepbeep.wav -D $hardware
+aplay sounds/beepbeep.wav -D $hardware 
 
 #this works really inconsistently and I don't know why. I would love to implement it
 #sox -r 16000 -t alsa $hardware /dev/shm/out.flac silence 1 0.3 1% 1 0.5 1%
