@@ -36,9 +36,8 @@ class Conversation:
         
     def ask(self, what):
         if(len(what) == 0):
-            result = Result()
-            result.Text = "Sorry, I didn't hear you"
-            return result
+            self.Result = Result("Sorry, I didn't hear you")
+            return self.Result
 
         self.Request = what
         immediateActions = config.options("immediateActions")
@@ -76,6 +75,9 @@ class ImmediateResult:
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"' + action + '"},"id":1}'
 
 class Result:
+    def __init__(self, directMessage):
+        self.Text = directMessage
+        
     def __init__(self, parsed_json, client_access_token, subscription_key):
         self.client_access_token = client_access_token
         self.subscription_key = subscription_key
