@@ -178,10 +178,11 @@ class Result:
 
     def show_notification(self, params):
         print(json.dumps(params))
-        return '{ "jsonrpc": "2.0", "method": "Notification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def json(self, params):
-        print(json.dumps(params))
+        method = params['method']
+        params.remove("method")
         return '{ "jsonrpc": "2.0", "method": "' + params['method'] + '", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def get_action(self, action):
