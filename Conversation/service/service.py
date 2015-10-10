@@ -23,6 +23,7 @@ config.read(configFile)
 
 includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
 ttsEngine = config.get('settings', 'tts.engine').replace('$includesDir', includesDir)
+speechRecognitionEngine = includesDir + 'speech-recog.sh'
 language = 'dutch'
 
 def picked_up(argument):
@@ -39,6 +40,9 @@ def picked_up(argument):
     result = c.ask(whatyoushouldhavesaid)
 
     whatwethinkyouwant = result.getKodiAction()
+
+    xbmc.log(msg="speechRecognitionEngine: " + speechRecognitionEngine, level=xbmc.LOGDEBUG)
+    xbmc.log(msg="ttsEngine: " + ttsEngine, level=xbmc.LOGDEBUG)
     
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
     xbmcResult = xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
@@ -47,7 +51,8 @@ def picked_up(argument):
         xbmc.log(msg="starting NextFunction: " + str(result.NextFunction), level=xbmc.LOGDEBUG)
         if(result.NeedsUserInput):
             subprocess.call([ttsEngine, "Which movie you want yes?"])
-            userInput = executeScript(includesDir + 'speech-recog.sh').strip('"')
+            userInput = executeScript(speechRecognitionEngine)
+            userInput = userInput.strip('"')
             xbmcInput = json.loads(xbmcResult)['result']
             chosenItem = getChosenItem(userInput, xbmcInput)
             if(chosenItem is not None):
