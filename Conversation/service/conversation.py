@@ -231,17 +231,20 @@ class Result:
         return self.json(params)
 
     def get_items(self, params):
-        numberOfItems = int(json.loads(params)['result']['Container(0).NumItems'])
+        try:
+            numberOfItems = json.loads(params)['result']['Container(0).NumItems']
 
-        items = []
-        for i in range(0, numberOfItems):
-            items.append('"Container(0).ListItem(' + str(i) + ').Label"')
-            items.append('"Container(0).ListItem(' + str(i) + ').FolderPath"')
-        
-        # Next function the user should select an item
-        self.NextFunction = self.select_and_play_item
-        self.NeedsUserInput = True
-        return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":[' + ','.join(items) + ']}}'
+            items = []
+            for i in range(0, numberOfItems):
+                items.append('"Container(0).ListItem(' + str(i) + ').Label"')
+                items.append('"Container(0).ListItem(' + str(i) + ').FolderPath"')
+            
+            # Next function the user should select an item
+            self.NextFunction = self.select_and_play_item
+            self.NeedsUserInput = True
+            return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":[' + ','.join(items) + ']}}'
+        except e:
+            return self.show_notification("ERROR", str(e))
 
     def get_addon_json(self, addonid, params):
         return '{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": ' + json.dumps(params) + ' }, "id": 2 }'

@@ -43,7 +43,7 @@ def picked_up(argument):
     xbmcResult = xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
 
     while(result.NextFunction is not None):
-        print ("starting NextFunction" + str(result.NextFunction))
+        xbmc.log(msg="starting NextFunction: " + str(result.NextFunction), level=xbmc.LOGDEBUG)
         if(result.NeedsUserInput):
             subprocess.call([ttsEngine, "Which movie you want yes?"])
             userInput = executeScript('speech-recog.sh')
@@ -55,7 +55,7 @@ def picked_up(argument):
                 result.NextFunction = None
                 nextFunctionResult = c.get_show_notification_json("Sorry","That movie is not in this list.", 300)
         else:
-            print ("no user input required")
+            xbmc.log(msg="no user input required", level=xbmc.DEBUGLOG)
             nextFunctionResult = result.NextFunction(xbmcResult)
         
         xbmcResult = xbmc.executeJSONRPC(nextFunctionResult.replace(' ', '%20'))
