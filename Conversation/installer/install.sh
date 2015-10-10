@@ -7,14 +7,12 @@ if [ ! -d $serviceFolder ]
 	then
 		echo "creating $serviceFolder"
 		mkdir $serviceFolder
-		sudo chown osmc $serviceFolder -R
 fi
 
 if [ ! -d $programFolder ]
 	then
 		echo "creating $programFolder"
 		mkdir $programFolder
-		sudo chown osmc $programFolder -R
 fi
 
 
@@ -26,5 +24,8 @@ if [ ! -f $programFolder/conversation.config ] || [ "$1" == "f" ]
 		echo "copying config"
 		cp ./conversation.config $programFolder/conversation.config -v
 fi
+
+sudo chown osmc $serviceFolder -R
+sudo chown osmc $programFolder -R
 
 echo "Done"
