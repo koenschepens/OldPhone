@@ -76,6 +76,14 @@ class ImmediateResult:
 
 class Result:
     def __init__(self, parsed_json, client_access_token = None, subscription_key = None):
+        self.Id = 1000
+        self.NextFunction = None
+        self.NeedsUserInput = False
+        self.Action = {}
+        self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
+        self.AvailableActions = config.options("actions")     
+        self.ResolvedQuery = parsed_json   
+
         if(client_access_token is None):
             #assume text only
             self.Text = parsed_json
@@ -84,14 +92,8 @@ class Result:
         self.client_access_token = client_access_token
         self.subscription_key = subscription_key
         self.ResolvedQuery = parsed_json['result']['resolvedQuery']
-        self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
-        self.AvailableActions = config.options("actions")
-        self.Id = 1000
-        self.NextFunction = None
-        self.NeedsUserInput = False
-        
-        self.Action = {}
+
         if('action' in parsed_json['result']):
             self.Action = parsed_json['result']['action']
 
