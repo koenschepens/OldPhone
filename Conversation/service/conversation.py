@@ -182,8 +182,8 @@ class Result:
 
     def json(self, params):
         method = params['method']
-        params.remove("method")
-        return '{ "jsonrpc": "2.0", "method": "' + params['method'] + '", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
+        del params["method"]
+        return '{ "jsonrpc": "2.0", "method": "' + method + '", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def get_action(self, action):
         return '{ "jsonrpc": "2.0", "method": "' + action + '", "id": ' + str(4000) + ' }'
