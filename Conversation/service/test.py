@@ -9,6 +9,8 @@ import logging
 import ConfigParser
 import traceback
 import json
+import urllib2
+
 
 import conversation
 
@@ -17,10 +19,6 @@ try:
 except:
     sys.path.append('/Library/XbmcLib/')
     from xbmcclient import XBMCClient
-
-# Create an XBMCClient object and connect
-x = XBMCClient("Just a test", ip="192.168.1.116")
-x.connect()
 
 tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
@@ -41,6 +39,7 @@ def picked_up(argument):
     whatwethinkyouwant = c.ask(whatyousaid)
     
     print(whatwethinkyouwant)
+    urllib2.urlopen('http://192.168.1.116/jsonrpc?request=' + whatwethinkyouwant.replace(' ', '%20')).read()
 
 def executeScript(script):
     script = includesDir + script

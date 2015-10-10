@@ -5,7 +5,7 @@ import subprocess
 import ConfigParser
 import re
 
-#activatewindow(video,plugin://plugin.video.kodipopcorntime/?searchString=asdf)"
+#activatewindow(video,plugin://plugin.video.kodipopcorntime/?endpoint=search)"
 
 folder = os.path.dirname(os.path.realpath(__file__))
 
@@ -66,7 +66,8 @@ class Conversation:
 
 class ImmediateResult:
     def executeAction(self, action):
-        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params": { "Action" : "' + action + '" } ,"id":1}'
+        #{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"down"},"id":1}
+        return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"' + action + '"},"id":1}'
 
 class Result:
     def __init__(self, parsed_json):
@@ -122,6 +123,11 @@ class Result:
                 value = value.replace("$location", self.Parameters["location"])
             if("service_name" in self.Parameters):
                 value = value.replace("$service_name", self.Parameters["service_name"])
+
+            if("title" in self.Parameters):
+                value = value.replace("$q", self.Parameters["title"])
+                value = value.replace("$title", self.Parameters["title"])
+                value = value.replace("$service_name", 'popcorntime')
             else:
                 value = value.replace("$service_name", 'youtube')
 
@@ -148,38 +154,34 @@ class Result:
     def playvideo(self, params):
         services = {
             'youtube': self.video_play_youtube,
-            'movie' : self.video_play_popcorn_time
+            'popcorntime' : self.video_play_popcorn_time
         }
 
         if('service_name' in params):
             func = services.get(params['service_name'], lambda: None)
             return func(params)
         else:
-            return self.video_play_popcorn_time()
+            return self.video_play_popcorn_time(params)
 
     def weather(self, params):
         return self.get_activatewindow_json("weather", 2)
 
-    def video_play_popcorn_time(self):
-        if('q' in self.Parameters):
-            result = self.get_addon_json('plugin.video.kodipopcorntime', '"search": "' + self.Parameters['q'] + '"')
-        elif('title' in self.Parameters):
-            result = self.get_addon_json('plugin.video.kodipopcorntime', '"title" : "' + self.Parameters['title'] + '"')
-        else:        
-            result = self.get_addon_json('plugin.video.kodipopcorntime', '')
-        return result + self.get_action("Down") + self.get_action("Select")
+    def video_play_popcorn_time(self, params):
+        if('q' in params):
+            q = params['q']
+        if('searchQuery' in params):
+            q = params['searchQuery']
+
+        result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/search/' + q + '"]}}'
+        return result
 
     def get_addon_json(self, addonid, params):
-        return '{ "jsonrpc": "2.0", "method": "RunAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
-
-    def runAddon(self, params):
-        return '{ "jsonrpc": "2.0", "method": "RunAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": { ' + params + ' } }, "id": 2 }'
+        return '{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": ' + json.dumps(params) + ' }, "id": 2 }'
 
     def get_activatewindow_json(self, window, id):
         return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(self.Id) + ' }'
 
     def show_notification(self, params):
-        print(json.dumps(params))
         return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def json(self, params):
@@ -201,6 +203,7 @@ class Result:
             p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             youtubeId, err = p.communicate()
             return '{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}'    
+            '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"video","dir":"plugin:\/\/plugin.video.kodipopcorntime\/?endpoint=search"}}'
 
 #tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 
