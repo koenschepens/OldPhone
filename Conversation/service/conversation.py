@@ -5,6 +5,7 @@ import ConfigParser
 import re
 import urllib
 import urllib2
+from urllib2 import HTTPError, URLError
 
 folder = os.path.dirname(os.path.realpath(__file__))
 
