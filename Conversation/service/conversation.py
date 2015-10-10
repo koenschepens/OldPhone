@@ -20,11 +20,14 @@ configFile = os.path.join(folder, 'conversation.config')
 print "CONFIG FILE: " + configFile
 config.read(configFile)
 
+client_access_token = config.get('aiapi', 'client_access_token')
+subscription_key = config.get('aiapi', 'subscription_key')
+
 import time
 import scipy.io.wavfile as wav
 
 class Conversation:
-    def __init__(self, client_access_token, subscription_key):
+    def __init__(self):
         self.client_access_token = client_access_token
         self.subscription_key = subscription_key
         self.Api = apiai.ApiAI(self.client_access_token, self.subscription_key)

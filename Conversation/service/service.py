@@ -1,7 +1,6 @@
 from time import sleep
 import RPi.GPIO as GPIO
 import subprocess 
-from subprocess import call
 import commands
 import time
 import os
@@ -16,9 +15,14 @@ import xbmc, xbmcaddon
 import json
 
 import conversation
+folder = os.path.dirname(os.path.realpath(__file__))
 
-tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
+config = ConfigParser.RawConfigParser()
+configFile = os.path.join(folder, 'conversation.config')
+config.read(configFile)
+
 includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
+ttsEngine = config.get('settings', 'tts.engine').replace('$includesDir', includesDir)
 language = 'dutch'
 
 def picked_up(argument):
@@ -30,7 +34,7 @@ def picked_up(argument):
 
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
-    c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
+    c = conversation.Conversation()
     result = c.ask(whatyoushouldhavesaid)
 
     whatwethinkyouwant = result.getKodiAction()
@@ -39,7 +43,7 @@ def picked_up(argument):
     xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
     #xbmc.executeJSONRPC(result.getAudioStream())
 
-    call(["tts", result.Text]
+    subprocess.call([ttsEngine, result.Text])
 
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 

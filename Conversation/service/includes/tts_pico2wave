@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#for the Raspberry Pi, we need to insert some sort of FILLER here since it cuts off the first bit of audio
+
+string=$@
+lang="en"
+if [ "$1" == "-l" ] ; then
+    lang="$2"
+    string=`echo "$string" | sed -r 's/^.{6}//'`
+fi
+
+pico2wave -w tmp.wav "$string" && aplay tmp.wav -D plughw:1,0
