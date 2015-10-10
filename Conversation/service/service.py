@@ -36,7 +36,7 @@ def picked_up(argument):
     
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
     xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
-    print(c.getAudioStream())
+    print(result.getAudioStream())
 
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
