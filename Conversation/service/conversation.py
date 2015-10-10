@@ -122,6 +122,8 @@ class Result:
                 value = value.replace("$location", self.Parameters["location"])
             if("service_name" in self.Parameters):
                 value = value.replace("$service_name", self.Parameters["service_name"])
+            else:
+                value = value.replace("$service_name", 'youtube')
 
             value = value.replace("$speech", self.Text)
             value = value.replace("$resolvedQuery", self.ResolvedQuery)
