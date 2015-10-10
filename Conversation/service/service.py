@@ -47,7 +47,7 @@ def picked_up(argument):
         xbmc.log(msg="starting NextFunction: " + str(result.NextFunction), level=xbmc.LOGDEBUG)
         if(result.NeedsUserInput):
             subprocess.call([ttsEngine, "Which movie you want yes?"])
-            userInput = executeScript('speech-recog.sh')
+            userInput = executeScript('speech-recog.sh').strip('"')
             xbmcInput = json.loads(xbmcResult)['result']
             chosenItem = getChosenItem(userInput, xbmcInput)
             if(chosenItem is not None):
