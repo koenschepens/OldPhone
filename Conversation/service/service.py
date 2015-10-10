@@ -27,10 +27,10 @@ language = 'dutch'
 
 def picked_up(argument):
     dialog = xbmcgui.Dialog()
-    dialog.notification('WHAT DO YOU WANT??!?!1', 'Example: play movie.', xbmcgui.NOTIFICATION_INFO, 5000)
+    dialog.notification('Yes hello this is dog.', 'Speak..', xbmcgui.NOTIFICATION_INFO, 1000)
 
     whatyousaid = executeScript('speech-recog.sh')
-    xbmc.executebuiltin( "ActivateWindow(busydialog)" )
+    #xbmc.executebuiltin( "ActivateWindow(busydialog)" )
 
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
@@ -62,7 +62,7 @@ def picked_up(argument):
 
     subprocess.call([ttsEngine, result.Text])
 
-    xbmc.executebuiltin( "Dialog.Close(busydialog)" )
+    #xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 
 
 def getChosenItem(userInput, xbmcInput):
