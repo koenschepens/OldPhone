@@ -8,9 +8,11 @@ import sys
 import logging
 import ConfigParser
 import traceback
+from collections import OrderedDict
 import json
 import urllib2
-
+reload(sys) 
+sys.setdefaultencoding('UTF8')
 
 import conversation
 
@@ -41,16 +43,41 @@ def picked_up(argument):
     c = conversation.Conversation()
     result = c.ask(whatyousaid)
     kodiJson = result.getKodiAction()
-    
-    print(kodiJson)
-    urllib2.urlopen('http://192.168.1.116/jsonrpc?request=' + kodiJson.replace(' ', '%20')).read()
-    subprocess.call([ttsEngine, result.Text])
 
-    print(result.getAudioStream())
+    xbmcResult = urllib2.urlopen('http://192.168.1.116/jsonrpc?request=' + kodiJson.replace(' ', '%20')).read()
+
+    while(result.NextFunction is not None):
+        print ("starting NextFunction" + str(result.NextFunction))
+        if(result.NeedsUserInput):
+            print ("NeedsUserInput")
+            userInput = "Pixels"
+            xbmcInput = json.loads(xbmcResult, object_pairs_hook=OrderedDict)['result']
+            chosenItem = getChosenItem(userInput, xbmcInput)
+            if(chosenItem is not None):
+                nextFunctionResult = result.NextFunction(chosenItem)
+            else:
+                print ("chosenItem is None")
+                result.NextFunction = None
+                nextFunctionResult = c.get_show_notification_json("Sorry","That movie is not in this list.", 300)
+        else:
+            print ("no user input required")
+            nextFunctionResult = result.NextFunction(xbmcResult)
+        
+        xbmcResult = urllib2.urlopen('http://192.168.1.116/jsonrpc?request=' + nextFunctionResult.replace(' ', '%20')).read()
+        print xbmcResult
+    
+    #subprocess.call([ttsEngine, result.Text])
+
+
+def getChosenItem(userInput, xbmcInput):
+    if(len(xbmcInput) > 0):
+        for key, value in xbmcInput.iteritems():
+            if(xbmcInput[key] == userInput):
+                return { "Label" : xbmcInput[key], "FolderPath" : xbmcInput[key.replace(".Label", ".FolderPath")] }
+    return None
 
 def executeScript(script):
     script = includesDir + script
-    print(script)
     p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
     return out

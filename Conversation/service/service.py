@@ -40,12 +40,37 @@ def picked_up(argument):
     whatwethinkyouwant = result.getKodiAction()
     
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
-    xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
-    #xbmc.executeJSONRPC(result.getAudioStream())
+    xbmcResult = xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
+
+    while(result.NextFunction is not None):
+        print ("starting NextFunction" + str(result.NextFunction))
+        if(result.NeedsUserInput):
+            subprocess.call([ttsEngine, "Which movie you want yes?"])
+            userInput = executeScript('speech-recog.sh')
+            xbmcInput = json.loads(xbmcResult, object_pairs_hook=OrderedDict)['result']
+            chosenItem = getChosenItem(userInput, xbmcInput)
+            if(chosenItem is not None):
+                nextFunctionResult = result.NextFunction(chosenItem)
+            else:
+                result.NextFunction = None
+                nextFunctionResult = c.get_show_notification_json("Sorry","That movie is not in this list.", 300)
+        else:
+            print ("no user input required")
+            nextFunctionResult = result.NextFunction(xbmcResult)
+        
+        xbmcResult = xbmc.executeJSONRPC(nextFunctionResult.replace(' ', '%20'))
 
     subprocess.call([ttsEngine, result.Text])
 
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
+
+
+def getChosenItem(userInput, xbmcInput):
+    if(len(xbmcInput) > 0):
+        for key, value in xbmcInput.iteritems():
+            if(xbmcInput[key] == userInput):
+                return { "Label" : xbmcInput[key], "FolderPath" : xbmcInput[key.replace(".Label", ".FolderPath")] }
+    return None
 
 def executeScript(script):
     script = includesDir + script
