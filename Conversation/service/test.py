@@ -50,7 +50,7 @@ def picked_up(argument):
         print ("starting NextFunction" + str(result.NextFunction))
         if(result.NeedsUserInput):
             print ("NeedsUserInput")
-            userInput = "Pixels"
+            userInput = "pixels"
             xbmcInput = json.loads(xbmcResult, object_pairs_hook=OrderedDict)['result']
             chosenItem = getChosenItem(userInput, xbmcInput)
             if(chosenItem is not None):

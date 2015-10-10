@@ -30,7 +30,7 @@ def picked_up(argument):
     dialog = xbmcgui.Dialog()
     dialog.notification('Yes hello this is dog.', 'Speak..', xbmcgui.NOTIFICATION_INFO, 1000)
 
-    whatyousaid = executeScript('speech-recog.sh')
+    whatyousaid = executeScript('speech-recog.sh').strip('"')
     #xbmc.executebuiltin( "ActivateWindow(busydialog)" )
 
     whatyoushouldhavesaid = whatyousaid.strip('"')
