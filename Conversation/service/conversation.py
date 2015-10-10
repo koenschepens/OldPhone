@@ -36,7 +36,9 @@ class Conversation:
         
     def ask(self, what):
         if(len(what) == 0):
-            return self.get_show_notification_json("Sorry", "I didn't hear you...", 1)
+            result = Result()
+            result.Text = "Sorry, I didn't hear you"
+            return result
 
         self.Request = what
         immediateActions = config.options("immediateActions")

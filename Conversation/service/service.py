@@ -30,7 +30,7 @@ def picked_up(argument):
     dialog = xbmcgui.Dialog()
     dialog.notification('Yes hello this is dog.', 'Speak..', xbmcgui.NOTIFICATION_INFO, 1000)
 
-    whatyousaid = executeScript('speech-recog.sh').strip('"')
+    whatyousaid = executeScript(includesDir + 'speech-recog.sh').strip('"')
     #xbmc.executebuiltin( "ActivateWindow(busydialog)" )
 
     whatyoushouldhavesaid = whatyousaid.strip('"')
@@ -47,7 +47,7 @@ def picked_up(argument):
         xbmc.log(msg="starting NextFunction: " + str(result.NextFunction), level=xbmc.LOGDEBUG)
         if(result.NeedsUserInput):
             subprocess.call([ttsEngine, "Which movie you want yes?"])
-            userInput = executeScript('speech-recog.sh').strip('"')
+            userInput = executeScript(includesDir + 'speech-recog.sh').strip('"')
             xbmcInput = json.loads(xbmcResult)['result']
             chosenItem = getChosenItem(userInput, xbmcInput)
             if(chosenItem is not None):
