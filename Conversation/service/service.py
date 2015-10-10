@@ -21,9 +21,6 @@ includesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
 language = 'dutch'
 
 def picked_up(argument):
-    #call(["/home/osmc/Pi/PiAUISuite/ReadSpeaker/sayhello"])
-    xbmc.log(msg='pickup!!!', level=xbmc.LOGDEBUG)
-    #executeAddon("plugin.video.youtube", '"url": "https://www.youtube.com/watch?v=f5RauCBguH0"')
     dialog = xbmcgui.Dialog()
     dialog.notification('WHAT DO YOU WANT??!?!1', 'Example: play movie.', xbmcgui.NOTIFICATION_INFO, 5000)
 
@@ -37,6 +34,7 @@ def picked_up(argument):
     
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
     xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
+    print(c.getAudioStream())
 
     xbmc.executebuiltin( "Dialog.Close(busydialog)" )
 

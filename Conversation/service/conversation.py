@@ -1,14 +1,12 @@
-
 import os.path, sys
 import json
 import subprocess 
 import ConfigParser
 import re
-
-#activatewindow(video,plugin://plugin.video.kodipopcorntime/?endpoint=search)"
+import urllib
+import urllib2
 
 folder = os.path.dirname(os.path.realpath(__file__))
-
 
 try:
     import apiai
@@ -57,12 +55,12 @@ class Conversation:
         print (leJson)
         parsed_json = json.loads(leJson)
 
-        result = Result(parsed_json)
+        self.Result = Result(parsed_json, self.client_access_token, self.subscription_key)
 
-        return result.getKodiAction()
+        return self.Result
 
     def get_show_notification_json(self, title, message, id):
-        return '{ "jsonrpc": "2.0", "method": "GUI.infodialog", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
 class ImmediateResult:
     def executeAction(self, action):
@@ -70,7 +68,9 @@ class ImmediateResult:
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"' + action + '"},"id":1}'
 
 class Result:
-    def __init__(self, parsed_json):
+    def __init__(self, parsed_json, client_access_token, subscription_key):
+        self.client_access_token = client_access_token
+        self.subscription_key = subscription_key
         self.ResolvedQuery = parsed_json['result']['resolvedQuery']
         self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
         self.Text = parsed_json['result']['fulfillment']['speech']
@@ -84,6 +84,26 @@ class Result:
         self.Parameters = {}
         if('parameters' in parsed_json['result']):
             self.Parameters = parsed_json['result']['parameters']
+    
+    def getAudioStream(self):
+        fileLocation = folder + "/output.wav"
+        url = 'https://api.api.ai/v1/tts?v=20150910&text=' + urllib.quote(self.Text)
+        req = urllib2.Request(url)
+        req.add_header('ocp-apim-subscription-key', self.subscription_key)
+        req.add_header('Authorization', 'Bearer ' + self.client_access_token)
+        r = urllib2.urlopen(req)
+        try:
+            # Open our local file for writing
+            with open(fileLocation, "wb") as local_file:
+                local_file.write(r.read())
+
+        #handle errors
+        except HTTPError, e:
+            print "HTTP Error:", e.code, url
+        except URLError, e:
+            print "URL Error:", e.reason, url
+
+        return self.playUrl(fileLocation)
 
     def getKodiAction(self):
         self.Id = self.Id + 1
@@ -190,7 +210,11 @@ class Result:
         return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
 
     def show_notification(self, title, message, id):
-        return '{ "jsonrpc": "2.0", "method": "GUI.infodialog", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
+
+    def playUrl(self, url):
+        params = { "method": "Player.Open", "item": { "file" : urllib.quote(url) }}
+        return self.json(params)
 
     def json(self, params):
         method = params['method']

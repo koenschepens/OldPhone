@@ -36,10 +36,13 @@ def picked_up(argument):
     whatyoushouldhavesaid = whatyousaid.strip('"')
 
     c = conversation.Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
-    whatwethinkyouwant = c.ask(whatyousaid)
+    result = c.ask(whatyousaid)
+    kodiJson = result.getKodiAction()
     
-    print(whatwethinkyouwant)
-    urllib2.urlopen('http://192.168.1.116/jsonrpc?request=' + whatwethinkyouwant.replace(' ', '%20')).read()
+    print(kodiJson)
+    urllib2.urlopen('http://192.168.1.116/jsonrpc?request=' + kodiJson.replace(' ', '%20')).read()
+    
+    print(result.getAudioStream())
 
 def executeScript(script):
     script = includesDir + script
