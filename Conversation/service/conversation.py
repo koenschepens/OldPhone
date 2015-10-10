@@ -121,15 +121,17 @@ class Result:
                 value = value.replace("$q", self.Parameters["q"])
             if("location" in self.Parameters):
                 value = value.replace("$location", self.Parameters["location"])
+            if("genre" in self.Parameters):
+                value = value.replace("$genre", self.Parameters["genre"])
             if("service_name" in self.Parameters):
                 value = value.replace("$service_name", self.Parameters["service_name"])
+            else:
+                value = value.replace("$service_name", 'popcorntime')
 
             if("title" in self.Parameters):
                 value = value.replace("$q", self.Parameters["title"])
                 value = value.replace("$title", self.Parameters["title"])
                 value = value.replace("$service_name", 'popcorntime')
-            else:
-                value = value.replace("$service_name", 'youtube')
 
             value = value.replace("$speech", self.Text)
             value = value.replace("$resolvedQuery", self.ResolvedQuery)
@@ -140,9 +142,9 @@ class Result:
 
     def other(self):
         if(self.Text is not None):
-            return self.get_show_notification_json(self.ResolvedQuery, self.Text, 600)
+            return self.show_notification(self.ResolvedQuery, self.Text, 600)
         else:
-            return self.get_show_notification_json(self.ResolvedQuery, "Me no understand", 601)
+            return self.show_notification(self.ResolvedQuery, "Me no understand", 601)
 
     def songs(self):
          #if('q' in self.Parameters):
@@ -167,12 +169,15 @@ class Result:
         return self.get_activatewindow_json("weather", 2)
 
     def video_play_popcorn_time(self, params):
-        if('q' in params):
-            q = params['q']
-        if('searchQuery' in params):
+        if('title' in params and params['title'] != '$title'):
+            q = params['title']
+            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/search?query=' + q + '"]}}'
+        elif('searchQuery' in params and params['searchQuery'] != '$q'):
             q = params['searchQuery']
+            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/search?query=' + q + '"]}}'
+        elif('genre' in params):
+            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/genres/' + params['genre'] + '/0?limit=20"]}}'
 
-        result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/search/' + q + '"]}}'
         return result
 
     def get_addon_json(self, addonid, params):
@@ -183,6 +188,9 @@ class Result:
 
     def show_notification(self, params):
         return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
+
+    def show_notification(self, title, message, id):
+        return '{ "jsonrpc": "2.0", "method": "GUI.infodialog", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
 
     def json(self, params):
         method = params['method']
@@ -199,11 +207,9 @@ class Result:
             return "Nothing found"
         else:
             script = self.IncludesDir + 'youtube-search ' + params["searchQuery"]
-            print(script)
             p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             youtubeId, err = p.communicate()
             return '{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}'    
-            '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"video","dir":"plugin:\/\/plugin.video.kodipopcorntime\/?endpoint=search"}}'
 
 #tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
 
