@@ -4,7 +4,7 @@ import subprocess
 import ConfigParser
 import re
 import urllib
-from urllib2 import urlopen, URLError, HTTPError
+import urllib2
 
 folder = os.path.dirname(os.path.realpath(__file__))
 
