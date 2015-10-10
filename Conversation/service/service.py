@@ -26,6 +26,7 @@ ttsEngine = config.get('settings', 'tts.engine').replace('$includesDir', include
 language = 'dutch'
 
 def picked_up(argument):
+    xbmc.log(msg='using ' + ttsEngine + ' as ttsEngine', level=xbmc.LOGDEBUG)
     dialog = xbmcgui.Dialog()
     dialog.notification('Yes hello this is dog.', 'Speak..', xbmcgui.NOTIFICATION_INFO, 1000)
 
