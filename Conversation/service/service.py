@@ -55,7 +55,7 @@ def picked_up(argument):
                 result.NextFunction = None
                 nextFunctionResult = c.get_show_notification_json("Sorry","That movie is not in this list.", 300)
         else:
-            xbmc.log(msg="no user input required", level=xbmc.DEBUGLOG)
+            xbmc.log(msg="no user input required", level=xbmc.LOGDEBUG)
             nextFunctionResult = result.NextFunction(xbmcResult)
         
         xbmcResult = xbmc.executeJSONRPC(nextFunctionResult.replace(' ', '%20'))
