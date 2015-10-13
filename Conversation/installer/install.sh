@@ -1,5 +1,4 @@
 #!/bin/bash
-
 serviceFolder="/home/osmc/.kodi/addons/service.oldphone.conversation"
 programFolder="/home/osmc/.kodi/addons/script.module.oldphone.conversation"
 

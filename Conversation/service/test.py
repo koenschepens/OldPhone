@@ -8,15 +8,12 @@ import sys
 import logging
 import ConfigParser
 import traceback
-from collections import OrderedDict
 import json
 import urllib2
 reload(sys) 
 sys.setdefaultencoding('UTF8')
 
 import conversation
-
-
 
 try:
     from xbmc.xbmcclient import XBMCClient
@@ -51,7 +48,7 @@ def picked_up(argument):
         if(result.NeedsUserInput):
             print ("NeedsUserInput")
             userInput = "pixels"
-            xbmcInput = json.loads(xbmcResult, object_pairs_hook=OrderedDict)['result']
+            xbmcInput = json.loads(xbmcResult)['result']
             chosenItem = getChosenItem(userInput, xbmcInput)
             if(chosenItem is not None):
                 nextFunctionResult = result.NextFunction(chosenItem)

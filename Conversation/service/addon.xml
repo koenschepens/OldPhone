@@ -6,7 +6,11 @@
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
-  <extension point="xbmc.service" library="service.py" start="startup" />
+  <!--<extension point="xbmc.service" library="kodi/kodi_test.py" start="startup" />-->
+  <extension point="xbmc.python.script" library="kodi/kodi_test.py">
+    <provides>executable</provides>
+  </extension>
+
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
     <summary lang="en"></summary>
