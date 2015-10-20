@@ -2,14 +2,8 @@ import xbmc
 import kodi_json
 import json
 
-class KodiList:
+class ListItems:
     Items = {}
-    def __init__(self):
-        window = kodi_json.kodi_execute_json({"method" : "GUI.GetProperties", "params" : {"properties" : '["currentwindow"]'}})
-        xbmc.log(msg="KODI_LIST: " + json.dumps(window), level=xbmc.LOGDEBUG) 
-
-    def listItems(self):
-        print str(self.Items)
 
     """
     def get_current_window(self):

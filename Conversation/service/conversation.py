@@ -33,7 +33,7 @@ class Conversation:
         self.client_access_token = client_access_token
         self.subscription_key = subscription_key
         self.Api = apiai.ApiAI(self.client_access_token, self.subscription_key)
-        
+
     def ask(self, what):
         if(len(what) == 0):
             self.Result = Result("Sorry, I didn't hear you")
@@ -87,23 +87,35 @@ class Result:
         if(client_access_token is None):
             #assume text only
             self.Text = parsed_json
+            self.Action = "message.show"
             return;
 
         self.client_access_token = client_access_token
         self.subscription_key = subscription_key
         self.ResolvedQuery = parsed_json['result']['resolvedQuery']
         self.Text = parsed_json['result']['fulfillment']['speech']
+        self.ParsedJson = parsed_json
 
         if('action' in parsed_json['result']):
             self.Action = parsed_json['result']['action']
+        else:
+            self.Action = "input.unknown"
 
         self.Parameters = {}
         if('parameters' in parsed_json['result']):
             self.Parameters = parsed_json['result']['parameters']
+
+    def __str__(self):
+        result = ""
+        for slot in dir(self):
+            attr = getattr(self, slot)
+            result = result + "\r\n" + slot + ": " + str(attr)
+        return result
+
     
     def getAudioStream(self):
         fileLocation = folder + "/output.wav"
-        url = 'https://api.api.ai/v1/tts?v=20150910&text=' + urllib.quote(self.Text)
+        url = 'https://api.api.ai/v1/tts?v=20150910&lang=' + config.get('settings', 'language') + '&text=' + urllib.quote(self.Text)
         req = urllib2.Request(url)
         req.add_header('ocp-apim-subscription-key', self.subscription_key)
         req.add_header('Authorization', 'Bearer ' + self.client_access_token)
@@ -227,7 +239,7 @@ class Result:
         self.NextFunction = self.get_items
         return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":["Container(0).NumItems"]}}'
 
-    #{%22id%22:1,%22jsonrpc%22:%222.0%22,%22method%22:%22Player.Open%22,%22params%22:{%22item%22:{%22file%22:%22plugin://plugin.video.kodipopcorntime/play/None/magnet%253A%253Fxt%253Durn%253Abtih%253A54714EBFEAC814DC37387FF694A8A42F41FD76AF%2526dn%253DWe%252BAre%252BStill%252BHere%252B%2525282015%252529%252B%25255B720p%25255D%2526tr%253Dudp%25253A%25252F%25252Ftracker.publicbt.com%25253A80%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.openbittorrent.com%25253A80%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Fopen.demonii.com%25253A1337%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.istole.it%25253A6969%2526tr%253Dudp%25253A%25252F%25252Ftracker.coppersurfer.tk%25253A80%2526tr%253Dudp%25253A%25252F%25252Fopen.demonii.com%25253A1337%2526tr%253Dudp%25253A%25252F%25252Ftracker.istole.it%25253A80%2526tr%253Dhttp%25253A%25252F%25252Ftracker.yify-torrents.com%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.publicbt.com%25253A80%2526tr%253Dudp%25253A%25252F%25252Ftracker.openbittorrent.com%25253A80%2526tr%253Dudp%25253A%25252F%25252Ftracker.coppersurfer.tk%25253A6969%2526tr%253Dudp%25253A%25252F%25252Fexodus.desync.com%25253A6969%2526tr%253Dhttp%25253A%25252F%25252Fexodus.desync.com%25253A6969%25252Fannounce%22}}}
+    #{%22id%22:1,%22jsonrpc%22:%222.0%22,%22method%22:%22Player.Open%22,%22params%22:{%22item%22:{%22file%22:%22plugin://plugin.video.kodipopcorntime/play/None/magnet%253A%253Fxt%253Durn%253Abtih%253A54714EBFEAC814DC37387FF694A8A42F41FD76AF%2526dn%253DWe%252BAre%252BStill%252BHere%252B%2525282015%252529%252B%25255B720p%25255D%2526tr%253Dudp%25253A%25252F%25252Ftracker.publicbt.com%25253A80%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.openbittorrent.com%25253A80%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Fopen.demonii.com%25253A1337%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.istole.it%25253A6969%2526tr%253Dudp%25253A%25252F%25252Ftracker.coppersurfer.tk%25253A80%2526tr%253Dudp%25253A%25252F%25252Fopen.demonii.com%25253A1337%2526tr%253Dudp%25253A%25252F%25252Ftracker.istole.it%25253A80%2526tr%253Dhttp%25253A%25252F%25252Ftracker.yify-torrents.com%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.publicbt.com%25253A80%2526tr%253Dudp%25253A%25252F%25252Ftracker.openbittorrent.com%25253A80%2526tr%253Dudp%25253A%25252F%25252Ftracker.coppersurfer.tk%25253A6969%2526tr%25 Dudp%25253A%25252F%25252Fexodus.desync.com%25253A6969%2526tr%253Dhttp%25253A%25252F%25252Fexodus.desync.com%25253A6969%25252Fannounce%22}}}
     def select_and_play_item(self, item):
         self.NextFunction = None
         self.NeedsUserInput = False

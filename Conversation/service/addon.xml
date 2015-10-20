@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="service.oldphone.conversation"
-       name="Old phone conversation service"
+       name="test kodi list"
        version="1.0.0"
        provider-name="Koen Schepens">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
-  <!--<extension point="xbmc.service" library="kodi/kodi_test.py" start="startup" />-->
-  <extension point="xbmc.python.script" library="kodi/kodi_test.py">
+  <extension point="xbmc.service" library="testflow.py" start="startup" />
+  <!--<extension point="xbmc.python.script" library="kodi/kodi_test.py">
     <provides>executable</provides>
-  </extension>
+  </extension>-->
 
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>

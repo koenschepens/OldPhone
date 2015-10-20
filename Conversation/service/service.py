@@ -17,6 +17,9 @@ import json
 import conversation
 folder = os.path.dirname(os.path.realpath(__file__))
 
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'kodi'))
+import kodi_container
+
 config = ConfigParser.RawConfigParser()
 configFile = os.path.join(folder, 'conversation.config')
 config.read(configFile)
@@ -27,7 +30,6 @@ speechRecognitionEngine = includesDir + 'speech-recog.sh'
 language = 'dutch'
 
 def picked_up(argument):
-    xbmc.log(msg='using ' + ttsEngine + ' as ttsEngine', level=xbmc.LOGDEBUG)
     dialog = xbmcgui.Dialog()
     dialog.notification('Yes hello this is dog.', 'Speak..', xbmcgui.NOTIFICATION_INFO, 1000)
 
@@ -47,36 +49,24 @@ def picked_up(argument):
     xbmc.log(msg="response: " + whatwethinkyouwant.encode('utf8'), level=xbmc.LOGDEBUG)
     xbmcResult = xbmc.executeJSONRPC(whatwethinkyouwant.encode('utf8'))
 
-    while(result.NextFunction is not None):
-        xbmc.log(msg="starting NextFunction: " + str(result.NextFunction), level=xbmc.LOGDEBUG)
-        if(result.NeedsUserInput):
-            subprocess.call([ttsEngine, "Which movie you want yes?"])
-            userInput = executeScript(speechRecognitionEngine)
-            userInput = userInput.strip('"')
-            xbmcInput = json.loads(xbmcResult)['result']
-            chosenItem = getChosenItem(userInput, xbmcInput)
-            if(chosenItem is not None):
-                nextFunctionResult = result.NextFunction(chosenItem)
-            else:
-                result.NextFunction = None
-                nextFunctionResult = c.get_show_notification_json("Sorry","The movie " + userInput + " is not in this list.", 300)
-        else:
-            xbmc.log(msg="no user input required", level=xbmc.LOGDEBUG)
-            nextFunctionResult = result.NextFunction(xbmcResult)
-        
-        xbmcResult = xbmc.executeJSONRPC(nextFunctionResult.replace(' ', '%20'))
+    # Get current screen and list
+    container = kodi_container.Container()
+    container.load()
 
-    subprocess.call([ttsEngine, result.Text])
+    xbmc.log(msg = "container dir: " + str(dir(container)))
+
+    if(container.hasItems()):
+        container.updateItems()
+        subprocess.call([ttsEngine, "Which one?"])
+        userInput = executeScript(speechRecognitionEngine).strip('"')
+        xbmc.log(msg = "getting label: " + userInput)
+        item = container.getItemByLabel(userInput)
+        if(item is not None):
+            item.play()
+
+    #subprocess.call([ttsEngine, result.Text])
 
     #xbmc.executebuiltin( "Dialog.Close(busydialog)" )
-
-
-def getChosenItem(userInput, xbmcInput):
-    if(len(xbmcInput) > 0):
-        for key, value in xbmcInput.iteritems():
-            if(xbmcInput[key].lower() == userInput.lower()):
-                return { "Label" : xbmcInput[key], "FolderPath" : xbmcInput[key.replace(".Label", ".FolderPath")] }
-    return None
 
 def executeScript(script):
     print(script)
@@ -104,7 +94,6 @@ while True:
                 #runningPid = voicecommand.pid;
                 time.sleep(0.25)
         if(GPIO.input(hoorn) == 0):
-            os.system('pkill voicecommand')
             if(new):
                 xbmc.log(msg='Phone is down', level=xbmc.LOGDEBUG)
                 new=False
