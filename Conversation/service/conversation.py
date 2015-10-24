@@ -59,7 +59,7 @@ class Conversation:
         request.query = what
         response = request.getresponse()
         leJson = response.read()
-        #print (leJson)
+        print (leJson)
         parsed_json = json.loads(leJson)
 
         self.Result = Result(parsed_json, self.client_access_token, self.subscription_key)
@@ -81,7 +81,6 @@ class Result:
         self.NeedsUserInput = False
         self.Action = {}
         self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
-        self.AvailableActions = config.options("actions")     
         self.ResolvedQuery = parsed_json   
 
         if(client_access_token is None):
@@ -111,51 +110,6 @@ class Result:
             attr = getattr(self, slot)
             result = result + "\r\n" + slot + ": " + str(attr)
         return result
-
-    
-    def getAudioStream(self):
-        fileLocation = folder + "/output.wav"
-        url = 'https://api.api.ai/v1/tts?v=20150910&lang=' + config.get('settings', 'language') + '&text=' + urllib.quote(self.Text)
-        req = urllib2.Request(url)
-        req.add_header('ocp-apim-subscription-key', self.subscription_key)
-        req.add_header('Authorization', 'Bearer ' + self.client_access_token)
-        r = urllib2.urlopen(req)
-        try:
-            # Open our local file for writing
-            with open(fileLocation, "wb") as local_file:
-                local_file.write(r.read())
-
-        #handle errors
-        except HTTPError, e:
-            print "HTTP Error:", e.code, url
-        except URLError, e:
-            print "URL Error:", e.reason, url
-
-        return self.playUrl(fileLocation)
-
-    def getKodiAction(self):
-        self.Id = self.Id + 1
-        if(len(self.Action) > 0):
-            #print("action: " + str(self.Action))
-            if(self.Action in self.AvailableActions):
-                #print("action found!")
-                configValue = config.get("actions", self.Action)
-                # ^(\w*)\(((\[\w*\])*)\)$
-                action = re.search('(\w*)\((.*)\,*\)', configValue)
-                methodName = action.group(1)
-
-                #print ("METHOD: " + methodName)
-                params = self.updateParams(action.group(2).split(','))
-
-                #print ("PARAMS: " + str(params))
-                method = getattr(self, methodName)
-                if not method:
-                    raise Exception("Method %s not implemented" % method_name)
-
-                return method(params)
-
-        func = self.other
-        return func()
 
     def updateParams(self, params):
         paramsDict = {}
@@ -193,126 +147,5 @@ class Result:
             return self.show_notification(self.ResolvedQuery, self.Text, 600)
         else:
             return self.show_notification(self.ResolvedQuery, "Me no understand", 601)
-
-    def songs(self):
-         #if('q' in self.Parameters):
-         return self.get_activatewindow_json("MusicLibrary", 501)
-
-    def browser_open(self):
-        return self.get_show_notification_json("Sorry", "Browsing the interwebs is not possible yet", 602)
-
-    def playvideo(self, params):
-        services = {
-            'youtube': self.video_play_youtube,
-            'popcorntime' : self.video_play_popcorn_time
-        }
-
-        if('service_name' in params):
-            func = services.get(params['service_name'], lambda: None)
-            return func(params)
-        else:
-            return self.video_play_popcorn_time(params)
-
-    def weather(self, params):
-        return self.get_activatewindow_json("weather", 2)
-
-    def video_play_popcorn_time(self, params):
-        if('title' in params and params['title'] != '$title'):
-            q = params['title']
-            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/search?query=' + q + '"]}}'
-        elif('searchQuery' in params and params['searchQuery'] != '$q'):
-            q = params['searchQuery']
-            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/search?query=' + q + '"]}}'
-            self.NextFunction = self.get_number_of_items
-        elif('genre' in params and params['genre'] != '$genre'):
-            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/genres/' + params['genre'] + '/0?limit=20"]}}'
-            self.NextFunction = self.get_number_of_items
-        else:
-            result = '{"id":1,"jsonrpc":"2.0","method":"GUI.ActivateWindow","params":{"window":"videos","parameters":["plugin://plugin.video.kodipopcorntime/genres"]}}'
-            self.NextFunction = self.get_number_of_items
-        return result
-
-    def get_current_window(self):
-        return '{jsonrpc"":"2.0","method":"GUI.GetProperties","id":"1","params":{"properties":["currentwindow"]}}'
-
-    def get_number_of_items(self, params):
-        self.NextFunction = self.get_items
-        return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":["Container(0).NumItems"]}}'
-
-    #{%22id%22:1,%22jsonrpc%22:%222.0%22,%22method%22:%22Player.Open%22,%22params%22:{%22item%22:{%22file%22:%22plugin://plugin.video.kodipopcorntime/play/None/magnet%253A%253Fxt%253Durn%253Abtih%253A54714EBFEAC814DC37387FF694A8A42F41FD76AF%2526dn%253DWe%252BAre%252BStill%252BHere%252B%2525282015%252529%252B%25255B720p%25255D%2526tr%253Dudp%25253A%25252F%25252Ftracker.publicbt.com%25253A80%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.openbittorrent.com%25253A80%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Fopen.demonii.com%25253A1337%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.istole.it%25253A6969%2526tr%253Dudp%25253A%25252F%25252Ftracker.coppersurfer.tk%25253A80%2526tr%253Dudp%25253A%25252F%25252Fopen.demonii.com%25253A1337%2526tr%253Dudp%25253A%25252F%25252Ftracker.istole.it%25253A80%2526tr%253Dhttp%25253A%25252F%25252Ftracker.yify-torrents.com%25252Fannounce%2526tr%253Dudp%25253A%25252F%25252Ftracker.publicbt.com%25253A80%2526tr%253Dudp%25253A%25252F%25252Ftracker.openbittorrent.com%25253A80%2526tr%253Dudp%25253A%25252F%25252Ftracker.coppersurfer.tk%25253A6969%2526tr%25 Dudp%25253A%25252F%25252Fexodus.desync.com%25253A6969%2526tr%253Dhttp%25253A%25252F%25252Fexodus.desync.com%25253A6969%25252Fannounce%22}}}
-    def select_and_play_item(self, item):
-        self.NextFunction = None
-        self.NeedsUserInput = False
-
-        print("Gekozen voor: " + item["Label"])
-
-        params = { "method" : "Player.Open", "params" : { "item" : { "file" : item["FolderPath"] }}}
-
-        return self.json(params)
-
-    def get_items(self, params, attempt = 0):
-        if(attempt > 5):
-            self.NextFunction = None
-            self.NeedsUserInput = False
-            return None
-
-        try:
-            numberOfItems = int(json.loads(params)['result']['Container(0).NumItems'])
-
-            items = []
-            for i in range(0, numberOfItems):
-                items.append('"Container(0).ListItem(' + str(i) + ').Label"')
-                items.append('"Container(0).ListItem(' + str(i) + ').FolderPath"')
-            
-            # Next function the user should select an item
-            self.NextFunction = self.select_and_play_item
-            self.NeedsUserInput = True
-            return '{"jsonrpc":"2.0","method":"XBMC.GetInfoLabels","id":"1","params":{"labels":[' + ','.join(items) + ']}}'
-        except:
-            # Maybe we should wait and try again
-            sleep(attempt)
-            return self.get_items(params, attempt + 1)
-
-    def get_addon_json(self, addonid, params):
-        return '{ "jsonrpc": "2.0", "method": "Addons.ExecuteAddon", "params": { "wait": false, "addonid": "' + addonid + '", "params": ' + json.dumps(params) + ' }, "id": 2 }'
-
-    def get_activatewindow_json(self, window, id):
-        return '{ "jsonrpc": "2.0", "method": "ActivateWindow", "params": { "window": "' + window + '" }, "id": ' + str(self.Id) + ' }'
-
-    def show_notification(self, params):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": ' + json.dumps(params) + ', "id": ' + str(self.Id) + ' }'
-
-    def show_notification(self, title, message, id):
-        return '{ "jsonrpc": "2.0", "method": "GUI.ShowNotification", "params": { "title": "' + title + '", "message": "' + message + '" }, "id": ' + str(id) + ' }'
-
-    def playUrl(self, url):
-        params = { "method": "Player.Open", "params" : { "item": { "file" : urllib.quote(url) }}}
-        return self.json(params)
-
-    def json(self, params):
-        params["jsonrpc"] = "2.0"
-        params["id"] = str(self.Id)
-        return json.dumps(params)
-
-    def get_action(self, action):
-        return '{ "jsonrpc": "2.0", "method": "' + action + '", "id": ' + str(4000) + ' }'
-
-    def video_play_youtube(self, params):
-        global includesDir
-        if('searchQuery' not in params):
-            self.LastMethod = self.video_play_youtube
-            return "Nothing found"
-        else:
-            script = self.IncludesDir + 'youtube-search ' + params["searchQuery"]
-            p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            youtubeId, err = p.communicate()
-            return '{"id":1,"jsonrpc":"2.0","method":"Player.Open","params":{"item":{"file":"plugin:\/\/plugin.video.youtube\/?path=\/root\/search&action=play_video&videoid=' + youtubeId + '"}}}'    
-
-#tokens = { 'dutch' : 'b240ec13475a464890af46b48f49f5c7', 'english' : 'fb928615eb914f4785e110eecad49c95' }
-
-#language = sys.argv[1]
-#text = sys.argv[2]
-
-#conversation = Conversation(tokens[language], '7c4c06c1-eb1d-4fd3-9367-134f20cbcb25')
 
 #conversation.ask(text)

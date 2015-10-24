@@ -8,7 +8,11 @@ import sys
 import logging
 import ConfigParser
 
-import xbmc
+try:
+    from xbmc.xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
+except:
+    sys.path.append('/usr/share/pyshared/xbmc')
+    from xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
 
 addonFolder = "/home/osmc/.kodi/addons/service.keypad/" 
 
@@ -39,15 +43,14 @@ i = 1
 
 def send_key(key):
     try:
-        if(config.has_option('default', key) and config.option('default', key) is not None):
-            xbmc.executebuiltin("Action(" + config.option('default', key) + ")")
-            sleep(0.25)
-            xbmc.release_button()
+        xbmc.send_keyboard_button(button=key)
+        sleep(0.25)
+        xbmc.release_button()
     except:
         logging.warning("value invalid")
 
 def picked_up(horn):
-    xbmc.executebuiltin("RunAddon('script.module.oldphone.conversation')")
+    xbmc.send_action("RunAddon('script.module.oldphone.conversation')")
 
 def row_changed(row):
     global rows
@@ -102,6 +105,21 @@ for option in gpiokeymappings:
         columns.append(column)
         GPIO.setup(column, GPIO.OUT)
         GPIO.output(column, 1)
+
+logging.info("Setting up Kodi client")
+
+host = config.get("xbmc", "host")
+port = config.getint("xbmc", "port")
+
+logging.info("host: " + str(host))
+logging.info("port: " + str(port))
+
+# Create an XBMCClient object and connect (needed because we don't run as the same user as Kodi)
+xbmc = XBMCClient("OldPhone", addonFolder + "/icon.png")
+xbmc.connect()
+
+#GPIO.setup(hoorn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+#GPIO.add_event_detect(hoorn, GPIO.RISING, callback=picked_up) 
  
 while True:
     try:

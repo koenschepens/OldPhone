@@ -24,6 +24,7 @@ availableContexts = {
         }
 
 actionString = None
+context = None
 
 i = 0
 for arg in sys.argv:
@@ -35,6 +36,9 @@ for arg in sys.argv:
     if(arg == '-a'):
         actionString = sys.argv[i + 1]
         print("using action: " + actionString)
+    if(arg == '-e'):
+        actionString = sys.argv[i + 1]
+        print("execute: " + actionString)
 
     i = i + 1
 

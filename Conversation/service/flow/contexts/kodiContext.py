@@ -1,6 +1,8 @@
 import context
 import sys
 import kodi
+import time
+import kodiContextFiles
 
 try:
     import xbmcgui
@@ -65,5 +67,25 @@ class KodiContext(context.Context):
         self.log("sending action: " + action)
         xbmc.executebuiltin(action)
 
+    def userInputRequired(self):
+        self.log("check if user input is required")
+        time.sleep(8)
+        win = xbmcgui.WindowDialog()
 
+        #self.log("controlList.size: " + str(controlList.size()))
+        numberOfItems = int(xbmc.getInfoLabel("Container().NumItems"))
+
+        items = []
+
+        for i in xrange(1,numberOfItems):
+            skip = 0
+            label = xbmc.getInfoLabel("Container().ListItem(" + str(i) + ").Label")
+            items.append({ "label": label, "number" : i })
+
+        mydisplay = kodiContextFiles.KeyPad.KeyPad()
+        mydisplay.addItems(items)
+        mydisplay.doModal()
+
+            #win.setProperty("Container().ListItem(" + str(i) + ").Label", "[" + str(i) + "] " + label )
+        return numberOfItems > 1
     

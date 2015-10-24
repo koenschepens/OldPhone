@@ -11,6 +11,10 @@ class weather(actionState):
         self.Context.log(str(result.Parameters))
 
     def search(self, result):
+        self.Context.ActivateWindow(pluginurl = None, window = "weather")
+        self.Context.say(result.Text)
+
+    def search_old(self, result):
         self.Context.log("weather search: " + str(result.Parameters))
 
         if("location" in result.Parameters):
@@ -22,7 +26,7 @@ class weather(actionState):
             #self.Context.ActivateWindow(pluginurl = None, window = "weather")
             locname = result.Parameters["location"]
             locid = find_location(locname)
-            forecast(locname, locide)
+            forecast(locname, locid)
             #except:
             #    self.Context.log("error loading weather")
             #    self.Context.ActivateWindow(pluginurl = None, window = "weather")

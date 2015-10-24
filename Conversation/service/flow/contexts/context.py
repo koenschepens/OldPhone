@@ -4,6 +4,7 @@ import subprocess
 import os
 import json
 import sys
+import tts
 from time import sleep
 sys.path.insert(0,'..')
 import flow
@@ -30,13 +31,15 @@ class Context:
 
         self.Conversation = conversation.Conversation()
 
+        self.Language = self.Config.get("settings", "language")
         self.IncludesDir = self.RootFolder + '/includes/'
-        self.TtsEngine = self.Config.get('settings', 'tts.engine').replace('$includesDir', self.IncludesDir)
-        self.SpeechRecognitionEngine = self.IncludesDir + 'speech-recog.sh -l ' + self.Config.get('settings', 'language')
+        self.TtsEngine = tts.tts_pyvona.PyvonaSpeaker(self.Config.get('tts', 'gender'), self.Language) #self.Config.get('settings', 'tts.engine').replace('$includesDir', self.IncludesDir)
+        self.SpeechRecognitionEngine = self.IncludesDir + 'speech-recog.sh -l ' + self.Language
         self.PlingCommand = 'aplay -D ' + self.Config.get('settings', 'phonedevice') + ' ' + self.IncludesDir + '/sounds/beepbeep.wav'
         self.TuutCommand = 'aplay -D ' + self.Config.get('settings', 'phonedevice') + ' ' + self.IncludesDir + '/sounds/tuut.wav'
 
         self.State = flow.initial.Initial(self)
+
 
     def run(self):
         self.State.go()
@@ -75,8 +78,9 @@ class Context:
         return result
 
     def say(self, text):
-        self.log("trying to say: '" + text + "' using engine " + self.TtsEngine)
-        subprocess.call([self.TtsEngine, text])
+        self.log("trying to say: '" + text + "' using engine " + str(self.TtsEngine))
+        self.TtsEngine.speak(text)
+        #subprocess.call([self.TtsEngine, text])
 
     def executeScript(self, script):
         p = subprocess.Popen(script, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -108,7 +112,6 @@ class Context:
     def send_action(self, action):
         self.log("Send action: " + action)
 
-    def SendAction(self, action, url):
-        action = action + '(' + url + ')'
-        result = self.send_action(action)
+    def userInputRequired(self):
+        return True
 

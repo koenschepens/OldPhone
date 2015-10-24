@@ -1,5 +1,13 @@
 import json
-import xbmc
+import sys
+try:
+    import xbmc, xbmcgui
+except:
+    try:
+        sys.path.append('/usr/share/pyshared/xbmc')
+        import xbmc, xbmcgui
+    except:
+        pass
 
 def kodi_get_json(params):
     params["jsonrpc"] = "2.0"
@@ -7,7 +15,7 @@ def kodi_get_json(params):
 
     request = json.dumps(params)
 
-    xbmc.log(msg="request: " + request, level=xbmc.LOGDEBUG) 
+    print("request: " + request) 
 
     return request
 
