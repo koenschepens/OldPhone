@@ -10,5 +10,5 @@ class PyvonaVoice(pyvona.Voice):
     def speak(self, text_to_speak):
         """Speak a given text
         """
-        with NamedTemporaryFile(delete=True) as f:
+        with open(text_to_speak + ".wav", 'w+') as f:
             subprocess.call(["mplayer", f.name])
