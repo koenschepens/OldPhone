@@ -6,7 +6,7 @@ import tempfile
 __author__ = 'macbook'
 
 class PyvonaVoice(pyvona.Voice):
-    def speak(self, text_to_speak):
+    def speak(self, text_to_speak, hwout = "alsa:device=hw=1.0"):
         """Speak a given text
         """
 
@@ -18,4 +18,4 @@ class PyvonaVoice(pyvona.Voice):
                     self.fetch_voice_fp(text_to_speak, f)
 
         print(path)
-        subprocess.call(["mplayer", path])
+        subprocess.call(["mplayer", path, "-ao", hwout])
