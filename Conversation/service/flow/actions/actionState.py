@@ -12,7 +12,7 @@ class actionState(state.State):
         immediateActions = self.Context.Config.options("immediateActions")
 
         if(isinstance(result, basestring)):
-            self.Context.State = flow.actions.configAction(self.Context)
+            self.Context.State = flow.actions.configActionState(self.Context)
             self.Context.State.handle(result)
             return
 
@@ -21,8 +21,6 @@ class actionState(state.State):
         if(not configState.handle(result)):
             self.Context.log(result.Action + " is not a config item")
 
-            #for item in dir(result):
-            #    self.Context.log(str(getattr(result, item)))
             self.Context.log("Action: " + str(result.Action))
 
             actionItems = result.Action.split('.')
@@ -45,7 +43,7 @@ class actionState(state.State):
                 self.Context.State = actionClassess[actionItems[0]](self.Context)
             else:
                 self.Context.log("domain " + actionItems[0] + " does not exist. Using config")
-                self.Context.State = flow.actions.configAction(self.Context)
+                self.Context.State = flow.actions.configActionState(self.Context)
             
             if(hasattr(self.Context.State, actionItems[1])):
                 self.Context.log("actionState action: " + actionItems[1])

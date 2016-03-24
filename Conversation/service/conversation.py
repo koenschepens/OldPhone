@@ -5,12 +5,14 @@ import pyaudio
 import ConfigParser
 import re
 import math
+import audioop
+import time
 
 INITIAL_VOL_THRESHOLD = 0.010
 FORMAT = pyaudio.paInt16
 SHORT_NORMALIZE = (1.0/32768.0)
 CHANNELS = 1
-RATE = 16000
+RATE = 44100
 INPUT_BLOCK_TIME = 0.05
 INPUT_FRAMES_PER_BLOCK = int(RATE*INPUT_BLOCK_TIME)
 # if we get this many noisy blocks in a row, increase the threshold
@@ -68,54 +70,65 @@ class Conversation:
 
     def ask_speech(self):
         self.pa = pyaudio.PyAudio()
-        self.stream = self.open_mic_stream()
+        vad = apiai.VAD()
 
-        ''' voice_request = ai.text_request()
-            bytessize = 2048
+        resampler = apiai.Resampler(source_samplerate=RATE)
 
-            with open('log.raw', 'rb') as f:
-                data = f.read(bytessize)
-                while data:
-                    request.send(data)
-                    data = f.read(bytessize)
+        request = self.Api.voice_request()
+        request.lang = 'en' # optional, default value equal 'en'
 
-         request.getresponse() '''
+        self.silentcount = 0
+        self.startedTalking = False
+        run = False
 
-        voice_request = self.Api.voice_request()
+        def callback(in_data, frame_count, time_info, status):
+            frames, data = resampler.resample(in_data, frame_count)
+            state = vad.processFrame(frames)
+            amplitude = self.get_rms(data)
 
-        silentcount = 0
+            if(not self.startedTalking and amplitude > INITIAL_VOL_THRESHOLD):
+                self.startedTalking = True
+                print("started talking...")
 
-        BUFFER_SIZE = 2048
-        samples = self.stream.read(BUFFER_SIZE, exception_on_overflow = False)
-        amplitude = self.get_rms(samples)
+            if(self.startedTalking):
+                if(amplitude <= INITIAL_VOL_THRESHOLD):
+                    self.silentcount += 1
+                else:
+                    self.silentcount = 0
 
-        while(amplitude <= INITIAL_VOL_THRESHOLD):
-            samples = self.stream.read(BUFFER_SIZE, exception_on_overflow = False)
-            amplitude = self.get_rms(samples)
-            print("_amp: %s" % amplitude)
+                request.send(data)
 
-        print("you're talking now!")
-
-        run = True
-
-        while(run):
-            if(amplitude <= INITIAL_VOL_THRESHOLD):
-                silentcount += 1
+            if (state == 1 and self.silentcount <= 10):
+                return in_data, pyaudio.paContinue
             else:
-                silentcount = 0
+                print ("stopped talking...")
+                return in_data, pyaudio.paComplete
 
-            print("amp: %s" % amplitude)
-            voice_request.send(samples)
-            samples = self.stream.read(BUFFER_SIZE, exception_on_overflow = False)
-            amplitude = self.get_rms(samples)
+        device_index = self.find_input_device()
 
-            if(silentcount > 10):
-                run = False
+        self.stream = self.pa.open(   format = FORMAT,
+                                 channels = CHANNELS,
+                                 rate = RATE,
+                                 input = True,
+                                 input_device_index = device_index,
+                                 frames_per_buffer = INPUT_FRAMES_PER_BLOCK,
+                                 stream_callback = callback)
 
-        voice_request.send(samples)
-        print("stopped talking...")
+        self.stream.start_stream()
 
-        response = voice_request.getresponse()
+        try:
+            while self.stream.is_active():
+                time.sleep(0.1)
+        except Exception:
+            raise
+        except KeyboardInterrupt:
+            pass
+
+        self.stream.stop_stream()
+        self.stream.close()
+        self.pa.terminate()
+
+        response = request.getresponse()
         leJson = response.read()
         parsed_json = json.loads(leJson)
 
@@ -175,18 +188,6 @@ class Conversation:
             print( "No preferred input found; using default input device." )
 
         return device_index
-
-    def open_mic_stream(self):
-        device_index = self.find_input_device()
-
-        stream = self.pa.open(   format = FORMAT,
-                                 channels = CHANNELS,
-                                 rate = RATE,
-                                 input = True,
-                                 input_device_index = device_index,
-                                 frames_per_buffer = INPUT_FRAMES_PER_BLOCK)
-
-        return stream
 
 
 class ImmediateResult:
