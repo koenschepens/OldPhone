@@ -1,0 +1,56 @@
+[settings]
+# Sleep time between key presses in seconds
+hoornWaitTime=0.2
+# GPIO bounce time in ms
+bounceTime=0.05
+keypadWaitTime=0.05
+
+<<<<<<< HEAD
+=======
+[gpiokeymapping]
+1=19,20
+2=19,26
+3=19,16
+4=13,20
+5=13,26
+6=13,16
+7=12,20
+8=12,5
+9=12,16
+0=6,21
+h=6,20
+s=7,8
+
+[gpiomapping]
+hoorn=11
+
+[default]
+1=one
+2=two
+3=three
+4=four
+5=five
+6=six
+7=seven
+8=eight
+9=nine
+0=zero
+s=numpadtimes
+h=numpadplus
+hoorn_up=h
+hoorn_down=t
+>>>>>>> origin/master
+
+[jumpsms]
+1=back
+2=jumpSMS(2)
+3=jumpSMS(3)
+4=jumpSMS(4)
+5=jumpSMS(5)
+6=jumpSMS(6)
+7=jumpSMS(7)
+8=jumpSMS(8)
+9=jumpSMS(9)
+0=jumpSMS(0)
+s=Back
+h=Home
