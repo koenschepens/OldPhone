@@ -1,11 +1,18 @@
 from time import sleep
-import RPi.GPIO as GPIO
-import subprocess 
+
+import sys
+import os
+
+try:
+    import GPIO.GPIO as GPIO
+except:
+    sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'includes', 'GPIO'))
+    import GPIO as GPIO
+
+import subprocess
 import commands
 import time
-import os
 from datetime import datetime
-import sys
 import logging
 import ConfigParser
 import traceback

@@ -7,7 +7,7 @@ class PyvonaSpeaker(speaker.Speaker):
     def __init__(self, gender, language):
         speaker.Speaker.__init__(self, gender, language)
         self.Pyvona = pyvona.create_voice("GDNAIRN4SS66PRNKPQZQ","2gURBTiaqnkjxEXZX+cslGhkJ+OVKTzWCZg7mvpp")
-        allVoices = json.loads(self.Pyvona.list_voices())
+        allVoices = self.Pyvona.list_voices()
         self.DesiredVoice = "Ruben"
         for voice in allVoices["Voices"]:
             if(voice["Gender"] == gender and voice["Language"] == language):

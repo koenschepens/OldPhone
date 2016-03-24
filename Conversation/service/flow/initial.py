@@ -1,14 +1,4 @@
-from time import sleep
-import RPi.GPIO as GPIO
-import subprocess 
-import commands
-import time
-import os
-from datetime import datetime
 import sys
-import logging
-import ConfigParser
-import traceback
 
 import state
 import phoneDown

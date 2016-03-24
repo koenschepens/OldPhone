@@ -1,13 +1,34 @@
 import ConfigParser
-import RPi.GPIO as GPIO
-import subprocess
-import os
-import json
 import sys
+import os
+import speech_recognition
+
+try:
+    import GPIO.GPIO as GPIO
+except:
+    sys.path.append(os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..', 'includes', 'GPIO')))
+
+    import GPIO as GPIO
+
+try:
+    import houndify
+except:
+    sys.path.append(os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..', 'includes', 'houndify')))
+
+    import houndify
+
+
+import subprocess
+import json
 import tts
 from time import sleep
+
 sys.path.insert(0,'..')
 import flow
+
+clientId = "wniU9od72rVhNhMkbz_CcQ=="
+clientKey = "l7onYG8L5ymGmducxBJNke2wDY-m5mPRzCc9Oc8_qNV2MPIheBsKGcaaCpTfxPZDWS-h3AOH_KSagJAsXbF7cg=="
+client = houndify.StreamingHoundClient(clientId, clientKey, sampleRate=8000)
 
 class Context:
     Xbmc = None
@@ -27,14 +48,14 @@ class Context:
         sys.path.append(folder)
         import conversation
         sys.path.append(os.path.join(folder, 'kodi'))
-        import kodi_container
+        #import kodi_container
 
         self.Conversation = conversation.Conversation()
 
         self.Language = self.Config.get("settings", "language")
         self.IncludesDir = self.RootFolder + '/includes/'
         self.TtsEngine = tts.tts_pyvona.PyvonaSpeaker(self.Config.get('tts', 'gender'), self.Language) #self.Config.get('settings', 'tts.engine').replace('$includesDir', self.IncludesDir)
-        self.SpeechRecognitionEngine = self.IncludesDir + 'speech-recog.sh -l ' + self.Language
+        self.SpeechRecognition = speech_recognition.SpeechRecognition.SpeechRecognition(self)
         self.PlingCommand = 'aplay -D ' + self.Config.get('settings', 'phonedevice') + ' ' + self.IncludesDir + '/sounds/beepbeep.wav'
         self.TuutCommand = 'aplay -D ' + self.Config.get('settings', 'phonedevice') + ' ' + self.IncludesDir + '/sounds/tuut.wav'
 
@@ -67,10 +88,10 @@ class Context:
 
         if(question is not None):
             self.say(question)
+
+        result = self.Conversation.ask_speech()
         
-        result = self.executeScript(self.SpeechRecognitionEngine).strip('"')
-        
-        self.log("result: " + result)
+        self.log("result: " + str(result))
 
         if(pling):
             self.executeScript(self.PlingCommand)

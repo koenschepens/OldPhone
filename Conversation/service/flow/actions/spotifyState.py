@@ -1,21 +1,11 @@
 from __future__ import unicode_literals
 
-import flow.state
-import flow.initial
-import flow.contexts
-import flow.actions
-import kodi
-import spotify
 try:
     import xbmcgui
 except:
     pass
-import time
-
-import conversation
 from actionState import actionState
 
-import cmd
 import logging
 import threading
 

@@ -7,10 +7,11 @@ import actions
 class PhoneUp(state.State):
     def go(self):
         while(self.Context.isUp()):
-            whatyousaid = self.Context.getVoiceInput()
+            #whatyousaid = self.Context.getVoiceInput()
 
-            self.Context.log(whatyousaid)
-            result = self.Context.Conversation.ask(whatyousaid)
+            #self.Context.log(whatyousaid)
+            #result = self.Context.Conversation.ask(whatyousaid)
+            result = self.Context.Conversation.ask_speech()
 
             self.Context.State = actions.actionState(self.Context)
             self.Context.State.handle(result)

@@ -1,19 +1,8 @@
-import flow.state
-import flow.initial
-import flow.contexts
-import flow.actions
-import kodi
-
 try:
     import xbmcgui
 except:
     pass
-import time
-
-import conversation
 from actionState import actionState
-from spotifyState import spotifyState
-from userInput import userInput
 
 class media(actionState):
 
@@ -54,18 +43,23 @@ class media(actionState):
         self.Context.SendAction('PlayMedia', 'plugin://plugin.video.youtube/?path=/root/search&action=play_video&videoid=' + youtubeId )
 
     def spotify_play(self, result):
-        spot = spotifyState(self.Context)
-        spot.do_login()
-        results = spot.do_search(result)
-        for track in results.tracks:
-            self.Context.log("link: " + str(track.link))
-            self.Context.log("artist: " + str(track.artists[0].name))
-            self.Context.log("name: " + str(track.name))
-            self.Context.CreateWindow()
+        try:
+            from spotifyState import spotifyState
 
-        self.Context.SendAction('PlayMedia', 'plugin://plugin.video.youtube/' )
-        
-        #track_uri = 'spotify:track:6xZtSE6xaBxmRozKA0F6TA'
+            spot = spotifyState(self.Context)
+            spot.do_login()
+            results = spot.do_search(result)
+            for track in results.tracks:
+                self.Context.log("link: " + str(track.link))
+                self.Context.log("artist: " + str(track.artists[0].name))
+                self.Context.log("name: " + str(track.name))
+                self.Context.CreateWindow()
+
+            self.Context.SendAction('PlayMedia', 'plugin://plugin.video.youtube/' )
+
+            #track_uri = 'spotify:track:6xZtSE6xaBxmRozKA0F6TA'
+        except:
+            self.Context.show_notification("Spotify not installed")
         
     def music_search(self, result):
         self.Context.log("search music: " + str(result.ParsedJson))

@@ -1,8 +1,8 @@
 import context
 import sys
-import kodi
+#import kodi
 import time
-import kodiContextFiles
+#import kodiContextFiles
 
 try:
     import xbmcgui
@@ -16,6 +16,12 @@ except:
         import xbmcplugin
         import xbmc, xbmcaddon
     except:
+        class xbmc():
+            LOGDEBUG = 0
+            LOGWARNING = 1
+            LOGERROR = 2
+
+        WINDOW_DIALOG_TEXT_VIEWER = 4
         pass
 
 class KodiContext(context.Context):
@@ -45,7 +51,7 @@ class KodiContext(context.Context):
         if(self.Context.log(xbmcResult['status']['code'] == '200')):
             self.Context.log("succes! " + str(xbmcResult))
         else:
-            self.Context.log("error! result.ParsedJson: " + str(result.ParsedJson) + ". Kodi response: " + str(xbmcResult))
+            self.Context.log("error! result.ParsedJson: " + str(xbmcResult.ParsedJson) + ". Kodi response: " + str(xbmcResult))
 
         return xbmcResult
 

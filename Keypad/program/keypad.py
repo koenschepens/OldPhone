@@ -1,5 +1,5 @@
 from time import sleep
-import RPi.GPIO as GPIO
+import GPIO.GPIO as GPIO
 from enum import Enum
 from subprocess import call
 import time

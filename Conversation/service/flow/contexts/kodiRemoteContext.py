@@ -5,8 +5,11 @@ import sys
 try:
     from xbmc.xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
 except:
-    sys.path.append('/usr/share/pyshared/xbmc')
-    from xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
+    try:
+        sys.path.append('/usr/share/pyshared/xbmc')
+        from xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
+    except:
+        import xbmc_client as xbmcclient
 
 # Use this context to create a remote connection with kodi
 class KodiRemoteContext(context.Context):

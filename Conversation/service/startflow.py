@@ -6,7 +6,6 @@ folder = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'flow'))
 
 from flow import actions
-from flow import initial
 from flow import contexts
 
 config = ConfigParser.RawConfigParser()

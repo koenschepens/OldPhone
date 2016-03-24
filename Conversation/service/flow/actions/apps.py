@@ -1,15 +1,11 @@
-import flow.state
-import flow.initial
-import flow.contexts
-import flow.actions
-import kodi
+import ConfigParser
+
 try:
     import xbmcgui
 except:
     pass
 import time
 
-import conversation
 from actionState import actionState
 from userInput import userInput
 
