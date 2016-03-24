@@ -1,2 +1,0 @@
-curl --data-binary '{ "jsonrpc": "2.0", "method": "XBMC.GetInfoLabels", "id": "test", "params":{"labels":["Container.FolderPath"]}}' -H 'content-type: application/json;' http://localhost/jsonrpc
-

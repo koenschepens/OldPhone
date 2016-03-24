@@ -5,5 +5,6 @@
 
 service mediacenter stop
 #sudo git pull
-./install.sh
+./install.sh -f
 service mediacenter start
+#xbmc-send -a "RunPlugin(plugin://service.oldphone.conversation/)"
