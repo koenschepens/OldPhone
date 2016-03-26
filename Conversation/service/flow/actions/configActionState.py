@@ -1,8 +1,8 @@
 import re
 import ConfigParser
 import time
-from Conversation.service.flow import states
-from Conversation.service.flow.states.statebase import StateBase
+from service.flow import states
+from service.flow.states.statebase import StateBase
 
 
 class configActionState(StateBase):

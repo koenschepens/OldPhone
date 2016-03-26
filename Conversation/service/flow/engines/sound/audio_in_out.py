@@ -3,7 +3,7 @@ import math
 import wave
 import pyaudio
 import time
-from Conversation.service.flow.engines.sound.sound_base import SoundBase
+from service.flow.engines.sound.sound_base import SoundBase
 
 INITIAL_VOL_THRESHOLD = 0.010
 FORMAT = pyaudio.paInt16

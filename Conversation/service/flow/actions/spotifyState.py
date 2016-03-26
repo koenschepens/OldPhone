@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from Conversation.service.flow.states.statebase import StateBase
+from service.flow.states.statebase import StateBase
 
 try:
     import xbmcgui

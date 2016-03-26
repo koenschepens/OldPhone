@@ -2,7 +2,7 @@ import json
 import os
 import re
 import sys
-from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import PersonalAssistantBase, AssistentResult, ImmediateResult
+from service.flow.engines.personal_assistant.personal_assistent_base import PersonalAssistantBase, AssistentResult, ImmediateResult
 
 RATE = 44100
 

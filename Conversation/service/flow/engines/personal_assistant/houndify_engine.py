@@ -1,7 +1,4 @@
-import os
-import sys
-from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import PersonalAssistantBase, \
-    AssistentResult
+from service.flow.engines.personal_assistant.personal_assistent_base import PersonalAssistantBase, AssistentResult
 
 actionMapper = {
     "NoResultCommand" : "wisdom.unknown",
@@ -10,7 +7,7 @@ actionMapper = {
 
 __author__ = 'macbook'
 
-from Conversation.includes.houndify.houndify import HoundListener, StreamingHoundClient
+from includes.houndify.houndify import HoundListener, StreamingHoundClient
 
 class HoundifyEngine(PersonalAssistantBase, HoundListener):
     def __init__(self, context):
@@ -22,7 +19,7 @@ class HoundifyEngine(PersonalAssistantBase, HoundListener):
         print("you said: " + what)
 
     def open(self):
-        self.client = StreamingHoundClient(self.client_id, self.client_key, sampleRate=8000)
+        self.client = StreamingHoundClient(self.client_id, self.client_key, sampleRate=16000)
         self.client.setLocation(37.388309, -121.973968)
         self._active = True
         self.client.start(self)

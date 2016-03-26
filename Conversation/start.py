@@ -1,12 +1,12 @@
 import os
 import sys
 import ConfigParser
-from Conversation.service.flow.engines import context
+from service.flow.engines import context
 
 folder = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'flow'))
 
-from Conversation.service.flow import actions
+from service.flow import actions
 
 config = ConfigParser.RawConfigParser()
 includes_dir = folder + '/includes'
@@ -18,7 +18,7 @@ def get_engine(type, context):
     import importlib
     engine = context.config.get("engines", type)
     class_name = ''.join(s[0].upper() + s[1:] for s in engine.split('_'))
-    engine_class = getattr(importlib.import_module("Conversation.service.flow.engines.{0}.{1}".format(type,engine)), class_name)
+    engine_class = getattr(importlib.import_module("service.flow.engines.{0}.{1}".format(type,engine)), class_name)
     return engine_class
 
 actionString = None

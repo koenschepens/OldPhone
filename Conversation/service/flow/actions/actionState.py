@@ -1,6 +1,6 @@
-from Conversation.service.flow.actions import media, smalltalk, weather, news, input as Input, images, message, clock, name, apps, wisdom
-from Conversation.service.flow.actions.configActionState import configActionState as cs
-from Conversation.service.flow.states.statebase import StateBase
+from service.flow.actions import media, smalltalk, weather, news, input as Input, images, message, clock, name, apps, wisdom
+from service.flow.actions.configActionState import configActionState as cs
+from service.flow.states.statebase import StateBase
 
 class actionState(StateBase):
     def handle(self, result):

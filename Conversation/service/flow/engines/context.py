@@ -1,8 +1,8 @@
 import os
 import sys
 from time import sleep
-from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import AssistentResult
-from Conversation.service.flow.states.initial import Initial
+from service.flow.engines.personal_assistant.personal_assistent_base import AssistentResult
+from service.flow.states.initial import Initial
 
 class Context():
     target_engine = None
@@ -38,10 +38,12 @@ class Context():
 
     def ask(self, message = None):
         if(message is None):
+
             self.sound_engine.open()
 
             self.personal_assistant.open()
 
+            # Writes the stream from the sound engine to the personal assistant
             def callback(in_data, frame_count):
                 self.personal_assistant.send(in_data, frame_count)
 

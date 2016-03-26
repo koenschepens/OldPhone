@@ -1,4 +1,4 @@
-from Conversation.service import kodi
+from service import kodi
 import target_base
 import sys
 import time
