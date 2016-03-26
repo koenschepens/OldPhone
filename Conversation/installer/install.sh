@@ -9,10 +9,10 @@ fi
 
 cp ../service/* $serviceFolder/ -v -R
 
-if [ ! -f $serviceFolder/resources/lib/conversation.config ] || [ "$1" == "-f" ]
+if [ ! -f $serviceFolder/conversation.config ] || [ "$1" == "-f" ]
 	then
 		echo "copying config"
-		cp ../service/resources/lib/conversation.config $serviceFolder/lib/resources/conversation.config -v
+		cp ../service/conversation.config $serviceFolder/conversation.config -v
 fi
 
 sudo chown osmc $serviceFolder -R
