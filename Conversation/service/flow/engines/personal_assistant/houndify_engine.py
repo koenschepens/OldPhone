@@ -5,9 +5,7 @@ actionMapper = {
     "WikipediaCommand" : "browser.open"
 }
 
-__author__ = 'macbook'
-
-from includes.houndify.houndify import HoundListener, StreamingHoundClient
+from houndify import HoundListener, StreamingHoundClient
 
 class HoundifyEngine(PersonalAssistantBase, HoundListener):
     def __init__(self, context):
