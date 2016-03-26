@@ -6,11 +6,11 @@ from Conversation.service.flow.engines import context
 folder = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'flow'))
 
-from flow import actions
+from Conversation.service.flow import actions
 
 config = ConfigParser.RawConfigParser()
 includes_dir = folder + '/includes'
-configFile = folder + '/conversation.config'
+configFile = folder + '/settings.config'
 
 config.read(configFile)
 
