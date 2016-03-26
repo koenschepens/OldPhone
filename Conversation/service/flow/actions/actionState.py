@@ -1,61 +1,56 @@
-import flow
-from flow import state
-from flow.actions import *
-from flow.actions import configActionState
-from flow.contexts import *
-import conversation
-import sys
+from Conversation.service.flow.actions import media, smalltalk, weather, news, input as Input, images, message, clock, name, apps, wisdom
+from Conversation.service.flow.actions.configActionState import configActionState as cs
+from Conversation.service.flow.states.statebase import StateBase
 
-class actionState(state.State):
-
+class actionState(StateBase):
     def handle(self, result):
-        immediateActions = self.Context.Config.options("immediateActions")
+        immediateActions = self.context.config.options("immediateActions")
 
         if(isinstance(result, basestring)):
-            self.Context.State = flow.actions.configActionState(self.Context)
-            self.Context.State.handle(result)
+            self.context.State = cs(self.context)
+            self.context.State.handle(result)
             return
 
-        configState = configActionState.configActionState(self.Context)
+        configState = cs(self.context)
 
         if(not configState.handle(result)):
-            self.Context.log(result.Action + " is not a config item")
+            self.context.log(result.Action + " is not a config item")
 
-            self.Context.log("Action: " + str(result.Action))
+            self.context.log("Action: " + str(result.Action))
 
             actionItems = result.Action.split('.')
             actionClassess = {
-                "media": flow.actions.media,
-                "smalltalk": flow.actions.smalltalk,
-                "weather": flow.actions.weather,
-                "news": flow.actions.news,
-                "smalltalk": flow.actions.smalltalk,
-                "input": flow.actions.input,
-                "images": flow.actions.images,
-                "message": flow.actions.message,
-                "clock": flow.actions.clock,
-                "name": flow.actions.name,
-                "apps": flow.actions.apps
+                "media": media.media,
+                "wisdom": wisdom.wisdom,
+                "smalltalk": smalltalk.smalltalk,
+                "weather": weather.weather,
+                "news": news.news,
+                "input": Input.input,
+                "images": images.images,
+                "message": message.message,
+                "clock": clock.clock,
+                "name": name.name,
+                "apps": apps.apps
             }
 
             if(actionItems[0] in actionClassess):
-                self.Context.log("domain exists :" + actionItems[0])
-                self.Context.State = actionClassess[actionItems[0]](self.Context)
+                self.context.log("domain exists :" + actionItems[0])
+                self.context.State = actionClassess[actionItems[0]](self.context)
             else:
-                self.Context.log("domain " + actionItems[0] + " does not exist. Using config")
-                self.Context.State = flow.actions.configActionState(self.Context)
-            
-            if(hasattr(self.Context.State, actionItems[1])):
-                self.Context.log("actionState action: " + actionItems[1])
-                action = getattr(self.Context.State, actionItems[1])
+                self.context.log("domain " + actionItems[0] + " does not exist. Using config")
+                self.context.State = cs(self.context)
+
+            if(hasattr(self.context.State, actionItems[1])):
+                self.context.log("actionState action: " + actionItems[1])
+                action = getattr(self.context.State, actionItems[1])
                 action(result)
             else:
-                self.Context.log("action does not exist: " + actionItems[1] + ". Using " + self.Context.State.__class__.__name__ + ".handle()")
-                self.Context.State.handle(result)
+                self.context.log("action does not exist: " + actionItems[1] + ". Using " + self.context.State.__class__.__name__ + ".handle()")
+                self.context.State.handle(result)
 
         # Check if user input is required
-        if(self.Context.userInputRequired()):
-            self.Context.State = flow.actions.input(self.Context)
-            self.Context.State.handle(result)
-        
+        if(self.context.user_input_required()):
+            self.context.State = input(self.context)
+            self.context.State.handle(result)
+
 

@@ -1,65 +1,48 @@
+from Conversation.service.flow.states.statebase import StateBase
+
 try:
     import xbmcgui
 except:
     pass
-from actionState import actionState
 
-class media(actionState):
+class media(StateBase):
 
     def handle(self, result):
-        self.Context.log("handle media: " + str(result.Parameters))
+        self.context.log("handle media: " + str(result.Parameters))
 
     def video_play(self, result):
         if("service_name" in result.Parameters):
             if(result.Parameters["service_name"] == "youtube"):
-                self.Context.log("youtube play: " + str(result.Parameters))
+                self.context.log("youtube play: " + str(result.Parameters))
             else:
-                self.play_movie(result)
+                self.context.play_movie(result)
         else:
-            self.play_movie(result)
+            self.context.play_movie(result)
 
     def video_search(self, result):
-        self.Context.log("video_search: " + str(result.Parameters))
-
-    def play_movie(self, result):
-        params = result.Parameters
-        if('title' in params and params['title'] != '$title'):
-            q = params['title']
-            url = 'plugin://plugin.video.kodipopcorntime/search?query=' + q + ''
-        elif('searchQuery' in params and params['searchQuery'] != '$q'):
-            q = params['searchQuery']
-            url = 'plugin://plugin.video.kodipopcorntime/search?query=' + q + ''
-        elif('genre' in params and params['genre'] != '$genre'):
-            url = 'plugin://plugin.video.kodipopcorntime/genres/' + params['genre'] + '/1?limit=20'
-        else:
-            url = "plugin://plugin.video.kodipopcorntime/genres"
-
-        container = self.Context.ActivateWindow(url, window='videos')
+        self.context.log("video_search: " + str(result.Parameters))
        
     def music_play(self, result):
         self.spotify_play(result)
-
-    def temp(self):        
-        self.Context.SendAction('PlayMedia', 'plugin://plugin.video.youtube/?path=/root/search&action=play_video&videoid=' + youtubeId )
 
     def spotify_play(self, result):
         try:
             from spotifyState import spotifyState
 
-            spot = spotifyState(self.Context)
+            spot = spotifyState(self.context)
             spot.do_login()
             results = spot.do_search(result)
             for track in results.tracks:
-                self.Context.log("link: " + str(track.link))
-                self.Context.log("artist: " + str(track.artists[0].name))
-                self.Context.log("name: " + str(track.name))
-                self.Context.CreateWindow()
+                self.context.log("link: " + str(track.link))
+                self.context.log("artist: " + str(track.artists[0].name))
+                self.context.log("name: " + str(track.name))
+                self.context.CreateWindow()
 
-            self.Context.SendAction('PlayMedia', 'plugin://plugin.video.youtube/' )
+            self.context.SendAction('PlayMedia', 'plugin://plugin.video.youtube/' )
 
             #track_uri = 'spotify:track:6xZtSE6xaBxmRozKA0F6TA'
         except:
-            self.Context.show_notification("Spotify not installed")
+            self.context.show_notification("Spotify not installed")
         
     def music_search(self, result):
-        self.Context.log("search music: " + str(result.ParsedJson))
+        self.context.log("search music: " + str(result.ParsedJson))

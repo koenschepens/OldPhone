@@ -15,6 +15,5 @@ if __name__ == '__main__':
     params = urlparse.parse_qs('&'.join(sys.argv[1:]))
     window = PopupWindow(**params)
     window.show()
-    xbmc.sleep(5000)
     window.close()
     del window

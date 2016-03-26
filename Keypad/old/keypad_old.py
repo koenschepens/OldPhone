@@ -14,7 +14,7 @@ except:
     sys.path.append('/usr/share/pyshared/xbmc')
     from xbmcclient import XBMCClient
 
-addonFolder = "/home/osmc/.kodi/addons/service.keypad/" 
+addonFolder = "/home/osmc/.target/addons/service.keypad/"
 
 config = ConfigParser.RawConfigParser()
 config.read(addonFolder + 'keypad.config')

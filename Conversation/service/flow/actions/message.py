@@ -1,14 +1,10 @@
-import flow.state
-import flow.contexts
+from Conversation.service.flow.states.statebase import StateBase
 
-import conversation
-from actionState import actionState
-
-class message(actionState):
+class message(StateBase):
 
     def handle(self, result):
-        self.Context.log(str(result.Parameters))
+        self.context.log(str(result.Parameters))
 
     def show(self, result):
-        self.Context.log("message: "+str(result.Text))
+        self.context.log("message: "+str(result.Text))
 

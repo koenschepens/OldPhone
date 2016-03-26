@@ -1,15 +1,12 @@
 import ConfigParser
+from Conversation.service.flow.states.statebase import StateBase
 
 try:
     import xbmcgui
 except:
     pass
-import time
 
-from actionState import actionState
-from userInput import userInput
-
-class apps(actionState):
+class apps(StateBase):
 
     def handle(self, result):
         self.Config = ConfigParser.RawConfigParser()
@@ -21,9 +18,9 @@ class apps(actionState):
         appName = str(result.Parameters['app_name'])
 
         if(appName in self.Config.options("apps")):
-            appId = self.Context.Config.get("apps", appName)
-            self.Context.log("open app: " + appId)
-            self.Context.ActivateWindow(pluginurl = appId)
+            appId = self.context.Config.get("apps", appName)
+            self.context.log("open app: " + appId)
+            self.context.open_plugin(pluginurl = appId)
 
 
 

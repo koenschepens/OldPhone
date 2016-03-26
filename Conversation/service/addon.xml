@@ -6,8 +6,8 @@
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
-  <extension point="xbmc.service" library="startflow.py" start="startup" />
-  <!--<extension point="xbmc.python.script" library="kodi/kodi_test.py">
+  <extension point="xbmc.service" library="start.py" start="startup" />
+  <!--<extension point="xbmc.python.script" library="target/kodi_test.py">
     <provides>executable</provides>
   </extension>-->
 

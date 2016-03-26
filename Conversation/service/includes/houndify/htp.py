@@ -24,7 +24,6 @@ class HTPConnection:
 		self.conn = ssl.wrap_socket(self.rawConn)
 		self.conn.connect((hostname, port))
 
-
 	def SendMessage(self, msg):
 		self.conn.sendall(struct.pack('!I', len(msg.data)))
 		self.conn.sendall(struct.pack('!H', msg.type))

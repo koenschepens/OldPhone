@@ -1,21 +1,17 @@
-import flow.state
-import flow.contexts
+from Conversation.service.flow.states.statebase import StateBase
 
-import conversation
-from actionState import actionState
-
-class input(actionState):
+class input(StateBase):
 
     def handle(self, result):
-        self.Context.log("trying to handle: " + str(result.ParsedJson))
+        self.context.log("trying to handle: " + str(result.ParsedJson))
         if(result is not None):
             if(result.Text is not None and len(result.Text) > 0):
-                self.Context.say(result.Text)
+                self.context.say(result.Text)
             else:
-                self.Context.show_notification(result.Text)
+                self.context.show_notification(result.Text)
         else:
             self.unknown(result)
 
     def unknown(self, result):
-        self.Context.log("No understand: "+ str(result.ResolvedQuery))
-        self.Context.say("Sorry what?")
+        self.context.log("No understand: "+ str(result.ResolvedQuery))
+        self.context.say("Sorry what?")

@@ -1,14 +1,10 @@
-import flow.state
-import flow.contexts
+from Conversation.service.flow.states.statebase import StateBase
 
-import conversation
-from actionState import actionState
-
-class userInput(actionState):
+class userInput(StateBase):
 
     def handle(self, result):
-        choice = self.Context.getVoiceInput(question="Make a choice", ringBackTone = False, pling = True)
-        self.Context.log("user input: " + choice)
+        choice = self.context.get_voice_input(question="Make a choice", ringBackTone = False, pling = True)
+        self.context.log("user input: " + choice)
         return choice
 
 

@@ -1,10 +1,6 @@
-import flow.state
-import flow.contexts
+from Conversation.service.flow.states.statebase import StateBase
 
-import conversation
-from actionState import actionState
-
-class images(actionState):
+class images(StateBase):
 
     def search(self, result):
-        self.Context.log("image search: "+str(result.ParsedJson))
+        self.context.log("image search: "+str(result.ParsedJson))

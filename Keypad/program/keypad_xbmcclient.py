@@ -14,7 +14,7 @@ except:
     sys.path.append('/usr/share/pyshared/xbmc')
     from xbmcclient import XBMCClient,ACTION_EXECBUILTIN,ACTION_BUTTON
 
-addonFolder = "/home/osmc/.kodi/addons/service.keypad/" 
+addonFolder = "/home/osmc/.target/addons/service.keypad/"
 
 logging.basicConfig(filename=addonFolder + 'keypad.log',level=logging.INFO)
 #logging.basicConfig(level=logging.INFO)

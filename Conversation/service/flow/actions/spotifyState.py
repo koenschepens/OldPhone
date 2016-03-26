@@ -1,15 +1,15 @@
 from __future__ import unicode_literals
+from Conversation.service.flow.states.statebase import StateBase
 
 try:
     import xbmcgui
 except:
     pass
-from actionState import actionState
 
 import logging
 import threading
 
-class spotifyState(actionState):
+class spotifyState(StateBase):
 
     doc_header = 'Commands'
     prompt = 'spotify> '
@@ -173,7 +173,7 @@ class spotifyState(actionState):
 
         query = " ".join(searchParameters).replace("spotify", "")
 
-        self.Context.log("query: " + query)
+        self.context.log("query: " + query)
 
         if not self.logged_in.is_set():
             self.logger.warning('You must be logged in to search')
