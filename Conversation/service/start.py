@@ -1,14 +1,12 @@
 import os
 import sys
 import ConfigParser
-from Conversation.service import flow
 from Conversation.service.flow.engines.context import Context
 
 folder = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'flow'))
 
 from flow import actions
-from flow import engines
 
 config = ConfigParser.RawConfigParser()
 includes_dir = folder + '/includes'
