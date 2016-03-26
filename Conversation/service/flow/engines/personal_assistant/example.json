@@ -1,0 +1,489 @@
+{
+  'Status': 'OK',
+  'AudioLength': 16.25,
+  'Format': 'SoundHoundVoiceSearchResult',
+  'Disambiguation': {
+    'NumToShow': 1,
+    'ChoiceData': [
+      {
+        'FixedTranscription': 'bean',
+        'Transcription': 'bean',
+        'ConfidenceScore': 1
+      }
+    ]
+  },
+  'RealTime': 4.054,
+  'ResultsAreFinal': [
+    True
+  ],
+  'FormatVersion': '1.0',
+  'AllResults': [
+    {
+      'NativeData': [
+        {
+          'Title': 'Bean',
+          'WrittenSummaryShort': 'Bean',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461981,
+          'URI': 'http://en.wikipedia.org/wiki/Bean',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean">"Bean"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a common name for large plant seeds of several genera of the family Fabaceae which are used for human or animal food.',
+          'SpokenSummaryShort': 'Bean is a common name for large plant seeds of several genera of the family Fabaceae which are used for human or animal food.',
+          'ResolvedID': 1461981,
+          'WrittenSummaryLong': 'Bean (/\u02c8bi\u02d0n/) is a common name for large plant seeds of several genera of the family Fabaceae (alternately Leguminosae) which are used for human or animal food.'
+        },
+        {
+          'Title': 'Bean (film)',
+          'WrittenSummaryShort': 'Bean (film)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461991,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28film%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28film%29">"Bean_(film)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a 1997 feature film based on the television series Mr. Bean.',
+          'SpokenSummaryShort': 'Bean is a 1997 feature film based on the television series Mr. Bean.',
+          'ResolvedID': 1461991,
+          'WrittenSummaryLong': 'Bean (also known as Bean: The Ultimate Disaster Movie or Bean: The Movie) is a 1997 feature film based on the television series Mr. Bean. It stars Rowan Atkinson in the title role and Peter MacNicol. It was directed by Mel Smith.'
+        },
+        {
+          'ShouldIndicateRedirect': False,
+          'Title': 'Bean (film)',
+          'WrittenSummaryShort': 'Bean (film)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461982,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28film%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28film%29">"Bean_(film)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a 1997 feature film based on the television series Mr. Bean.',
+          'SpokenSummaryShort': 'Bean is a 1997 feature film based on the television series Mr. Bean.',
+          'RequestedTitle': 'Bean (1997 film)',
+          'ResolvedID': 1461991,
+          'WrittenSummaryLong': 'Bean (also known as Bean: The Ultimate Disaster Movie or Bean: The Movie) is a 1997 feature film based on the television series Mr. Bean. It stars Rowan Atkinson in the title role and Peter MacNicol. It was directed by Mel Smith.'
+        },
+        {
+          'Title': 'Bean (software)',
+          'WrittenSummaryShort': 'Bean (software)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461993,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28software%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28software%29">"Bean_(software)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a word processor for Mac OS X.',
+          'SpokenSummaryShort': 'Bean is a word processor for Mac OS X.',
+          'ResolvedID': 1461993,
+          'WrittenSummaryLong': 'Bean is a word processor for Mac OS X. It is no longer being developed, however it is still available for download. Originally free and open source software Bean became closed source at version 3. However, the Bean executable is still distributed free of charge.'
+        },
+        {
+          'ShouldIndicateRedirect': True,
+          'Title': "List of Ender's Game characters",
+          'WrittenSummaryShort': "List of Ender's Game characters",
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461988,
+          'URI': 'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters">"List_of_Ender\'s_Game_characters"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': '',
+          'SpokenSummaryShort': '',
+          'RequestedTitle': 'Bean (character)',
+          'ResolvedID': 6400323,
+          'WrittenSummaryLong': '\xf7'
+        },
+        {
+          'ShouldIndicateRedirect': False,
+          'Title': 'Bean (software)',
+          'WrittenSummaryShort': 'Bean (software)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461995,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28software%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28software%29">"Bean_(software)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a word processor for Mac OS X.',
+          'SpokenSummaryShort': 'Bean is a word processor for Mac OS X.',
+          'RequestedTitle': 'Bean (word processor)',
+          'ResolvedID': 1461993,
+          'WrittenSummaryLong': 'Bean is a word processor for Mac OS X. It is no longer being developed, however it is still available for download. Originally free and open source software Bean became closed source at version 3. However, the Bean executable is still distributed free of charge.'
+        },
+        {
+          'Title': 'Bean (name)',
+          'WrittenSummaryShort': 'Bean (name)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461992,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28name%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28name%29">"Bean_(name)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean (name): given name and surname',
+          'SpokenSummaryShort': 'Bean (name): given name and surname',
+          'ResolvedID': 1461992,
+          'WrittenSummaryLong': 'Bean (name): given name and surname'
+        },
+        {
+          'ShouldIndicateRedirect': True,
+          'Title': 'JavaBeans',
+          'WrittenSummaryShort': 'JavaBeans',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461989,
+          'URI': 'http://en.wikipedia.org/wiki/JavaBeans',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/JavaBeans">"JavaBeans"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects into a single object .',
+          'SpokenSummaryShort': 'In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects into a single object .',
+          'RequestedTitle': 'Bean (computing)',
+          'ResolvedID': 5401313,
+          'WrittenSummaryLong': 'In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects into a single object (the bean). They are serializable, have a zero-argument constructor, and allow access to properties using getter and setter methods.'
+        },
+        {
+          'Title': 'BEAN (charity)',
+          'WrittenSummaryShort': 'BEAN (charity)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1285598,
+          'URI': 'http://en.wikipedia.org/wiki/BEAN_%28charity%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/BEAN_%28charity%29">"BEAN_(charity)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'BEAN, a non-profit organization based in Seattle, Washington, USA, encourages volunteerism for young professionals and benefits local and international charitable organizations.',
+          'SpokenSummaryShort': 'BEAN, a non-profit organization based in Seattle, Washington, USA, encourages volunteerism for young professionals and benefits local and international charitable organizations.',
+          'ResolvedID': 1285598,
+          'WrittenSummaryLong': 'BEAN, a non-profit organization based in Seattle, Washington, USA, encourages volunteerism for young professionals and benefits local and international charitable organizations. BEAN was founded in 2002 by Howard Wu. BEAN currently has chapters in Seattle, San Francisco, Phoenix, Minneapolis, New York, Philadelphia, Shanghai, Hong Kong and Seoul.'
+        },
+        {
+          'ShouldIndicateRedirect': True,
+          'Title': "List of Ender's Game characters",
+          'WrittenSummaryShort': "List of Ender's Game characters",
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461985,
+          'URI': 'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters">"List_of_Ender\'s_Game_characters"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': '',
+          'SpokenSummaryShort': '',
+          'RequestedTitle': 'Bean (Enderverse)',
+          'ResolvedID': 6400323,
+          'WrittenSummaryLong': '\xf7'
+        },
+        {
+          'ShouldIndicateRedirect': False,
+          'Title': 'Bean (film)',
+          'WrittenSummaryShort': 'Bean (film)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461983,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28film%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28film%29">"Bean_(film)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a 1997 feature film based on the television series Mr. Bean.',
+          'SpokenSummaryShort': 'Bean is a 1997 feature film based on the television series Mr. Bean.',
+          'RequestedTitle': 'Bean (1997 movie)',
+          'ResolvedID': 1461991,
+          'WrittenSummaryLong': 'Bean (also known as Bean: The Ultimate Disaster Movie or Bean: The Movie) is a 1997 feature film based on the television series Mr. Bean. It stars Rowan Atkinson in the title role and Peter MacNicol. It was directed by Mel Smith.'
+        },
+        {
+          'ShouldIndicateRedirect': True,
+          'Title': "List of Ender's Game characters",
+          'WrittenSummaryShort': "List of Ender's Game characters",
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461984,
+          'URI': 'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters">"List_of_Ender\'s_Game_characters"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': '',
+          'SpokenSummaryShort': '',
+          'RequestedTitle': "Bean (Ender's Game)",
+          'ResolvedID': 6400323,
+          'WrittenSummaryLong': '\xf7'
+        },
+        {
+          'ShouldIndicateRedirect': False,
+          'Title': 'Bean (name)',
+          'WrittenSummaryShort': 'Bean (name)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461986,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28name%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28name%29">"Bean_(name)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean (name): given name and surname',
+          'SpokenSummaryShort': 'Bean (name): given name and surname',
+          'RequestedTitle': 'Bean (People)',
+          'ResolvedID': 1461992,
+          'WrittenSummaryLong': 'Bean (name): given name and surname'
+        },
+        {
+          'ShouldIndicateRedirect': False,
+          'Title': 'Bean (software)',
+          'WrittenSummaryShort': 'Bean (software)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461987,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28software%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28software%29">"Bean_(software)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean is a word processor for Mac OS X.',
+          'SpokenSummaryShort': 'Bean is a word processor for Mac OS X.',
+          'RequestedTitle': 'Bean (Word Processor)',
+          'ResolvedID': 1461993,
+          'WrittenSummaryLong': 'Bean is a word processor for Mac OS X. It is no longer being developed, however it is still available for download. Originally free and open source software Bean became closed source at version 3. However, the Bean executable is still distributed free of charge.'
+        },
+        {
+          'ShouldIndicateRedirect': False,
+          'Title': 'Bean (name)',
+          'WrittenSummaryShort': 'Bean (name)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461994,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28name%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28name%29">"Bean_(name)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean (name): given name and surname',
+          'SpokenSummaryShort': 'Bean (name): given name and surname',
+          'RequestedTitle': 'Bean (surname)',
+          'ResolvedID': 1461992,
+          'WrittenSummaryLong': 'Bean (name): given name and surname'
+        },
+        {
+          'Title': 'Bean (disambiguation)',
+          'WrittenSummaryShort': 'Bean (disambiguation)',
+          'Image': 'http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png',
+          'OriginalID': 1461990,
+          'URI': 'http://en.wikipedia.org/wiki/Bean_%28disambiguation%29',
+          'WikipediaAttribution': 'This article uses material from the Wikipedia article <a href="http://en.wikipedia.org/wiki/Bean_%28disambiguation%29">"Bean_(disambiguation)"</a>, which is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share-Alike License 3.0</a>.',
+          'SpokenSummaryLong': 'Bean has multiple meanings. View this Wikipedia disambiguation page.',
+          'SpokenSummaryShort': 'Bean has multiple meanings. View this Wikipedia disambiguation page.',
+          'ResolvedID': 1461990,
+          'WrittenSummaryLong': 'Bean has multiple meanings. View this Wikipedia disambiguation page.'
+        }
+      ],
+      'TemplateData': {
+        'Items': [
+          {
+            'TemplateData': {
+              'BodyText': 'Bean (/\u02c8bi\u02d0n/) is a common name for large plant seeds of several genera of the family Fabaceae (alternately Leguminosae) which are used for human or animal food.',
+              'Footer': 'View on Wikipedia',
+              'Title': 'Bean',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/Bean'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': 'Bean (also known as Bean: The Ultimate Disaster Movie or Bean: The Movie) is a 1997 feature film based on the television series Mr. Bean. It stars Rowan Atkinson in the title role and Peter MacNicol. It was directed by Mel Smith.',
+              'Footer': 'View on Wikipedia',
+              'Title': 'Bean (film)',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/Bean_%28film%29'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': 'Bean is a word processor for Mac OS X. It is no longer being developed, however it is still available for download. Originally free and open source software Bean became closed source at version 3. However, the Bean executable is still distributed free of charge.',
+              'Footer': 'View on Wikipedia',
+              'Title': 'Bean (software)',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/Bean_%28software%29'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': '\xf7',
+              'Footer': 'View on Wikipedia',
+              'Title': "List of Ender's Game characters",
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': 'Bean (name): given name and surname',
+              'Footer': 'View on Wikipedia',
+              'Title': 'Bean (name)',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/Bean_%28name%29'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': 'In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects into a single object (the bean). They are serializable, have a zero-argument constructor, and allow access to properties using getter and setter methods.',
+              'Footer': 'View on Wikipedia',
+              'Title': 'JavaBeans',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/JavaBeans'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': 'BEAN, a non-profit organization based in Seattle, Washington, USA, encourages volunteerism for young professionals and benefits local and international charitable organizations. BEAN was founded in 2002 by Howard Wu. BEAN currently has chapters in Seattle, San Francisco, Phoenix, Minneapolis, New York, Philadelphia, Shanghai, Hong Kong and Seoul.',
+              'Footer': 'View on Wikipedia',
+              'Title': 'BEAN (charity)',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/BEAN_%28charity%29'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          },
+          {
+            'TemplateData': {
+              'BodyText': 'Bean has multiple meanings. View this Wikipedia disambiguation page.',
+              'Footer': 'View on Wikipedia',
+              'Title': 'Bean (disambiguation)',
+              'ActionURIs': [
+                'http://en.wikipedia.org/wiki/Bean_%28disambiguation%29'
+              ],
+              'TemplateName': 'Media'
+            },
+            'TemplateName': 'Media'
+          }
+        ],
+        'TemplateName': 'VerticalTemplateList'
+      },
+      'ViewType': [
+        'Native',
+        'Template',
+        'HTML',
+        'None'
+      ],
+      'Hints': {
+        'Spoken': {
+          'Priority': 'Medium',
+          'Text': 'Try saying, "Show me the wikipedia entry for Bean?" You will be given the wikipedia entry.'
+        },
+        'Written': {
+          'Hints': [
+            {
+              'Priority': 'Medium',
+              'Text': 'Try saying, "Show me the wikipedia entry for Bean" You will be given the wikipedia entry.'
+            },
+            {
+              'Priority': 'Medium',
+              'Text': 'Try saying, "Who is Barack Obama?" You will be given Barack Obama\'s wikipedia entry.'
+            },
+            {
+              'Priority': 'Medium',
+              'Text': 'Try saying, "Show me Bean in wikipedia" You will be given the wikipedia entry.'
+            }
+          ]
+        }
+      },
+      'TemplateName': 'VerticalTemplateList',
+      'AutoListen': False,
+      'WrittenResponse': 'Bean',
+      'SpokenResponse': 'Bean is a common name for large plant seeds of several genera of the family Fabaceae which are used for human or animal food.',
+      'CommandKind': 'WikipediaCommand',
+      'ConversationState': {
+        'ShortResponseOnly': True,
+        'CommandKind': 'WikipediaCommand',
+        'ConversationStateTime': 1459015685,
+        'Entries': [
+          {
+            'OriginalID': 1461981,
+            'URI': 'http://en.wikipedia.org/wiki/Bean',
+            'ResolvedID': 1461981
+          },
+          {
+            'OriginalID': 1461991,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28film%29',
+            'ResolvedID': 1461991
+          },
+          {
+            'OriginalID': 1461982,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28film%29',
+            'ResolvedID': 1461991
+          },
+          {
+            'OriginalID': 1461990,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28disambiguation%29',
+            'ResolvedID': 1461990
+          },
+          {
+            'OriginalID': 1461993,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28software%29',
+            'ResolvedID': 1461993
+          },
+          {
+            'OriginalID': 1461988,
+            'URI': 'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters',
+            'ResolvedID': 6400323
+          },
+          {
+            'OriginalID': 1461995,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28software%29',
+            'ResolvedID': 1461993
+          },
+          {
+            'OriginalID': 1461992,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28name%29',
+            'ResolvedID': 1461992
+          },
+          {
+            'OriginalID': 1461989,
+            'URI': 'http://en.wikipedia.org/wiki/JavaBeans',
+            'ResolvedID': 5401313
+          },
+          {
+            'OriginalID': 1285598,
+            'URI': 'http://en.wikipedia.org/wiki/BEAN_%28charity%29',
+            'ResolvedID': 1285598
+          },
+          {
+            'OriginalID': 1461985,
+            'URI': 'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters',
+            'ResolvedID': 6400323
+          },
+          {
+            'OriginalID': 1461983,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28film%29',
+            'ResolvedID': 1461991
+          },
+          {
+            'OriginalID': 1461984,
+            'URI': 'http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters',
+            'ResolvedID': 6400323
+          },
+          {
+            'OriginalID': 1461986,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28name%29',
+            'ResolvedID': 1461992
+          },
+          {
+            'OriginalID': 1461987,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28software%29',
+            'ResolvedID': 1461993
+          },
+          {
+            'OriginalID': 1461994,
+            'URI': 'http://en.wikipedia.org/wiki/Bean_%28name%29',
+            'ResolvedID': 1461992
+          }
+        ]
+      },
+      'SpokenResponseLong': 'Bean is a common name for large plant seeds of several genera of the family Fabaceae which are used for human or animal food.',
+      'WrittenResponseLong': 'Bean (/\u02c8bi\u02d0n/) is a common name for large plant seeds of several genera of the family Fabaceae (alternately Leguminosae) which are used for human or animal food.',
+      'HTMLData': {
+        'HTMLHead': {
+          'CSS': '<link rel="stylesheet" href="//static.midomi.com/corpus/H_Zk82fGHFX/build/css/templates.min.css">',
+          'JS': '<script src="//static.midomi.com/corpus/H_Zk82fGHFX/build/js/templates.min.js"></script>'
+        },
+        'SmallScreenHTML': "<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean>Bean</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean (/\u02c8bi\u02d0n/) is a common name for large plant seeds of several genera of the family Fabaceae (alternately Leguminosae) which are used for human or animal food.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28film%29>Bean (film)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean (also known as Bean: The Ultimate Disaster Movie or Bean: The Movie) is a 1997 feature film based on the television series Mr. Bean. It stars Rowan Atkinson in the title role and Peter MacNicol. It was directed by Mel Smith.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28film%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28software%29>Bean (software)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean is a word processor for Mac OS X. It is no longer being developed, however it is still available for download. Originally free and open source software Bean became closed source at version 3. However, the Bean executable is still distributed free of charge.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28software%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters>List of Ender's Game characters</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>\xf7\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28name%29>Bean (name)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean (name): given name and surname\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28name%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/JavaBeans>JavaBeans</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects into a single object (the bean). They are serializable, have a zero-argument constructor, and allow access to properties using getter and setter methods.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/JavaBeans>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/BEAN_%28charity%29>BEAN (charity)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>BEAN, a non-profit organization based in Seattle, Washington, USA, encourages volunteerism for young professionals and benefits local and international charitable organizations. BEAN was founded in 2002 by Howard Wu. BEAN currently has chapters in Seattle, San Francisco, Phoenix, Minneapolis, New York, Philadelphia, Shanghai, Hong Kong and Seoul.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/BEAN_%28charity%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28disambiguation%29>Bean (disambiguation)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean has multiple meanings. View this Wikipedia disambiguation page.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28disambiguation%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n",
+        'LargeScreenHTML': "<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean>Bean</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean (/\u02c8bi\u02d0n/) is a common name for large plant seeds of several genera of the family Fabaceae (alternately Leguminosae) which are used for human or animal food.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28film%29>Bean (film)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean (also known as Bean: The Ultimate Disaster Movie or Bean: The Movie) is a 1997 feature film based on the television series Mr. Bean. It stars Rowan Atkinson in the title role and Peter MacNicol. It was directed by Mel Smith.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28film%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28software%29>Bean (software)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean is a word processor for Mac OS X. It is no longer being developed, however it is still available for download. Originally free and open source software Bean became closed source at version 3. However, the Bean executable is still distributed free of charge.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28software%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters>List of Ender's Game characters</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>\xf7\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/List_of_Ender%27s_Game_characters>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28name%29>Bean (name)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean (name): given name and surname\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28name%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/JavaBeans>JavaBeans</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects into a single object (the bean). They are serializable, have a zero-argument constructor, and allow access to properties using getter and setter methods.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/JavaBeans>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/BEAN_%28charity%29>BEAN (charity)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>BEAN, a non-profit organization based in Seattle, Washington, USA, encourages volunteerism for young professionals and benefits local and international charitable organizations. BEAN was founded in 2002 by Howard Wu. BEAN currently has chapters in Seattle, San Francisco, Phoenix, Minneapolis, New York, Philadelphia, Shanghai, Hong Kong and Seoul.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/BEAN_%28charity%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n<div class='h-template h-media'>\n  <div class=pure-g>\n    <div class='h-media-text-wrapper pure-'>\n      <h3 class='h-template-title h-media-title'><a href=http://en.wikipedia.org/wiki/Bean_%28disambiguation%29>Bean (disambiguation)</a>\n      </h3>\n      <p class='h-template-p h-media-bodytext'>Bean has multiple meanings. View this Wikipedia disambiguation page.\n      </p>\n    </div>\n  </div>\n  <div class=pure-g>\n    <div class=pure-u-1>\n      <p class='h-template-footer h-media-footer'><a href=http://en.wikipedia.org/wiki/Bean_%28disambiguation%29>View on Wikipedia</a>\n      </p>\n    </div>\n  </div>\n</div>\n"
+      }
+    }
+  ],
+  'BuildInfo': {
+    'BuildNumber': '2837',
+    'Kind': 'Low Fat',
+    'Variant': 'release',
+    'SVNRevision': '28328',
+    'Machine': 's10766724502414.pnp.melodis.com',
+    'SVNBranch': 'dev_multi_machine',
+    'User': 'knightly',
+    'Date': 'Thu Mar 24 05:33:45 PDT 2016'
+  },
+  'NumToReturn': 1,
+  'RealSpeechTime': 4.047,
+  'DomainUsage': [
+    {
+      'Domain': 'Wikipedia',
+      'DomainUniqueID': '94c94b51-65f5-4d8d-931e-a4b08354fd78',
+      'CreditsUsed': 1
+    }
+  ],
+  'ServerGeneratedId': '1de7c896-d1bd-4614-bc97-d099c5a4078c'
+}

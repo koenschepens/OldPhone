@@ -2,7 +2,183 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619281a9-078f-41bb-bddc-d87e6f409284" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/installer/install.sh" afterPath="$PROJECT_DIR$/Conversation/installer/install.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/example.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/gpiotest.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/houndify.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/htp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/lib.macosx-10.9-intel-2.7/pySHSpeex.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/pySHSpeexmodule.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/bits.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/cb_search.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/exc_10_16_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/exc_10_32_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/exc_20_32_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/exc_5_256_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/exc_5_64_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/exc_8_128_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/filters.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/gain_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/gain_table_lbr.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/hexc_10_32_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/hexc_table.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/high_lsp_tables.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/lpc.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/lsp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/lsp_tables_nb.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/ltp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/modes.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/modes_wb.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/nb_celp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/quant_lsp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/sb_celp.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/soundhound.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/speex.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/speex_callbacks.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/speex_header.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/stereo.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/vbr.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/vq.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/build/temp.macosx-10.9-intel-2.7/soundhound-speex/src/window.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/pySHSpeexmodule.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/setup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_bits.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_buffer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_callbacks.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_config_types.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_config_types.h.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_echo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_header.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_jitter.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_preprocess.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_resampler.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_stereo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/include/speex/speex_types.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/Jamfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/_kiss_fft_guts.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/arch.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/bits.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/buffer.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/cb_search.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/cb_search.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/cb_search_arm4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/cb_search_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/cb_search_sse.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/exc_10_16_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/exc_10_32_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/exc_20_32_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/exc_5_256_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/exc_5_64_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/exc_8_128_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fftwrap.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fftwrap.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filterbank.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filterbank.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filters.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filters.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filters_arm4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filters_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/filters_sse.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fixed_arm4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fixed_arm5e.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fixed_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fixed_debug.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/fixed_generic.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/gain_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/gain_table_lbr.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/hexc_10_32_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/hexc_table.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/high_lsp_tables.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/jitter.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/kiss_fft.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/kiss_fft.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/kiss_fftr.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/kiss_fftr.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lpc.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lpc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lpc_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lsp.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lsp.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lsp_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/lsp_tables_nb.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/ltp.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/ltp.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/ltp_arm4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/ltp_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/ltp_sse.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/math_approx.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/mdf.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/misc_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/modes.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/modes.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/modes_wb.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/nb_celp.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/nb_celp.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/os_support.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/preprocess.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/pseudofloat.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/quant_lsp.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/quant_lsp.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/quant_lsp_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/resample.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/sb_celp.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/sb_celp.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/smallft.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/smallft.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/soundhound-16khz.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/soundhound-8khz-int.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/soundhound-8khz.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/soundhound.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/speex.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/speex_callbacks.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/speex_header.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/stack_alloc.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/stereo.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/testdenoise.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/testecho.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/testenc.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/testenc_uwb.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/testenc_wb.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vbr.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vbr.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vorbis_psy.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vq.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vq.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vq_arm4.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vq_bfin.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/vq_sse.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/pySHSpeex/soundhound-speex/src/window.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/sample_stdin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/sample_text.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/houndify/sample_wave.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/readspeaker" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/say" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/sounds/beepbeep.aif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/sounds/beepbeep.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/sounds/tuut.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/speech-recog.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/speech/models/AcousticModels.tgz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/tts/Text2Speech" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/tts/pyvona.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/tts/readspeaker" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/tts/tts_pico2wave" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/vc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/voicecommand" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Conversation/service/includes/youtube-search" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Conversation/service/includes/GPIO/__init__.py" afterPath="$PROJECT_DIR$/Conversation/includes/tts/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/__init__.py" afterPath="$PROJECT_DIR$/Conversation/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/actions/__init__.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/actions/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/states/__init__.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/states/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/actions.config" afterPath="$PROJECT_DIR$/Conversation/actions.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/api_ai.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/api_ai.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/engines/context.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/engines/context.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/states/phoneUp.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/states/phoneUp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/settings.config" afterPath="$PROJECT_DIR$/Conversation/settings.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_pyvona.py" afterPath="$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_pyvona.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OldPhone.iws" />
@@ -24,11 +200,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="start.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Conversation/service/start.py">
+      <file leaf-file-name="settings.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/settings.config">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <caret line="61" column="99" selection-start-line="61" selection-start-column="99" selection-end-line="61" selection-end-column="99" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="houndify_engine.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3288044">
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -36,94 +222,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Keypad/installer/update.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="install.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Keypad/installer/install.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6666666">
-              <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Conversation/installer/update.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="install.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Conversation/installer/install.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65891474">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="actionState.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/actionState.py">
+      <file leaf-file-name="configActionState.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/configActionState.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+              <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kodi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/target/kodi.py">
+      <file leaf-file-name="personal_assistent_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/target/console.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keypad.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Keypad/program/keypad.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kodi_remote.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/target/kodi_remote.py">
+      <file leaf-file-name="media.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/media.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actions.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/actions.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="houndify.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/houndify.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phoneUp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/states/phoneUp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="example.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/example.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="367" column="21" selection-start-line="367" selection-start-column="7" selection-end-line="367" selection-end-column="21" />
+              <folding>
+                <element signature="e#404#17522#0" expanded="false" />
+                <element signature="e#17546#21976#0" expanded="false" />
+                <element signature="e#21996#22074#0" expanded="false" />
+                <element signature="e#22091#22859#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="context.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/context.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,20 +328,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Conversation/service/conversation.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/addon.xml" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/__init__.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/speech_recognition/houndify_recognition.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/tts/pyvona_tts.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/tts/__init__.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/__init__.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/tts/pyvona_voice.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/input/console.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/states/phoneUp.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/apiai.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/input/hook_always_up.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/actions/configActionState.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/input.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/images.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/message.py" />
@@ -167,10 +338,8 @@
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/clock.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/target/kodi.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/target/kodi_remote.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/api_ai.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_base.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/smalltalk.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_pyvona.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/media.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/apps.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/actions/weather.py" />
@@ -179,12 +348,10 @@
         <option value="$PROJECT_DIR$/Conversation/service/actions.config" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/sound/audio_in_out.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py" />
         <option value="$PROJECT_DIR$/Conversation/service/includes/houndify/htp.py" />
         <option value="$PROJECT_DIR$/Conversation/service/includes/houndify/houndify.py" />
         <option value="$PROJECT_DIR$/Conversation/service/conversation.config" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/target/target_base.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/context.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/states/statebase.py" />
         <option value="$PROJECT_DIR$/Conversation/old/flow/old/state.py" />
         <option value="$PROJECT_DIR$/Conversation/service/ui/conversation_ui.py" />
@@ -192,8 +359,26 @@
         <option value="$PROJECT_DIR$/Conversation/old/flow/old/phoneDown.py" />
         <option value="$PROJECT_DIR$/Conversation/service/flow/engines/target/console.py" />
         <option value="$PROJECT_DIR$/Conversation/old/flow/old/test.py" />
-        <option value="$PROJECT_DIR$/Conversation/service/start.py" />
         <option value="$PROJECT_DIR$/Conversation/installer/install.sh" />
+        <option value="$PROJECT_DIR$/Conversation/service/start.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/states/__init__.py" />
+        <option value="$PROJECT_DIR$/Conversation/__init__.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/actions/__init__.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/states/phoneUp.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/includes/__init__.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/includes/houndify/__init__.py" />
+        <option value="$PROJECT_DIR$/Conversation/includes/tts/pyvona.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_pyvona.py" />
+        <option value="$PROJECT_DIR$/Conversation/includes/houndify/htp.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/context.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/api_ai.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/test.json" />
+        <option value="$PROJECT_DIR$/Conversation/settings.config" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/example.json" />
+        <option value="$PROJECT_DIR$/Conversation/includes/houndify/houndify.py" />
+        <option value="$PROJECT_DIR$/Conversation/actions.config" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py" />
+        <option value="$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py" />
       </list>
     </option>
   </component>
@@ -293,7 +478,211 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="installer" />
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="states" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engines" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engines" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engines" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="personal_assistant" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OldPhone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conversation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -323,6 +712,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="935" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -330,6 +720,7 @@
       <recent name="$PROJECT_DIR$/Conversation/service/flow/contexts/speech_recognition" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Conversation" />
       <recent name="$PROJECT_DIR$/Conversation/service/flow/states" />
       <recent name="$PROJECT_DIR$/Conversation/service/flow/contexts/kodi" />
       <recent name="$PROJECT_DIR$/Conversation/service/flow/contexts/input" />
@@ -348,7 +739,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="OldPhone" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Conversation/service/start.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Conversation/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -429,7 +820,7 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="OldPhone" />
@@ -619,7 +1010,25 @@
       <option name="project" value="LOCAL" />
       <updated>1459002833441</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed install script">
+      <created>1459002990319</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1459002990319</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed missing module">
+      <created>1459003254819</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1459003254819</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Moved root folder">
+      <created>1459009947359</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1459009947359</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -627,8 +1036,8 @@
     <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32826748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39817628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32826748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39817628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -659,19 +1068,21 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Use pyAudio to record sound" />
     <MESSAGE value="Fixed stuff" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Fixed install script" />
+    <MESSAGE value="Fixed missing module" />
+    <MESSAGE value="Moved root folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved root folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="56" />
+          <url>file://$PROJECT_DIR$/Conversation/service/flow/engines/context.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -684,7 +1095,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="60" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -697,341 +1108,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Python/2.7/site-packages/apiai-0.0.6-py2.7.egg!/apiai/apiai.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="305" column="8" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/input/hook_always_up.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1458994915000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1458994915000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/immediateAction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/news.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/spotifyState.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/yo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/userInput.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/clock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Python/2.7/site-packages/apiai-0.0.6-py2.7.egg!/apiai/resampler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33152175">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/input.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/pyaudio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="288" column="8" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/includes/tts/pyvona.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/pyvona.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_pyvona.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/media.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/weather.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/smalltalk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="37" selection-start-line="3" selection-start-column="0" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/name.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036231883">
-          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/wisdom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/configActionState.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/actions.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/speech_recognition/houndify_recognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/api_ai.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/includes/houndify/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0892856">
-          <caret line="147" column="179" selection-start-line="147" selection-start-column="165" selection-end-line="147" selection-end-column="179" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.072463766">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#865#1750#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/ssl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/includes/houndify/htp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/includes/houndify/houndify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.925926">
-          <caret line="123" column="17" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/conversation.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/sound/audio_in_out.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/target/target_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/states/statebase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Conversation/service/ui/conversation_ui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1077,25 +1153,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/actionState.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conversation/service/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1126,9 +1184,374 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Conversation/installer/install.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65891474">
+        <state vertical-scroll-proportion="-9.444445">
           <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/kodi_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/kodi_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/kodi_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/kodi_player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/kodi_windows.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/kodi_window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/ui/kodi_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/addon.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/kodi/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/states/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/tts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/tts/tts_pyvona.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/pyvona.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/ssl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7777777">
+          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+          <folding>
+            <element signature="e#1680#1695#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="534" column="0" selection-start-line="534" selection-start-column="0" selection-end-line="534" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/htp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#262#276#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/pySHSpeex/pySHSpeexmodule.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/pySHSpeex/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/sample_stdin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/sound/audio_in_out.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="41" selection-start-line="162" selection-start-column="32" selection-end-line="162" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="382" column="0" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/actionState.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/states/initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/api_ai.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/settings.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="99" selection-start-line="61" selection-start-column="99" selection-end-line="61" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/media.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/states/phoneUp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/actions.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/example.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="367" column="21" selection-start-line="367" selection-start-column="7" selection-end-line="367" selection-end-column="21" />
+          <folding>
+            <element signature="e#404#17522#0" expanded="false" />
+            <element signature="e#17546#21976#0" expanded="false" />
+            <element signature="e#21996#22074#0" expanded="false" />
+            <element signature="e#22091#22859#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/actions/configActionState.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/includes/houndify/houndify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/personal_assistent_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conversation/service/flow/engines/personal_assistant/houndify_engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3288044">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,0 @@
-#!/bin/sh
-INTEXT=$2
-LANG=$1
-TEXT=${INTEXT// /$"%20"}
-URL="http://tts.readspeaker.com/a/speak?key=e068a22cb88820e1a31d72ae157121ee&command=produce&text=$TEXT&lang=$LANG&voice=Male01&audioformat=mp3"
-mpg123 -a plughw:1,0 $URL

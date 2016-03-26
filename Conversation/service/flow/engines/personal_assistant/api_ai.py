@@ -2,7 +2,7 @@ import json
 import os
 import re
 import sys
-from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import PersonalAssistantBase, Result, ImmediateResult
+from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import PersonalAssistantBase, AssistentResult, ImmediateResult
 
 RATE = 44100
 
@@ -23,7 +23,7 @@ class ApiAi(PersonalAssistantBase):
 
     def ask_text(self, what):
         if(len(what) == 0):
-            self.Result = Result("Sorry, I didn't hear you")
+            self.Result = AssistentResult("Sorry, I didn't hear you")
             return self.Result
 
         self.Request = what
@@ -50,7 +50,7 @@ class ApiAi(PersonalAssistantBase):
 
         parsed_json = json.loads(leJson)
 
-        self.Result = Result(parsed_json, self.client_access_token, self.subscription_key)
+        self.Result = AssistentResult(parsed_json, self.client_access_token, self.subscription_key)
 
         return self.Result
 
@@ -71,3 +71,24 @@ class ApiAi(PersonalAssistantBase):
     def close(self):
         pass
 
+class ApiAiResult(AssistentResult):
+    def __init__(self, parsed_json):
+        self.Id = 1000
+        self.NextFunction = None
+        self.NeedsUserInput = False
+        self.Action = {}
+        self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
+        self.ResolvedQuery = parsed_json
+
+        self.ResolvedQuery = parsed_json['result']['resolvedQuery']
+        self.Text = parsed_json['result']['fulfillment']['speech']
+        self.ParsedJson = parsed_json
+
+        if('action' in parsed_json['result']):
+            self.Action = parsed_json['result']['action']
+        else:
+            self.Action = "input.unknown"
+
+        self.Parameters = {}
+        if('parameters' in parsed_json['result']):
+            self.Parameters = parsed_json['result']['parameters']

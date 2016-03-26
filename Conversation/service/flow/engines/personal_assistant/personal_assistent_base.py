@@ -6,6 +6,10 @@ __author__ = 'macbook'
 class PersonalAssistantBase():
     def __init__(self, context):
         self.context = context
+        self._active = True
+
+    def is_active(self):
+        return self._active
 
     def ask_text(self, what):
         print("you said: " + what)
@@ -20,45 +24,30 @@ class PersonalAssistantBase():
         pass
 
     def getresponse(self):
-        return self.request.getresponse()
+        return self.request.getresponse().read()
 
     def get_json_response(self):
-        response = self.getresponse()
-        leJson = response.read()
-        return json.loads(leJson)
+        return json.loads(self.getresponse())
+
+    def get_result(self):
+        raise NotImplementedError
 
 class ImmediateResult:
     def executeAction(self, action):
         #{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"down"},"id":1}
         return '{"jsonrpc":"2.0","method":"Input.ExecuteAction","params":{"action":"' + action + '"},"id":1}'
 
-class Result:
-    def __init__(self, parsed_json):
-        self.Id = 1000
-        self.NextFunction = None
-        self.NeedsUserInput = False
-        self.Action = {}
-        self.IncludesDir = os.path.dirname(os.path.realpath(__file__)) + '/includes/'
-        self.ResolvedQuery = parsed_json
-
-        '''if(parsed_json is None):
-            #assume text only
-            self.Text = parsed_json
-            self.Action = "message.show"
-            return;'''
-
-        self.ResolvedQuery = parsed_json['result']['resolvedQuery']
-        self.Text = parsed_json['result']['fulfillment']['speech']
-        self.ParsedJson = parsed_json
-
-        if('action' in parsed_json['result']):
-            self.Action = parsed_json['result']['action']
-        else:
-            self.Action = "input.unknown"
-
-        self.Parameters = {}
-        if('parameters' in parsed_json['result']):
-            self.Parameters = parsed_json['result']['parameters']
+class AssistentResult():
+    Id = 0
+    NextFunction = None
+    NeedsUserInput = False
+    Action = {}
+    IncludesDir = None
+    ResolvedQuery = None
+    Text = None
+    Action = None
+    Parameters = {}
+    Url = None
 
     def __str__(self):
         result = ""
@@ -75,6 +64,7 @@ class Result:
             name = splitted[0]
             value = splitted[1]
 
+            # TODO : I can do better than this:
             if("q" in self.Parameters):
                 value = value.replace("$q", self.Parameters["q"])
             if("location" in self.Parameters):

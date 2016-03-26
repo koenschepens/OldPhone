@@ -1,7 +1,7 @@
 import os
 import sys
 from time import sleep
-from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import Result
+from Conversation.service.flow.engines.personal_assistant.personal_assistent_base import AssistentResult
 from Conversation.service.flow.states.initial import Initial
 
 class Context():
@@ -50,11 +50,11 @@ class Context():
             self.sound_engine.close()
             self.personal_assistant.close()
 
-        json = self.personal_assistant.get_json_response()
+        while(self.personal_assistant.is_active()):
+            #wait for the response from the assistant
+            sleep(0.1)
 
-        self.log(json)
-
-        self.Result = Result(json)
+        self.Result = self.personal_assistant.get_result()
 
         return self.Result
 
