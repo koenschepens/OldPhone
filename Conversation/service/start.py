@@ -1,7 +1,7 @@
 import os
 import sys
 import ConfigParser
-from Conversation.service.flow.engines.context import Context
+from Conversation.service.flow.engines import context
 
 folder = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'flow'))
@@ -22,7 +22,7 @@ def get_engine(type, context):
     return engine_class
 
 actionString = None
-context = None
+_context = None
 
 i = 0
 for arg in sys.argv:
@@ -30,7 +30,7 @@ for arg in sys.argv:
     if(arg == '-c'):
         contextString = sys.argv[i + 1]
         print("using context: " + contextString)
-        context = get_engine("target", contextString)(folder)
+        _context = get_engine("target", contextString)(folder)
     if(arg == '-a'):
         actionString = sys.argv[i + 1]
         print("using action: " + actionString)
@@ -40,23 +40,23 @@ for arg in sys.argv:
 
     i = i + 1
 
-if(context is None):
+if(_context is None):
     tts_gender = config.get("tts", "gender")
 
-    context = Context(config, folder, includes_dir, config.get("settings", "language"))
+    _context = context.Context(config, folder, includes_dir, config.get("settings", "language"))
 
-    context.sound_engine = get_engine("sound", context)(context)
-    context.tts_engine = get_engine("tts", context)(context, config.get("tts", "gender"), context.language)
-    context.target_engine = get_engine("target", context)(context)
-    context.input_engine = get_engine("input", context)(context)
-    context.personal_assistant = get_engine("personal_assistant", context)(context)
+    _context.sound_engine = get_engine("sound", _context)(_context)
+    _context.tts_engine = get_engine("tts", _context)(_context, config.get("tts", "gender"), _context.language)
+    _context.target_engine = get_engine("target", _context)(_context)
+    _context.input_engine = get_engine("input", _context)(_context)
+    _context.personal_assistant = get_engine("personal_assistant", _context)(_context)
     language = config.get("settings", "language")
 
 if(actionString is not None):
-    result = context.Conversation.ask(actionString)
-    context.state = actions.actionState(context)
-    context.state.handle(result)
+    result = _context.Conversation.ask(actionString)
+    _context.state = actions.actionState(_context)
+    _context.state.handle(result)
 else:
-    context.run()
+    _context.run()
 
 
